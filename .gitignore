@@ -1,2 +1,5 @@
 /var/cache
 /var/session
+/var/report
+/var/log
+/downloader
