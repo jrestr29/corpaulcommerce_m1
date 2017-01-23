@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+*
+* Magento
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Open Software License (OSL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/osl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@magentocommerce.com so we can send you a copy immediately.
+*
+* @category    GetSocial
+* @package     GetSocial_SharingButtons
+* @copyright   Copyright (c) 2015 GetSocial (http://getsocial.io/)
+* @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*
+-->
+<config>
+    <modules>
+        <GetSocial_SharingButtons>
+            <version>1.0.1</version>
+        </GetSocial_SharingButtons>
+    </modules>
+
+    <global>
+        
+        <blocks>
+            <sharingbuttons>
+                <class>GetSocial_SharingButtons_Block</class>
+            </sharingbuttons>
+        </blocks>
+        
+        <helpers>
+            <sharingbuttons>
+                <class>GetSocial_SharingButtons_Helper</class>
+            </sharingbuttons>
+        </helpers>
+
+    </global>
+    
+    <admin>
+        <routers>
+            <sharingbuttons>
+                <use>admin</use>
+                <args>
+                    <module>GetSocial_SharingButtons</module>
+                    <frontName>sharingbuttons</frontName>
+                </args>
+            </sharingbuttons>
+        </routers>
+    </admin>
+
+    <adminhtml>
+
+        <menu>
+            <configgetsocial translate="title" module="sharingbuttons">
+                <title>GetSocial</title>
+                <sort_order>150</sort_order>
+                <children>
+                    <managesharingbuttons translate="title" module="sharingbuttons">
+                        <title>Manage Sharing Buttons</title>
+                        <sort_order>11</sort_order> 
+                        <action>sharingbuttons/adminhtml_sharingbuttons</action>
+                    </managesharingbuttons>
+                </children>
+            </configgetsocial>
+        </menu>
+        <layout>
+            <updates>
+                <sharingbuttons module="GetSocial_SharingButtons">
+                    <file>sharingbuttons.xml</file>
+                </sharingbuttons>
+            </updates>
+        </layout>
+        
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <sharingbuttons module="GetSocial_SharingButtons">
+                    <file>sharingbuttons.xml</file>
+                </sharingbuttons>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <default>
+        <sharingbuttons>
+            <general>
+                <mode>1</mode>
+                <social_position>1</social_position>
+            </general>
+        </sharingbuttons>
+    </default>
+
+</config>

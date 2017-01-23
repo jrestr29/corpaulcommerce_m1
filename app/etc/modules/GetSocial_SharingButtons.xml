@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <GetSocial_SharingButtons>
+            <active>false</active>
+            <codePool>community</codePool>
+			<name>Get Social Buttons</name>
+        </GetSocial_SharingButtons>
+    </modules>
+</config>

@@ -1,0 +1,475 @@
+/*
+ * Get Social Sharing Buttons Styles
+ */
+
+$color_green: #85b023;
+$color_blue: #339ed5;
+$color_grey: #606060;
+$color_white: #FFF;
+$color_red: #d36c65;
+$color_orange: #f29809;
+
+#loading-mask {
+    display: none;
+}
+
+#main-nav {
+    font-family: "Raleway",sans-serif;
+    font-size: 16px;
+    color: $color_grey;
+
+    .gs-form-header {
+        margin-right: -1px;
+        padding-top: 0;
+        display: block;
+        background: $color_blue;
+
+        //position: absolute;
+        z-index: 6;
+        -webkit-transition: all 200ms;
+        transition: all 200ms;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+        height: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-left: -40px;
+        margin-right: -40px;
+
+        #logo-wrapper {
+            background: darken($color_blue, 10%);
+            background-image: url("../img/getsocial-app-logo.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 25px 30px;
+            float: left;
+            width: 100px;
+        }
+    }
+
+    .edit-title {
+        background: $color_white;
+        text-align: center;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 46px 0;
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative;
+
+        h1 {
+            max-width: 860px;
+            font-family: "Raleway",sans-serif;
+            line-height: 35px;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 30px;
+            font-weight: 800;
+
+            + p {
+                max-width: 860px;
+                margin: 20px auto 0;
+                display: block;
+                border: none;
+                border-radius: 4px;
+                padding: 0;
+                font-size: 15px;
+                font-family: sans-serif;
+            }
+        }
+    }
+
+    div.gs-form {
+        max-width: 600px;
+        margin: 0 auto;
+
+        &.goto-getsocial {
+            margin-top: 50px;
+        }
+
+        .form-content {
+            background: #fff;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+            .field-group {
+                padding-left: 125px;
+                position: relative;
+                border: 1px solid #e1e1e1;
+
+                &:after {
+                    content: ".";
+                    display: block;
+                    clear: both;
+                    visibility: hidden;
+                    line-height: 0;
+                    height: 0;
+                }
+
+                .field-label {
+                    padding-top: 40px;
+                    float: left;
+                    width: 95px;
+                    min-width: 95px;
+                    height: 100%;
+                    background: #f9f9f9;
+                    word-wrap: break-word;
+                    padding: 30px 0 40px 30px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: $color_blue;
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 2px;
+
+                    label {
+                        font-size: 18px;
+                        font-weight: normal;
+                        color: $color_white;
+                        font-family: sans-serif;
+                        padding-left: 10px;
+                    }
+                }
+
+                .field-input {
+                    float: left;
+                    width: 100%;
+                    padding: 30px 30px 30px;
+                    position: relative;
+                    font-size: 16px;
+                    font-family: sans-serif;
+                    background: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        .form-button-group {
+            #activate-account, #loading-create {
+                color: #FFF;
+                text-decoration: none;
+                padding-left: 20px;
+                padding: 15px 10px 15px 10px;
+                font-size: 20px;
+                font-family: "Source Sans Pro",sans-serif;
+            }
+        }
+    }
+
+    .form-item-url-input {
+        padding-top: 30px;
+    }
+
+    .form-item-insert-key {
+        display: none;
+        padding-top: 30px;
+
+        label[for=edit-insert-key] {
+            padding-bottom: 30px;
+        }
+
+        #edit-insert-key {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px 20px 10px;
+            color: $color_grey;
+            margin-bottom: 15px;
+        }
+    }
+
+    .submit-save-key {
+        display: none;
+    }
+
+    #edit-submit {
+        display: none;
+    }
+
+    .form-button-group {
+        background-color: $color_green;
+        margin: 0 auto;
+        padding: 15px 10px 15px 10px;
+        text-align: center;
+        width: 250px;
+        color: $color_white;
+        border-radius: 4px;
+        font-size: 20px;
+        color: #FFF;
+        text-decoration: none;
+        padding-left: 20px;
+        font-size: 20px;
+        font-family: "Source Sans Pro",sans-serif;
+
+        &#loading-create {
+            display: none;
+        }
+
+        &:hover {
+            background: darken($color_green, 10%);
+        }
+
+        a {
+            color: $color_white;
+            text-decoration: none;
+            padding-left: 20px;
+            padding: 15px 10px 15px 10px;
+        }
+
+        &.loading-create {
+            background: darken($color_green, 10%);
+
+            i {
+                margin-right: 15px;
+            }
+
+            .loading-create-label {
+                display: inline-block;
+            }
+
+            label {
+                color: $color_white;
+            }
+        }
+
+        &.success-message {
+            display: none;
+            width: 600px;
+            background: darken($color_green, 10%);
+            padding: 25px 10px 15px 30px;
+            margin-top: 50px;
+
+            #success-message {
+                display: inline-block !important;
+                padding-left: 30px;
+            }
+
+            i {
+                vertical-align: top;
+                //padding-top: 30px;
+                font-size: 30px;
+                padding-right: 10px;
+            }
+
+            label {
+                font-weight: normal;
+                text-align: left;
+                color: $color_white;
+            }
+
+            p {
+                font-size: 14px;
+                color: lighten($color_green, 10%);
+                margin-top: 5px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.get-social-config-form {
+    font-family: "Source Sans Pro",sans-serif;
+    font-size: 16px;
+    color: $color_grey;
+
+    .gs-form-header {
+        margin-right: -1px;
+        padding-top: 0;
+        display: block;
+        background: $color_blue;
+        position: absolute;
+        z-index: 6;
+        -webkit-transition: all 200ms;
+        transition: all 200ms;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+        height: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-left: -40px;
+        margin-right: -40px;
+
+        #logo-wrapper {
+            background: darken($color_blue, 10%);
+            background-image: url("../img/getsocial-app-logo.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 25px 30px;
+            float: left;
+            width: 100px;
+        }
+    }
+
+    #edit-title {
+        background: $color_white !important;
+        text-align: center;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 46px 0;
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative;
+
+        label {
+            max-width: 860px;
+            font-family: "Raleway",sans-serif;
+            line-height: 35px;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 30px;
+            font-weight: 800;
+            color: darken($color_blue, 10%);
+
+            + p {
+                max-width: 860px;
+                margin: 20px auto 0;
+                display: block;
+                border: none;
+                border-radius: 4px;
+                padding: 0;
+                font-size: 18px;
+                font-weight: normal;
+                color: darken($color_blue, 10%);
+            }
+        }
+    }
+
+    #edit-submit {
+        display: none;
+    }
+
+    .form-button-group {
+        background-color: $color_green;
+        margin: 0 auto;
+        padding: 15px 10px 15px 10px;
+        text-align: center;
+        width: 250px;
+        color: $color_white;
+        border-radius: 4px;
+        font-size: 20px;
+
+        &:hover {
+            background: darken($color_green, 10%);
+        }
+
+        a {
+            color: $color_white;
+            text-decoration: none;
+            padding-left: 20px;
+            padding: 15px 10px 15px 10px;
+        }
+
+        &.loading-create {
+            background: darken($color_green, 10%);
+            display: none;
+        }
+
+        &.success-message {
+            display: none;
+            width: 600px;
+            background: darken($color_green, 10%);
+            padding: 10px 10px 0px 30px;
+
+            #success-message {
+                display: inline-block;
+                padding-left: 30px;
+            }
+
+            i {
+                vertical-align: top;
+                padding-top: 30px;
+                font-size: 30px;
+            }
+
+            label {
+                font-weight: normal;
+                text-align: left;
+            }
+
+            p {
+                font-size: 14px;
+                color: lighten($color_green, 10%);
+            }
+        }
+    }
+}
+
+#api-key-form {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+
+    #gs-api-key {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 10px;
+        width: 80%;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: $color_grey;
+    }
+
+    .form-button-group {
+        margin-top: 20px;
+
+        input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            height: 30px;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: "Source Sans Pro",sans-serif;
+        }
+    }
+
+    #getkey-loading-create {
+        display: none;
+        padding: 25px 15px 15px 15px;
+    }
+}
+
+#result-info-bar {
+    background: transparent;
+
+    //visibility: hidden;
+    display: none;
+    text-align: center;
+    line-height: 1px;
+    margin-top: 20px;
+    border-radius: 2px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+#result-info-bar.error {
+    color: $color_red;
+    background-color: rgba($color_red, 0.3);
+}
+
+#result-info-bar .warning {
+    color: $color_orange;
+    background-color: rgba($color_orange, 0.3);
+}
+
+#result-info-bar .success {
+    color: $color_green;
+    background-color: rgba($color_green, 0.3);
+}
+
+#console {
+    display: none;
+}
