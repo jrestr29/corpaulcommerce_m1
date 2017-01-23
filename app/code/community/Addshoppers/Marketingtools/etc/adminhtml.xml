@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+  /**
+ 	* Copyright © 2016 AddShoppers.com
+ 	* FileDescription: File used to declare admin panel sections of the extension
+ 	*/
+-->
+<config>
+  <acl>
+    <resources>
+      <all>
+        <title>Allow Everything</title>
+      </all>
+      <admin>
+        <children>
+          <system>
+            <children>
+              <config>
+                <children>
+                  <addshoppers_iframe>
+                    <title>AddShoppers</title>
+                  </addshoppers_iframe>
+                </children>
+              </config>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>
