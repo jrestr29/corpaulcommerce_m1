@@ -3,7 +3,7 @@
 class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface {
 
-    protected $_code = 'ditosas_coordinadora';
+    protected $_code = 'ditosas_coordinadoracourrier    ';
 
     /**
      * Collect and get rates

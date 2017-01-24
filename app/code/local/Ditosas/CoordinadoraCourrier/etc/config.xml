@@ -9,6 +9,7 @@
         <models>
             <ditosas_coordinadoracourrier>
                 <class>Envato_Customshippingmethod_Model</class>
+
             </ditosas_coordinadoracourrier>
         </models>
         <helpers>

@@ -3,7 +3,7 @@
 class Ditosas_FedexCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface {
 
-    protected $_code = 'ditosas_fedex';
+    protected $_code = 'ditosas_fedexcourrier';
 
     /**
      * Collect and get rates
