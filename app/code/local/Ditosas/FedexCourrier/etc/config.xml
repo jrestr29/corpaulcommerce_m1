@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_FedexCourrier>
+            <version>1.0.0</version>
+        </Ditosas_FedexCourrier>
+    </modules>
+    <global>
+        <models>
+            <ditosas_fedexcourrier>
+                <class>Ditosas_FedexCourrier_Model</class>
+            </ditosas_fedexcourrier>
+        </models>
+        <helpers>
+            <ditosas_fedexcourrier>
+                <class>Ditosas_FedexCourrier_Helper</class>
+            </ditosas_fedexcourrier>
+        </helpers>
+    </global>
+    <default>
+        <carriers>
+            <ditosas_fedexcourrier>
+                <active>1</active>
+                <sallowspecific>1</sallowspecific>
+                <model>ditosas_fedexcourrier/carrier</model>
+                <name>FedEX</name>
+                <price>25000</price>
+                <title>FedEX</title>
+            </ditosas_fedexcourrier>
+        </carriers>
+    </default>
+</config>

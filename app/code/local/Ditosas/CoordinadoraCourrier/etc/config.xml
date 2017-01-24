@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_CoordinadoraCourrier>
+            <version>1.0.0</version>
+        </Ditosas_CoordinadoraCourrier>
+    </modules>
+    <global>
+        <models>
+            <ditosas_coordinadoracourrier>
+                <class>Envato_Customshippingmethod_Model</class>
+            </ditosas_coordinadoracourrier>
+        </models>
+        <helpers>
+            <ditosas_coordinadoracourrier>
+                <class>Envato_Customshippingmethod_Helper</class>
+            </ditosas_coordinadoracourrier>
+        </helpers>
+    </global>
+    <default>
+        <carriers>
+            <ditosas_coordinadoracourrier>
+                <active>1</active>
+                <sallowspecific>1</sallowspecific>
+                <model>ditosas_coordinadoracourrier/carrier</model>
+                <name>Coordinadora</name>
+                <price>25000</price>
+                <title>Coordinadora</title>
+            </ditosas_coordinadoracourrier>
+        </carriers>
+    </default>
+</config>
