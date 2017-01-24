@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'galano_grotesquebold_italic';
+  src: url('fonts/galano/galano_grotesque_bold_italic-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_bold_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesquebold';
+  src: url('fonts/galano/galano_grotesque_bold-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesqueitalic';
+  src: url('fonts/galano/galano_grotesque_italic-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesquelight_italic';
+  src: url('fonts/galano/galano_grotesque_light_italic-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_light_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesquelight';
+  src: url('fonts/galano/galano_grotesque_light-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesquemedium_italic';
+  src: url('fonts/galano/galano_grotesque_medium_italic-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_medium_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesquemedium';
+  src: url('fonts/galano/galano_grotesque_medium-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque_medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'galano_grotesqueregular';
+  src: url('fonts/galano/galano_grotesque-webfont.woff2') format('woff2'), url('fonts/galano/galano_grotesque-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
