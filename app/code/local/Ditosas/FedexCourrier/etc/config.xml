@@ -9,13 +9,29 @@
         <models>
             <ditosas_fedexcourrier>
                 <class>Ditosas_FedexCourrier_Model</class>
+                <resourceModel>ditosas_fedexcourrier_resource</resourceModel>
             </ditosas_fedexcourrier>
+            <ditosas_fedexcourrier_resource>
+                <class>Ditosas_FedexCourrier_Model_Resource</class>
+                <entities>
+                    <costos>
+                        <table>corpaul_courrier_costos</table>
+                    </costos>
+                </entities>
+            </ditosas_fedexcourrier_resource>
         </models>
         <helpers>
             <ditosas_fedexcourrier>
                 <class>Ditosas_FedexCourrier_Helper</class>
             </ditosas_fedexcourrier>
         </helpers>
+        <resources>
+            <ditosas_fedexcourrier_setup>
+                <setup>
+                    <module>Ditosas_FedexCourrier</module>
+                </setup>
+            </ditosas_fedexcourrier_setup>
+        </resources>
     </global>
     <default>
         <carriers>
