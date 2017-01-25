@@ -2,12 +2,12 @@
 <config>
     <modules>
         <Ditosas_CoordinadoraCourrier>
-            <active>false</active>
+            <active>true</active>
             <codePool>local</codePool>
             <depends>
                 <Mage_Shipping />
                 <Ditosas_CityDropdown />
-                <Colombia_Regions />
+                <Ditosas_ColombiaRegions />
             </depends>
         </Ditosas_CoordinadoraCourrier>
     </modules>

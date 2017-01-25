@@ -6,6 +6,8 @@
             <codePool>local</codePool>
             <depends>
                 <Mage_Shipping />
+                <Ditosas_CityDropdown />
+                <Ditosas_ColombiaRegions />
             </depends>
         </Ditosas_FedexCourrier>
     </modules>
