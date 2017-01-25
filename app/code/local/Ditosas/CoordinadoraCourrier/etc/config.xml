@@ -8,15 +8,30 @@
     <global>
         <models>
             <ditosas_coordinadoracourrier>
-                <class>Envato_Customshippingmethod_Model</class>
-
+                <class>Ditosas_CoordinadoraCourrier_Model</class>
+                <resourceModel>ditosas_coordinadoracourrier_resource</resourceModel>
             </ditosas_coordinadoracourrier>
+            <ditosas_coordinadoracourrier_resource>
+                <class>Ditosas_CoordinadoraCourrier_Model_Resource</class>
+                <entities>
+                    <costos>
+                        <table>corpaul_courrier_costos</table>
+                    </costos>
+                </entities>
+            </ditosas_coordinadoracourrier_resource>
         </models>
         <helpers>
             <ditosas_coordinadoracourrier>
-                <class>Envato_Customshippingmethod_Helper</class>
+                <class>Ditosas_CoordinadoraCourrier_Helper</class>
             </ditosas_coordinadoracourrier>
         </helpers>
+        <resources>
+            <ditosas_coordinadoracourrier_setup>
+                <setup>
+                    <module>Ditosas_CoordinadoraCourrier</module>
+                </setup>
+            </ditosas_coordinadoracourrier_setup>
+        </resources>
     </global>
     <default>
         <carriers>
