@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_ColombiaRegions>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ditosas_ColombiaRegions>
+    </modules>
+</config>
