@@ -20,6 +20,11 @@
                 </entities>
             </ditosas_citydropdown_resource>
         </models>
+        <helpers>
+            <ditosas_citydropdown>
+                <class>Ditosas_CityDropdown_Helper</class>
+            </ditosas_citydropdown>
+        </helpers>
         <resources>
             <ditosas_citydropdown_setup>
                 <setup>
