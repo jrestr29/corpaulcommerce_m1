@@ -3,7 +3,7 @@
 class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface {
 
-    protected $_code = 'ditosas_coordinadoracourrier    ';
+    protected $_code = 'ditosas_coordinadoracourrier';
 
     /**
      * Collect and get rates
@@ -14,7 +14,7 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
         $result = Mage::getModel('shipping/rate_result');
-        $result->append($this->_getDefaultRate());
+        $result->append($this->_getRate());
 
         return $result;
     }
@@ -31,15 +31,23 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
         );
     }
 
-    protected function _getDefaultRate()
-    {
+    protected function _getRate() {
+        $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
+        $checkCost = Mage::helper('ditosas_coordinadoracourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegionId(), $address->getCity());
+
         $rate = Mage::getModel('shipping/rate_result_method');
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
         $rate->setMethod($this->_code);
         $rate->setMethodTitle($this->getConfigData('name'));
-        $rate->setPrice($this->getConfigData('price'));
+
+        if(!$checkCost){
+            $rate->setPrice($this->getConfigData('price'));
+        } else {
+            $rate->setPrice($checkCost);
+        }
+
         $rate->setCost(0);
 
         return $rate;

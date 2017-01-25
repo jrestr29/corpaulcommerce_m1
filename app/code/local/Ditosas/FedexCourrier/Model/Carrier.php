@@ -14,7 +14,7 @@ class Ditosas_FedexCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Ab
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
         $result = Mage::getModel('shipping/rate_result');
-        $result->append($this->_getDefaultRate());
+        $result->append($this->_getRate());
 
         return $result;
     }
@@ -31,15 +31,23 @@ class Ditosas_FedexCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Ab
         );
     }
 
-    protected function _getDefaultRate()
-    {
+    protected function _getRate() {
+        $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
+        $checkCost = Mage::helper('ditosas_fedexcourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegionId(), $address->getCity());
+
         $rate = Mage::getModel('shipping/rate_result_method');
 
         $rate->setCarrier($this->_code);
         $rate->setCarrierTitle($this->getConfigData('title'));
         $rate->setMethod($this->_code);
         $rate->setMethodTitle($this->getConfigData('name'));
-        $rate->setPrice($this->getConfigData('price'));
+
+        if(!$checkCost){
+            $rate->setPrice($this->getConfigData('price'));
+        } else {
+            $rate->setPrice($checkCost);
+        }
+
         $rate->setCost(0);
 
         return $rate;
