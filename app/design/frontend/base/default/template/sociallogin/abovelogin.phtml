@@ -1,0 +1,6 @@
+<?php
+if (!Mage::helper('sociallogin/loginhelper')->isAlreadyLoggedIn() && $this->getAboveLogin() == '1') {
+    $this->getSocialLoginContainer();
+}
+?>
+
