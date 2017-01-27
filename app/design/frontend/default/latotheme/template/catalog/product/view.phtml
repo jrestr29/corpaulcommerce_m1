@@ -58,12 +58,6 @@
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
                 </div>
 
-                <div class="price-info">
-                    <?php echo $this->getPriceHtml($_product); ?>
-                    <?php echo $this->getChildHtml('bundle_prices') ?>
-                    <?php echo $this->getTierPriceHtml() ?>
-                </div>
-
                 <div class="extra-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
                     <?php echo $this->getChildHtml('product_type_availability'); ?>
@@ -77,8 +71,11 @@
                     </div>
                 <?php endif;?>
 
-
-
+                <div class="price-info">
+                    <?php echo $this->getPriceHtml($_product); ?>
+                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                    <?php echo $this->getTierPriceHtml() ?>
+                </div>
 
                 <?php echo $this->getChildHtml('other');?>
 
@@ -172,7 +169,7 @@
         </script>
     </div>
 
-    <div class="product-collateral toggle-content tabs">
+    <!--<div class="product-collateral toggle-content tabs">
         <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
             <dl id="collateral-tabs" class="collateral-tabs">
                 <?php foreach ($detailedInfoGroup as $alias => $html):?>
@@ -183,7 +180,7 @@
                 <?php endforeach;?>
             </dl>
         <?php endif; ?>
-    </div>
+    </div>!-->
 
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>

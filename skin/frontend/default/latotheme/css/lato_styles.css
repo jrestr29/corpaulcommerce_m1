@@ -425,9 +425,33 @@ body header nav ol li ul li a:hover {
   background-color: #ffffff !important;
   border: 2px solid #cccccc !important;
 }
+.product-view .add-to-cart input.qty {
+  height: 42px !important;
+}
+.product-view .product-shop .price-info {
+  float: left !important;
+  padding-left: 0 !important;
+}
+.product-view .product-shop .price-info span span {
+  color: #000 !important;
+  float: left !important;
+  font-size: 30px !important;
+}
 .product-view .product-shop .product-name span {
   text-transform: capitalize !important;
   color: #000000 !important;
+}
+.product-view .product-shop .product-options {
+  padding: 0 !important;
+  border: none !important;
+}
+.product-view .product-shop .product-options-bottom {
+  padding: 0 !important;
+  border: none !important;
+  background-color: #ffffff !important;
+}
+.product-view .product-shop .product-options-bottom .add-to-cart {
+  border-bottom: none !important;
 }
 .product-cart-sku {
   font-family: 'galano_grotesqueregular' !important;
@@ -468,4 +492,19 @@ h3,
 h4,
 strong {
   color: #000000 !important;
+}
+select {
+  border: 1px solid #000 !important;
+  border-radius: 0px !important;
+  background-color: #ffffff !important;
+}
+a.swatch-link {
+  -moz-border-radius: 50px !important;
+  -webkit-border-radius: 50px !important;
+  border-radius: 50px !important;
+}
+.swatch-label img {
+  -moz-border-radius: 50px !important;
+  -webkit-border-radius: 50px !important;
+  border-radius: 50px !important;
 }
