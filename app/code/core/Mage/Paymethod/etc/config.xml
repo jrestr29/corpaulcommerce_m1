@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ * Configuración módulo Bcommerce
+ * @author     Ejepe
+ */
+-->
+<config>
+    <modules>
+        <Bcommerce_Paymethod>
+            <version>1.0.0</version>
+        </Bcommerce_Paymethod>
+    </modules>
+	<frontend>
+        <routers>
+            <paymethod>
+                <use>standard</use>
+                <args>
+                    <module>Bcommerce_Paymethod</module>
+                    <frontName>paymethod</frontName>
+                </args>
+            </paymethod>
+        </routers>
+		<layout>
+            <updates>
+                <mymodule>
+                    <file>paymethod.xml</file>
+                </mymodule>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <models>
+            <paymethod>
+                <class>Bcommerce_Paymethod_Model</class>
+            </paymethod>
+        </models>
+        <helpers>
+            <paymethod>
+                <class>Bcommerce_Paymethod_Helper</class>
+            </paymethod>
+        </helpers>
+        <blocks>
+            <paymethod>
+				<class>Bcommerce_Paymethod_Block</class>
+			</paymethod>
+			<checkout>
+                <rewrite>
+                    <onepage_success>Bcommerce_Paymethod_Block_Onepage_Success</onepage_success>
+                </rewrite>
+            </checkout>
+        </blocks>
+    </global>
+	
+	<default>
+		<payment>
+		  <paymethod>
+			<active>1</active>
+			<model>paymethod/bcommerce</model>
+			<order_status>1</order_status>
+			<title>Bcommerce</title>
+			<nombre_establecimiento />
+			<commerce_id>0</commerce_id> 
+			<terminal_id>0</terminal_id>
+			<url>www</url>
+			<cod_unico_comercio>0</cod_unico_comercio>
+			<nit_comercio>0</nit_comercio>
+		  </paymethod>
+		</payment>
+	</default>
+	
+	
+</config>

@@ -1,0 +1,117 @@
+	<center>
+		<table class="table-response" id="comprobante-de-pago">
+			<tr align="center">
+				<th colspan="2"><h1 class="md-h1" align="center">CREDIBANCO</h1></th>
+			</tr>
+			<tr align="center">
+				<th colspan="2" align="center"><h3 class="md-h3" align="center" style="font-size: 14px !important;">Comprobante de Pago</h3></th>
+			</tr>
+			
+			<tr align="center">
+				<th colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size: 9px !important;">VENTA NO PRESENCIAL</h5></th>
+			</tr>
+			<tr align="center">
+				<th colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size: 9px !important;">(*) SUJETO A VERIFICACIÓN DE LA DIAN</h5></th>
+			</tr>
+			<tr align="center">
+				<th colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size: 9px !important;">PAGARÉ INCONDICIONALMENTE Y A LA ORDEN DEL ACREEDOR, EL VALOR TOTAL DE ESTE</h5></th>
+			</tr>
+			<tr align="center">
+				<th colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size: 9px !important;">PAGARÉ JUNTO CON LOS INTERESES A LAS TASAS MÁXIMAS PERMITIDAS POR LA LEY</br></h5></th>
+			</tr>			
+			
+			<tr align="left">
+				<td>Empresa</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('empresa')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Código unico de comercio</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('codunicocomercio')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Codigo Unico</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('codunico')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Terminal</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('terminal')); ?></td>
+			</tr>		
+			<tr align="left">
+				<td>Numero de Transaccion</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('numtra')); ?></td>
+			</tr>		
+			<tr align="left">
+				<td>Fecha de Transaccion</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('fectra')); ?></td>
+			</tr>	
+
+			<tr align="left">
+				<td>Hora de Transaccion</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('hortra')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Moneda</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('moneda')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Valor Total</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('valtot')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>IVA</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('iva')); ?></td>
+			</tr>
+
+			<tr align="left">
+				<td>Valor Neto</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('valnet')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Descripcion</td>
+				<td nowrap><?php print_r (Mage::app()->getRequest()->getParam('descr')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Respuesta</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('respuesta')); ?></td>
+			</tr>
+				<tr align="left">
+				<td>Numero Autorizacion</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('numaut')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Descripcion Respuesta</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('desresp')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Cuotas</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('cuotas')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Tarjeta</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('tarjeta')); ?></td>
+			</tr>
+			<tr align="left">
+				<td>Tipo Tarjeta</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('cardType')); ?></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size:11px !important;"><a href="javascript:imprSelec('comprobante-de-pago')">Imprimir Comprobante</a></h5></td>
+			</tr>
+			
+		</table>
+		<p/>
+	</center>
+	<script type="text/javascript">
+ 
+
+function imprSelec(muestra){
+
+var ficha=document.getElementById(muestra);
+	var ventimp=window.open(' ','popimpr');	
+	ventimp.document.write(ficha.innerHTML);
+	ventimp.document.close();
+	ventimp.close();
+	ventimp.print();
+	
+}
+</script>

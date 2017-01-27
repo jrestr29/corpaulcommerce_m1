@@ -1,0 +1,129 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    GetSocial
+ * @package     GetSocial_SharingButtons
+ * @copyright   Copyright (c) 2015 GetSocial (http://getsocial.io/)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700|Raleway:800">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all">
+
+<script type="text/javascript">
+    
+    var get_social_api_url = "<?php echo $this->getData()['api_url'] ?>";
+    
+    function toggle(id) {
+        var e = document.getElementById(id);
+        e.style.display = (e.style.display == 'block' ? 'none' : 'block');
+    }
+</script>
+
+<header>
+</header>
+<div id="main-nav">
+    <div class="gs-form-header">
+        <div class="gs-clearfix">
+            <a id="logo-wrapper" href="http://getsocial.io" target="_blank"></a>
+        </div>
+    </div>
+    <?php if (sizeof(Mage::getModel('core/variable')->loadByCode('gs-api-key')->getData()) == 0) { ?>
+    <div class="title-wrapper edit-title">
+        <?php if(true): ?>
+            <h1>Welcome and thanks for downloading <span>GetSocial’s Share Buttons & Social Media App Store</span></h1>
+            <p>To get started click on the button below to automatically activate your GetSocial account.</strong></p>
+        <?php else: ?>
+            <h1 id="app-title" class="app-grid-titles"><span>Install your apps below</span></h1>
+        <?php endif; ?>
+    </div>
+    <div id="result-info-bar" class="form-item form-type-item error">
+    </div>
+    <div id="register-form" class="account-info gs-form gs-small">
+        <div class="form-content" id="form-info">
+            <div class="field-group">
+                <div class="field-label no-desc">
+                    <label for="site-name">URL</label>
+                </div>
+                <div class="field-input">
+                    <?php echo Mage::getBaseUrl(); ?>
+                </div>
+
+            </div>
+            <div class="field-group">
+                <div class="field-label no-desc">
+                    <label for="site-name">Email</label>
+                </div>
+                <div class="field-input">
+                    <?php echo Mage::getSingleton('admin/session')->getUser()->getEmail(); ?>
+                </div>
+            </div>
+        </div>
+        <form action="<?php echo Mage::helper("adminhtml")->getUrl("sharingbuttons/adminhtml_sharingbuttons/post/");?>" method="post" id="submit-register-form">
+            <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+            <input type="hidden" name="gs-api-key" value="-1">
+            <input type="hidden" name="api-result" value="-1">
+        </form>
+        <div id="activate-account" class="form-button-group"><i class="fa fa-check"></i>
+            <a href="<?php echo $this->getData()['api_url'] ?>sites/create?source=magento&amp;email=<?php echo Mage::getSingleton('admin/session')->getUser()->getEmail(); ?>&amp;url=<?php echo Mage::getBaseUrl();?>" id="button-activate-account">Activate your account</a>
+        </div>
+        <div id="loading-create" class="loading-create form-button-group">
+            <i class="fa fa-refresh fa-spin"></i>
+            <div class="form-item form-type-item loading-create-label">
+                <label for="success-message">Activating Account...</label>
+            </div>
+        </div>
+    </div>
+    <div class="gs-small">
+        <form id="api-key-form" method="post" class="api-key gs-form gs-small hidden" action="options.php">
+            <div class="form-content">
+                <div class="field-clean">
+                    <div class="field-input">
+                        <p>Please go to your <a href="<?php echo $this->getData()['gs_account'] ?>customers/sign-in" target="_blank">Getsocial Account</a> and get your API KEY in the site options page.</p>
+                        <input id="gs-api-key" type="text" name="api-key" size="60" value="" maxlength="20"/>
+                        <p>Need help?
+                            <a href="mailto:support@getsocial.io" id="contact_us">Contact us</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <span id="check-key-href" style="display: none;"><?php echo $this->getData()['api_url'] . "sites/verify_key?url=" . Mage::getBaseUrl(); ?></span>
+            <div class="form-button-group" id="getkey-submit">
+                <input id="button-insert-key" type="submit" class="gs-button gs-success" value="Save Changes" />
+            </div>
+            <div id="getkey-loading-create" class="loading-create form-button-group">
+                <i class="fa fa-refresh fa-spin"></i>
+                <div class="form-item form-type-item loading-create-label">
+                    <label for="success-message">Activating Account...</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="success-message form-button-group">
+        <i class="fa fa-check"></i>
+        <div id="success-message" class="form-item form-type-item">
+            <label for="success-message">Congratulations!<p>You are ready to start in 3..2..1..</p> </label>
+        </div>
+    </div>
+    <?php } else { ?>
+    <div class="title-wrapper edit-title">
+        <h1>GetSocial Extension is installed</h1>
+        <p>To configure your apps click on the button bellow to go to the GetSocial's page.</p>
+    </div>
+    <div class="goto-getsocial account-info gs-form gs-small form-button-group">
+        <i class="fa fa-sign-in"></i>
+        <a href="<?php echo $this->getData()['gs_account'] ?>" target="_blank">Go to GetSocial</a>
+    </div>
+    <?php } ?>
+</div>
