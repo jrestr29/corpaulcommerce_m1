@@ -29,20 +29,49 @@
  * @see Mage_Page_Block_Template_Links
  */
 ?>
-<?php $_links = $this->getLinks(); ?>
-<?php if(count($_links)>0): ?>
-<div class="links">
-    <?php if($this->getTitle()): ?>
-    <div class="block-title"><strong><span><?php echo $this->__($this->getTitle()); ?></span></strong></div>
-    <?php endif; ?>
-    <ul<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
-        <?php foreach($_links as $_link): ?>
-            <?php if ($_link instanceof Mage_Core_Block_Abstract):?>
-                <?php echo $_link->toHtml() ?>
-            <?php else: ?>
-                <li<?php if($_link->getIsFirst()||$_link->getIsLast()): ?> class="<?php if($_link->getIsFirst()): ?>first<?php endif; ?><?php if($_link->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_link->getLiParams() ?>><?php echo $_link->getBeforeText() ?><a href="<?php echo $_link->getUrl() ?>" title="<?php echo $_link->getTitle() ?>" <?php echo $_link->getAParams() ?>><?php echo $_link->getLabel() ?></a><?php echo $_link->getAfterText() ?></li>
-            <?php endif;?>
-        <?php endforeach; ?>
-    </ul>
+
+
+<div class="links-block">
+    <div class="links">
+        <span>menu</span>
+        <ul>
+            <li>Novedades</li>
+            <li>Navidad</li>
+            <li>Regalos</li>
+            <li>Tecnología</li>
+            <li>Bonos y tarjetas</li>
+            <li>Corporativos</li>
+            <li>Hogar y Decoración</li>
+            <li>Ofertas</li>
+        </ul>
+    </div>
+
+    <div class="links">
+        <span>compañia</span>
+        <ul>
+            <li>Acerca de BUENOSMOTIVOS</li>
+            <li>Colección</li>
+            <li>Rastrea tu pedido</li>
+        </ul>
+    </div>
+
+    <div class="links" style="margin-left: 7%">
+        <span>legal</span>
+        <ul>
+            <li>Terminos y condiciones</li>
+            <li>Envíos y devoluciones</li>
+            <li>Contacto</li>
+            <li>Pólitica de privacidad</li>
+            <li>Cookies</li>
+            <li>Términos de Búsqueda</li>
+            <li>Búsqueda Avanzada</li>
+        </ul>
+    </div>
 </div>
-<?php endif; ?>
+
+<div class="getsocial">
+    <span>encuéntranos en nuestras redes sociales</span>
+    <img src="<?php echo $this->getSkinUrl('images/facebook-letter-logo.png'); ?>" />
+    <img src="<?php echo $this->getSkinUrl('images/instagram-symbol.png'); ?>" />
+    <img src="<?php echo $this->getSkinUrl('images/wordpress-logo-of-a-letter-in-a-circle.png'); ?>" />
+</div>

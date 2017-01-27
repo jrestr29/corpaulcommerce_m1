@@ -61,3 +61,425 @@
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  font-family: 'galano_grotesqueregular' !important;
+  font-weight: normal;
+  background-color: #ffffff;
+
+  header {
+    .logo {
+      max-width: 200px !important;
+      padding-left: 0 !important;
+    }
+
+    .account-cart-wrapper {
+      width: 40%;
+      text-align: right;
+      font-family: 'galano_grotesqueregular' !important;
+
+      .msg {
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+
+        a {
+          color: #636363;
+
+          span {
+            color: #636363 !important;
+          }
+
+          &::hover {
+            color: #636363;
+            text-decoration: none !important;
+
+            span {
+              color: #636363 !important;
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+
+      .account-link{
+        display: inline-block;
+        vertical-align: middle;
+        a {
+          color: #636363;
+
+          span {
+            color: #636363 !important;
+          }
+
+          &::hover {
+            color: #636363;
+
+            span {
+              color: #636363 !important;
+            }
+          }
+        }
+      }
+
+
+      .contact-phone{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+
+        img {
+          height: 18px;
+          position: relative;
+          display: inline-block;
+          top: 5px;
+          margin-right: 2px;
+        }
+        span {
+          display: inline-block;
+          font-weight: 400 !important;
+        }
+      }
+    }
+
+
+    #header-nav {
+      margin-top: 65px;
+      border-bottom: none !important;
+    }
+
+    .header-search-container {
+      position: absolute;
+      top: 95px;
+      right: 0;
+      width: 100%;
+      height: 50px;
+      padding: 0;
+      font-family: 'galano_grotesqueregular' !important;
+
+      #header-search {
+        display: inline-block;
+        position: initial;
+        width:100% !important;
+
+        form {
+          width:87%;
+          float: left;
+
+          input {
+            height: 48px !important;
+            padding-left: 38px;
+            font-family: 'galano_grotesqueregular';
+          }
+
+          button {
+            right: initial !important;
+            left: 0 !important;
+            top:7px !important;
+          }
+        }
+      }
+
+      .header-minicart {
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        width:150px;
+
+
+        .minicart{
+          height:47px;
+          border: 1px solid #000000;
+
+          .link {
+            display: inline-block;
+            background-color: #000000;
+            width:80%;
+            vertical-align: middle;
+
+            a {
+              background-color: #000000 !important;
+              color: #999999 !important;
+              height: 45px;
+              font-size: 13px !important;
+            }
+          }
+
+          .counter{
+            display: inline-block;
+            background-color: #ffffff;
+
+            text-align: center;
+            width: 17%;
+            margin-left: -3px;
+            font-weight: 400;
+            font-size: 18px;
+            margin-top: -4px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+
+    //Navigation
+    nav {
+      text-align: center !important;
+
+      ol {
+        width: 100%;
+        display: table !important;
+
+        li {
+          padding-right: 5px !important;
+          margin-right: 0px;
+          display: table-cell !important;
+
+          a {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+          }
+
+          a:hover {
+            color: #000000 !important;
+            border-bottom: 2px solid #000000;
+          }
+
+          a:active {
+            color: #000000 !important;
+            border-color: #000000 !important;
+          }
+
+          ul {
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+            top: 25px !important;
+            left: -53%;
+            display:none;
+
+            li{
+              display: block !important;
+              margin-bottom: 10px !important;
+
+
+              &:last-of-type {
+                margin-bottom: 10px !important;
+              }
+
+              a{
+                line-height: 20px !important;
+                height: 10px;
+                border:none !important;
+
+                &.ui-state-focus {
+                  background: #ffffff !important;
+                }
+
+                span{
+                  font-size: 11px;
+                  font-weight: 600;
+                  line-height: 0px !important;
+                  padding-bottom: 0px;
+                }
+              }
+
+              a:hover {
+                text-decoration: none !important;
+                background-color: #FFFFFF !important;
+                border:none !important;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
+
+  }
+
+
+}
+
+
+//Float social icons
+.addthis-animated  {
+  a {
+    margin-bottom: 2px !important;
+    span {
+       &.at-icon-wrapper {
+         background-color: #000000 !important;
+       }
+    }
+
+    &.at-svc-print, &.at-svc-compact {
+      display: none !important;
+    }
+  }
+}
+
+
+//Footer
+.footer-container {
+  max-width: 100% !important;
+  padding: 0 !important;
+
+  .newsletter {
+    background-color: rgba(2, 2, 2, 0.82);
+    height:85px;
+    text-align: center;
+    display: block;
+
+    .content{
+      position: relative;
+      top: 15px;
+    }
+
+    form {
+      display: inline-block;
+      vertical-align: middle;
+
+      .input-box {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .actions {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      input {
+        height: 50px!important;
+        display: inline-block;
+        color: #000000 !important;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      button {
+        height: 50px!important;
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid silver;
+        margin-left: 8px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 112px !important;
+
+        span {
+          color: #000000 !important;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 0 !important;
+          font-weight: 600;
+        }
+      }
+    }
+
+    span {
+      color: #fbd61d;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-right: 70px;
+    }
+  }
+
+ .footer {
+   max-width: 1260px !important;
+   padding-left: 0px;
+   padding-right: 0px;
+   margin: 0 auto;
+
+   .links-block {
+     display: inline-block;
+     vertical-align: middle;
+     width: 70%;
+
+     .links {
+       padding-right: 0;
+       width: 23%;
+
+       span {
+         text-transform: uppercase;
+         font-weight: 900;
+         color: #000;
+
+
+       }
+
+       ul {
+         li {
+           color: #000000;
+           text-transform: capitalize;
+         }
+       }
+     }
+   }
+
+   .getsocial {
+     display: inline-block;
+     vertical-align: middle;
+     width:29%;
+     text-align: center;
+
+     span {
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+       color: #000;
+       font-weight: 900;
+       line-height: 30px;
+       margin-bottom: 15px;
+     }
+
+     img {
+       display: inline-block;
+       vertical-align: middle;
+       height: 25px !important;
+       margin-right: 15px !important;
+     }
+   }
+ }
+
+
+  .pagend{
+    border-top: 1px solid #cccccc;
+  margin-top: 40px;
+
+    .content {
+      margin: 0 auto;
+      max-width: 1260px;
+
+      .copyright {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40%;
+
+        span {
+          font-weight: 900;
+          color: #000000;
+        }
+      }
+
+      .paymethods {
+        display: inline-block;
+        vertical-align: middle;
+        width: 59%;
+        position: relative;
+        left:0 !important;
+        
+        img {
+          float: right;
+        }
+      }
+    }
+
+
+  }
+}

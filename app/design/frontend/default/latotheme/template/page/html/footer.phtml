@@ -25,8 +25,40 @@
  */
 ?>
 <div class="footer-container">
+    <div class="newsletter">
+        <div class="content">
+            <span>haz parte de nuestra comunidad</span>
+            <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+                <div class="input-box">
+                    <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" />
+                </div>
+                <div class="actions">
+                    <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span><?php echo $this->__('Enviar') ?></span></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="footer">
         <?php echo $this->getChildHtml() ?>
-        <address class="copyright"><?php echo $this->getCopyright() ?></address>
+    </div>
+
+    <div class="pagend">
+        <div class="content">
+            <div class="copyright">
+                <span>2016 Buenos Motivos - Todos los derechos reservados</span>
+            </div>
+
+            <div class="paymethods">
+                <img src="<?php echo $this->getSkinUrl('images/footerimg.png') ?>" />
+            </div>
+        </div>
+
     </div>
 </div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+</script>
