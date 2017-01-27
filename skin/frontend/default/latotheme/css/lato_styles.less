@@ -483,3 +483,33 @@ body {
 
   }
 }
+
+//Breadcrumbs
+.breadcrumbs {
+  padding-left: 26px !important;
+
+  ul {
+    li {
+      font-size: 15px !important;
+      line-height: 31px;
+
+      a {
+        text-transform: capitalize !important;
+
+        &::hover {
+          color: #000000 !important;
+        }
+      }
+
+
+      strong {
+        color: #000000 !important;
+      }
+
+      &::after{
+        line-height:32px !important;
+        margin: 0 3px !important;
+      }
+    }
+  }
+}

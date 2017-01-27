@@ -374,3 +374,23 @@ body header nav ol li ul li a:hover {
 .footer-container .pagend .content .paymethods img {
   float: right;
 }
+.breadcrumbs {
+  padding-left: 26px !important;
+}
+.breadcrumbs ul li {
+  font-size: 15px !important;
+  line-height: 31px;
+}
+.breadcrumbs ul li a {
+  text-transform: capitalize !important;
+}
+.breadcrumbs ul li a::hover {
+  color: #000000 !important;
+}
+.breadcrumbs ul li strong {
+  color: #000000 !important;
+}
+.breadcrumbs ul li::after {
+  line-height: 32px !important;
+  margin: 0 3px !important;
+}
