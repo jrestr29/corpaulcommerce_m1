@@ -99,7 +99,6 @@ foreach($categories as $category) {
             $new_category->save();
         }
 
-
     } catch(Exception $e) {
         echo $e->getMessage();
         die();

@@ -34,24 +34,32 @@
 <div class="links-block">
     <div class="links">
         <span>menu</span>
+
         <ul>
-            <li>Novedades</li>
-            <li>Navidad</li>
-            <li>Regalos</li>
-            <li>Tecnología</li>
-            <li>Bonos y tarjetas</li>
-            <li>Corporativos</li>
-            <li>Hogar y Decoración</li>
-            <li>Ofertas</li>
+            <?php
+                $categories = Mage::getModel('catalog/category')->getCollection()
+                    ->addAttributeToFilter('parent_id', array('eq' => 2))
+                    ->load();
+
+                foreach ($categories as $category) {
+                    $cat =  Mage::getModel('catalog/category')->load($category->getId());
+
+                    if(!$cat->getIncludeInMenu()) {
+                        continue;
+                    }
+
+                    echo "<li><a href='".$cat->getUrl()."'>".$cat->getName()."</a></li>";
+                }
+            ?>
         </ul>
     </div>
 
     <div class="links">
         <span>compañia</span>
         <ul>
-            <li>Acerca de BUENOSMOTIVOS</li>
-            <li>Colección</li>
-            <li>Rastrea tu pedido</li>
+            <li><a href="#">Acerca de BUENOSMOTIVOS</a></li>
+            <!--<li>Colección</li>!-->
+            <!--<li>Rastrea tu pedido</li>!-->
         </ul>
     </div>
 
