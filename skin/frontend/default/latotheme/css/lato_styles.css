@@ -416,9 +416,6 @@ body header nav ol li ul li a:hover {
 .footer-container .pagend .content .paymethods img {
   float: right;
 }
-.breadcrumbs {
-  padding-left: 26px !important;
-}
 .breadcrumbs ul li {
   font-size: 15px !important;
   line-height: 31px;
@@ -549,4 +546,53 @@ a.swatch-link {
   -moz-border-radius: 50px !important;
   -webkit-border-radius: 50px !important;
   border-radius: 50px !important;
+}
+.slideshow-container {
+  border: none !important;
+}
+.slideshow-container .slideshow {
+  border: none !important;
+}
+.slideshow-container .slideshow-next:hover::before {
+  border-color: transparent transparent transparent #000000;
+}
+.slideshow-container .slideshow-prev:hover::before {
+  border-color: transparent #000000 transparent transparent;
+}
+.slideshow-container .slideshow-pager .cycle-pager-active::before {
+  background-color: #000;
+}
+.coleccion-destacada {
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.coleccion-destacada .borders {
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 1px solid #000000;
+  width: 35.6%;
+}
+.coleccion-destacada .title {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  line-height: 1.55;
+  font-size: 20px;
+  color: #000000 !important;
+  padding-left: 3.6%;
+  padding-right: 3.6%;
+}
+.destacados_banner {
+  position: relative;
+}
+.destacados_banner .img1 {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+.destacados_banner .img2 {
+  display: inline-block;
+  position: absolute;
+  right: 0;
 }
