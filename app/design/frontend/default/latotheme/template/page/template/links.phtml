@@ -34,37 +34,44 @@
 <div class="links-block">
     <div class="links">
         <span>menu</span>
+
         <ul>
-            <li>Novedades</li>
-            <li>Navidad</li>
-            <li>Regalos</li>
-            <li>Tecnología</li>
-            <li>Bonos y tarjetas</li>
-            <li>Corporativos</li>
-            <li>Hogar y Decoración</li>
-            <li>Ofertas</li>
+            <?php
+                $categories = Mage::getModel('catalog/category')->getCollection()
+                    ->addAttributeToFilter('parent_id', array('eq' => 2))
+                    ->load();
+
+                foreach ($categories as $category) {
+                    $cat =  Mage::getModel('catalog/category')->load($category->getId());
+
+                    if(!$cat->getIncludeInMenu()) {
+                        continue;
+                    }
+
+                    echo "<li><a href='".$cat->getUrl()."'>".$cat->getName()."</a></li>";
+                }
+            ?>
         </ul>
     </div>
 
     <div class="links">
         <span>compañia</span>
         <ul>
-            <li>Acerca de BUENOSMOTIVOS</li>
-            <li>Colección</li>
-            <li>Rastrea tu pedido</li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/acerca-de">Acerca de BUENOSMOTIVOS</a></li>
+            <!--<li>Colección</li>!-->
+            <!--<li>Rastrea tu pedido</li>!-->
         </ul>
     </div>
 
     <div class="links" style="margin-left: 7%">
         <span>legal</span>
         <ul>
-            <li>Terminos y condiciones</li>
-            <li>Envíos y devoluciones</li>
-            <li>Contacto</li>
-            <li>Pólitica de privacidad</li>
-            <li>Cookies</li>
-            <li>Términos de Búsqueda</li>
-            <li>Búsqueda Avanzada</li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/terminos-condiciones">Terminos y condiciones</a></li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/envios-devoluciones">Envíos y devoluciones</a></li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/contacto">Contacto</a></li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/politica-privacidad">Política de privacidad</a></li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/politica-cookies">Cookies</a></li>
+            <li><a href="<?php echo Mage::getBaseUrl() ?>/catalogsearch/advanced">Búsqueda Avanzada</a></li>
         </ul>
     </div>
 </div>

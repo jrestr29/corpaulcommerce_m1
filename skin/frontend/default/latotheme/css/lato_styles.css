@@ -59,6 +59,16 @@ body header .account-cart-wrapper {
   width: 40%;
   text-align: right;
   font-family: 'galano_grotesqueregular' !important;
+  top: 20px;
+}
+body header .account-cart-wrapper div {
+  margin-right: 30px;
+}
+body header .account-cart-wrapper div:last-of-type {
+  margin-right: 0 !important;
+}
+body header .account-cart-wrapper div:last-of-type a {
+  padding-right: 0 !important;
 }
 body header .account-cart-wrapper .msg {
   display: inline-block;
@@ -66,16 +76,16 @@ body header .account-cart-wrapper .msg {
   text-transform: uppercase;
 }
 body header .account-cart-wrapper .msg a {
-  color: #636363;
+  color: #626262;
 }
 body header .account-cart-wrapper .msg a span {
-  color: #636363 !important;
+  color: #626262 !important;
 }
-body header .account-cart-wrapper .msg a::hover {
-  color: #636363;
+body header .account-cart-wrapper .msg a:hover {
+  color: #626262;
   text-decoration: none !important;
 }
-body header .account-cart-wrapper .msg a::hover span {
+body header .account-cart-wrapper .msg a:hover span {
   color: #636363 !important;
   opacity: 0.8;
 }
@@ -98,7 +108,7 @@ body header .account-cart-wrapper .account-link a::hover span {
 body header .account-cart-wrapper .contact-phone {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20px;
+  color: #2d2d2d !important;
 }
 body header .account-cart-wrapper .contact-phone img {
   height: 18px;
@@ -112,7 +122,7 @@ body header .account-cart-wrapper .contact-phone span {
   font-weight: 400 !important;
 }
 body header #header-nav {
-  margin-top: 65px;
+  margin-top: 70px;
   border-bottom: none !important;
 }
 body header .header-search-container {
@@ -129,14 +139,26 @@ body header .header-search-container #header-search {
   position: initial;
   width: 100% !important;
 }
+body header .header-search-container #header-search .minicart-wrapper .block-subtitle {
+  color: #000000;
+  font-family: 'galano_grotesqueregular' !important;
+  font-size: 11px !important;
+}
 body header .header-search-container #header-search form {
-  width: 87%;
+  width: 86%;
   float: left;
+}
+body header .header-search-container #header-search form .input-box {
+  border: 1px solid #000000 !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 body header .header-search-container #header-search form input {
   height: 48px !important;
   padding-left: 38px;
   font-family: 'galano_grotesqueregular';
+  border: none !important;
 }
 body header .header-search-container #header-search form button {
   right: initial !important;
@@ -150,7 +172,7 @@ body header .header-search-container .header-minicart {
   width: 150px;
 }
 body header .header-search-container .header-minicart .minicart {
-  height: 47px;
+  height: 50px;
   border: 1px solid #000000;
 }
 body header .header-search-container .header-minicart .minicart .link {
@@ -158,22 +180,35 @@ body header .header-search-container .header-minicart .minicart .link {
   background-color: #000000;
   width: 80%;
   vertical-align: middle;
+  height: 48px;
 }
 body header .header-search-container .header-minicart .minicart .link a {
   background-color: #000000 !important;
   color: #999999 !important;
-  height: 45px;
+  height: 48px;
   font-size: 13px !important;
+}
+body header .header-search-container .header-minicart .minicart .link a span.icon {
+  background-repeat: no-repeat !important;
+  background-position: 0px 4px;
+  background-image: url(../images/minicart-icon.png);
+}
+body header .header-search-container .header-minicart .minicart .link a span.label {
+  position: relative;
+  top: 4px;
+  font-size: 13px;
+  color: #ffffff !important;
 }
 body header .header-search-container .header-minicart .minicart .counter {
   display: inline-block;
   background-color: #ffffff;
   text-align: center;
-  width: 17%;
+  width: 19%;
   margin-left: -3px;
   font-weight: 400;
   font-size: 18px;
-  margin-top: -4px;
+  margin-top: 2px;
+  color: #000000;
   vertical-align: middle;
 }
 body header nav {
@@ -191,7 +226,8 @@ body header nav ol li {
 body header nav ol li a {
   padding-right: 0 !important;
   padding-left: 0 !important;
-  color: #000000 !important;
+  color: rgba(0, 0, 0, 0.78) !important;
+  font-weight: 300;
   border-color: #000000 !important;
 }
 body header nav ol li a:hover {
@@ -203,11 +239,12 @@ body header nav ol li a:active {
   border-color: #000000 !important;
 }
 body header nav ol li ul {
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
-  border-bottom: 2px solid #000;
-  border-top: 2px solid #000;
-  top: 25px !important;
+  border-left: 2px solid #000 !important;
+  border-right: 2px solid #000 !important;
+  border-bottom: 2px solid #000 !important;
+  border-top: 2px solid #000 !important;
+  z-index: 9999999 !important;
+  top: 30px !important;
   left: -53%;
   display: none;
 }
@@ -315,16 +352,20 @@ body header nav ol li ul li a:hover {
 }
 .footer-container .footer .links-block .links {
   padding-right: 0;
-  width: 23%;
+  width: 24%;
 }
 .footer-container .footer .links-block .links span {
   text-transform: uppercase;
   font-weight: 900;
   color: #000;
+  font-size: 15px !important;
 }
 .footer-container .footer .links-block .links ul li {
   color: #000000;
   text-transform: capitalize;
+}
+.footer-container .footer .links-block .links ul li a {
+  font-size: 15px !important;
 }
 .footer-container .footer .getsocial {
   display: inline-block;
@@ -363,6 +404,7 @@ body header nav ol li ul li a:hover {
 .footer-container .pagend .content .copyright span {
   font-weight: 900;
   color: #000000;
+  font-family: 'galano_grotesquebold';
 }
 .footer-container .pagend .content .paymethods {
   display: inline-block;
