@@ -583,8 +583,26 @@ a.swatch-link {
   padding-left: 3.6%;
   padding-right: 3.6%;
 }
+.widget-title .borders {
+  display: inline-block;
+  vertical-align: middle;
+  border-top: 1px solid #000000;
+  width: 38.8%;
+}
+.widget-title .title {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  line-height: 1.55;
+  font-size: 20px;
+  color: #000000 !important;
+  padding-left: 3.6%;
+  padding-right: 3.6%;
+}
 .destacados_banner {
   position: relative;
+  height: 360px;
+  margin-bottom: 30px;
 }
 .destacados_banner .img1 {
   display: inline-block;
@@ -595,4 +613,73 @@ a.swatch-link {
   display: inline-block;
   position: absolute;
   right: 0;
+}
+.access_home {
+  height: 730px;
+  display: block;
+}
+.access_home .content {
+  width: 1114px;
+  margin: 0 auto ;
+}
+.access_home .regala_text {
+  display: block;
+  margin-top: 40px;
+}
+.access_home .regala_text h3 {
+  font-family: 'galano_grotesquebold';
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 15px;
+  line-height: 30px;
+}
+.access_home .regala_text span {
+  font-family: 'galano_grotesqueregular' !important;
+  color: #000000;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+}
+.access_home .regala_text a {
+  display: block;
+  color: #4478cc !important;
+  font-size: 12px;
+  font-family: 'galano_grotesqueregular' !important;
+}
+.access_home .left {
+  display: inline-block;
+  vertical-align: middle;
+}
+.access_home .right {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.access_home .right img {
+  display: block;
+  height: 360px;
+  position: relative;
+}
+.access_home .right img:first-of-type {
+  top: -4px;
+}
+body.cms-home .col-main {
+  height: 2250px;
+}
+.widget-products ul {
+  margin-top: 2em;
+}
+.widget-products ul li {
+  width: 31% !important;
+}
+.widget-products ul li a.product-image {
+  border: none !important;
+}
+.widget-products ul li h3 a {
+  font-family: 'galano_grotesqueregular' !important;
+}
+.widget-products ul li span.price {
+  font-family: 'galano_grotesqueregular' !important;
+  color: #000 !important;
 }
