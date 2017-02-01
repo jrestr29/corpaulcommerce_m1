@@ -789,6 +789,26 @@ a {
   }
 }
 
+.widget-title{
+  .borders {
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 1px solid #000000;
+    width: 38.8%;
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    line-height: 1.55;
+    font-size: 20px;
+    color: #000000 !important;
+    padding-left: 3.6%;
+    padding-right: 3.6%;
+  }
+}
+
 .destacados_banner{
   position: relative;
   height: 360px;
@@ -804,5 +824,99 @@ a {
     display: inline-block;
     position: absolute;
     right: 0;
+  }
+}
+
+.access_home{
+  height: 730px;
+  display: block;
+
+  .content{
+    width:1114px;
+    margin: 0 auto ;
+  }
+
+  .regala_text {
+    display: block;
+    margin-top: 40px;
+
+    h3{
+      font-family: 'galano_grotesquebold';
+      text-transform: uppercase;
+      color: #000000;
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    span {
+      font-family: 'galano_grotesqueregular' !important;
+      color: #000000;
+      text-transform: capitalize;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 30px;
+    }
+    
+    a {
+      display: block;
+      color: #4478cc !important;
+      font-size: 12px;
+      font-family: 'galano_grotesqueregular' !important;
+    }
+  }
+
+  .left {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .right {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    img {
+      display: block;
+      height:360px;
+      position: relative;
+
+      &:first-of-type{
+        top:-4px;
+      }
+    }
+  }
+}
+
+body {
+  &.cms-home {
+    .col-main {
+      height:2250px;
+    }
+  }
+}
+
+.widget-products {
+  ul {
+    margin-top: 2em;
+    li {
+      a{
+        &.product-image{
+          border:none !important;
+        }
+      }
+      width:31% !important;
+      h3 {
+        a {
+          font-family:  'galano_grotesqueregular' !important;;
+        }
+      }
+
+      span {
+        &.price {
+          font-family: 'galano_grotesqueregular' !important;
+          color: #000 !important;
+        }
+      }
+    }
   }
 }

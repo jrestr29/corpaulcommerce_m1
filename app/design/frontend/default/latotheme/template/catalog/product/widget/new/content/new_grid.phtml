@@ -27,7 +27,9 @@
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
 <div class="widget widget-new-products">
     <div class="widget-title">
-        <h2><?php echo $this->__('New Products') ?></h2>
+        <div class="borders"></div>
+        <div class="title"><?php echo $this->__('Lo mas vendido') ?></div>
+        <div class="borders"></div>
     </div>
     <div class="widget-products">
         <?php echo $this->getPagerHtml() ?>
