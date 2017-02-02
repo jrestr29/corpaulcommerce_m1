@@ -726,3 +726,9 @@ body.cms-page-view .col-main {
 .widget-products ul li:nth-child(3) {
   margin-right: 0 !important;
 }
+.addthis_counter addthis_pill_style {
+  display: none !important;
+}
+.btn-o {
+  display: none !important;
+}
