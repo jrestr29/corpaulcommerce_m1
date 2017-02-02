@@ -298,6 +298,10 @@ body header nav ol li ul li a:hover {
   position: relative;
   top: 15px;
 }
+.footer-container .newsletter .content span {
+  top: 4px;
+  position: relative;
+}
 .footer-container .newsletter form {
   display: inline-block;
   vertical-align: middle;
@@ -332,6 +336,7 @@ body header nav ol li ul li a:hover {
   vertical-align: middle;
   margin-right: 0 !important;
   font-weight: 600;
+  top: 0!important;
 }
 .footer-container .newsletter span {
   color: #fbd61d;
@@ -340,7 +345,7 @@ body header nav ol li ul li a:hover {
   margin-right: 70px;
 }
 .footer-container .footer {
-  max-width: 1260px !important;
+  max-width: 1200px !important;
   padding-left: 0px;
   padding-right: 0px;
   margin: 0 auto;
@@ -349,6 +354,7 @@ body header nav ol li ul li a:hover {
   display: inline-block;
   vertical-align: middle;
   width: 70%;
+  padding-left: 45px;
 }
 .footer-container .footer .links-block .links {
   padding-right: 0;
@@ -390,7 +396,7 @@ body header nav ol li ul li a:hover {
 }
 .footer-container .pagend {
   border-top: 1px solid #cccccc;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 .footer-container .pagend .content {
   margin: 0 auto;
@@ -400,6 +406,8 @@ body header nav ol li ul li a:hover {
   display: inline-block;
   vertical-align: middle;
   width: 40%;
+  padding-left: 75px;
+  padding-top: 5px;
 }
 .footer-container .pagend .content .copyright span {
   font-weight: 900;
@@ -549,6 +557,7 @@ a.swatch-link {
 }
 .slideshow-container {
   border: none !important;
+  margin-bottom: 0 !important;
 }
 .slideshow-container .slideshow {
   border: none !important;
@@ -559,13 +568,16 @@ a.swatch-link {
 .slideshow-container .slideshow-prev:hover::before {
   border-color: transparent #000000 transparent transparent;
 }
+.slideshow-container .slideshow-pager {
+  visibility: hidden;
+}
 .slideshow-container .slideshow-pager .cycle-pager-active::before {
   background-color: #000;
 }
 .coleccion-destacada {
   display: block;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 .coleccion-destacada .borders {
   display: inline-block;
@@ -582,6 +594,10 @@ a.swatch-link {
   color: #000000 !important;
   padding-left: 3.6%;
   padding-right: 3.6%;
+}
+.widget-title {
+  padding-top: 23px;
+  padding-bottom: 16px;
 }
 .widget-title .borders {
   display: inline-block;
@@ -602,17 +618,19 @@ a.swatch-link {
 .destacados_banner {
   position: relative;
   height: 360px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 .destacados_banner .img1 {
   display: inline-block;
   position: absolute;
   left: 0;
+  width: 580px;
 }
 .destacados_banner .img2 {
   display: inline-block;
   position: absolute;
   right: 0;
+  width: 563px;
 }
 .access_home {
   height: 730px;
@@ -678,8 +696,18 @@ body.cms-home .col-main {
 }
 .widget-products ul li h3 a {
   font-family: 'galano_grotesqueregular' !important;
+  text-transform: capitalize;
+  font-size: 18px;
 }
 .widget-products ul li span.price {
-  font-family: 'galano_grotesqueregular' !important;
+  font-family: 'galano_grotesquebold' !important;
   color: #000 !important;
+}
+.widget-products ul li:hover {
+  border: 1px solid #e4e2e2;
+  box-shadow: 8px 5px 8px #ccc;
+}
+body.cms-page-view .col-main {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
