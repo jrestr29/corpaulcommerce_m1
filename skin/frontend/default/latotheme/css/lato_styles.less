@@ -307,6 +307,8 @@ body {
             border-bottom: 2px solid #000 !important;;
             border-top: 2px solid #000 !important;;
             z-index: 9999999 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
 
             top: 30px !important;
             left: -53%;
@@ -314,17 +316,19 @@ body {
 
             li{
               display: block !important;
-              margin-bottom: 10px !important;
+              padding-bottom: 13px;
+              padding-right: 0 !important;
 
-
-              &:last-of-type {
-                margin-bottom: 10px !important;
-              }
 
               a{
                 line-height: 20px !important;
                 height: 10px;
                 border:none !important;
+                text-transform: lowercase;
+
+                &:first-letter {
+                  text-transform: uppercase !important;
+                }
 
                 &.ui-state-focus {
                   background: #ffffff !important;
@@ -340,8 +344,11 @@ body {
 
               a:hover {
                 text-decoration: none !important;
-                background-color: #FFFFFF !important;
                 border:none !important;
+              }
+
+              &:hover {
+                background-color: #ccc;
               }
             }
 
@@ -491,6 +498,8 @@ body {
      vertical-align: middle;
      width:29%;
      text-align: center;
+     position: relative;
+     top: -2em;
 
      span {
       display: block;
@@ -561,16 +570,26 @@ body {
       line-height: 31px;
 
       a {
-        text-transform: capitalize !important;
+        text-transform: lowercase !important;
 
-        &::hover {
+        &:hover {
           color: #000000 !important;
+        }
+
+        &::first-letter{
+          text-transform: uppercase;
         }
       }
 
 
       strong {
+        &::first-letter{
+          text-transform: uppercase;
+        }
+        text-transform: lowercase;
         color: #000000 !important;
+
+
       }
 
       &::after{
@@ -653,9 +672,23 @@ body {
    }
 
    .product-name{
+     h3 {
+       a {
+         text-transform: lowercase !important;
+
+         &:first-letter {
+           text-transform: uppercase !important;
+         }
+       }
+     }
+
      span {
-       text-transform: capitalize !important;
+       text-transform: lowercase !important;
        color: #000000 !important;
+
+       &:first-letter {
+         text-transform: uppercase !important;
+       }
      }
    }
 
@@ -935,6 +968,15 @@ body {
           font-family:  'galano_grotesqueregular' !important;
           text-transform: capitalize;
           font-size: 18px;
+          text-transform: lowercase;
+
+          &:first-letter{
+            text-transform: uppercase !important;
+          }
+        }
+
+        a:first-letter {
+          text-transform: uppercase !important;
         }
       }
 
@@ -988,3 +1030,16 @@ body {
   display: none !important;
 }
 
+h3.product-name{
+  a{
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.atc_s addthis_button_compact{
+  display: none !important;
+}

@@ -246,21 +246,25 @@ body header nav ol li ul {
   border-bottom: 2px solid #000 !important;
   border-top: 2px solid #000 !important;
   z-index: 9999999 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   top: 30px !important;
   left: -53%;
   display: none;
 }
 body header nav ol li ul li {
   display: block !important;
-  margin-bottom: 10px !important;
-}
-body header nav ol li ul li:last-of-type {
-  margin-bottom: 10px !important;
+  padding-bottom: 13px;
+  padding-right: 0 !important;
 }
 body header nav ol li ul li a {
   line-height: 20px !important;
   height: 10px;
   border: none !important;
+  text-transform: lowercase;
+}
+body header nav ol li ul li a:first-letter {
+  text-transform: uppercase !important;
 }
 body header nav ol li ul li a.ui-state-focus {
   background: #ffffff !important;
@@ -273,8 +277,10 @@ body header nav ol li ul li a span {
 }
 body header nav ol li ul li a:hover {
   text-decoration: none !important;
-  background-color: #FFFFFF !important;
   border: none !important;
+}
+body header nav ol li ul li:hover {
+  background-color: #ccc;
 }
 .addthis-animated a {
   margin-bottom: 2px !important;
@@ -383,6 +389,8 @@ body header nav ol li ul li a:hover {
   vertical-align: middle;
   width: 29%;
   text-align: center;
+  position: relative;
+  top: -2em;
 }
 .footer-container .footer .getsocial span {
   display: block;
@@ -434,13 +442,20 @@ body header nav ol li ul li a:hover {
   line-height: 31px;
 }
 .breadcrumbs ul li a {
-  text-transform: capitalize !important;
+  text-transform: lowercase !important;
 }
-.breadcrumbs ul li a::hover {
+.breadcrumbs ul li a:hover {
   color: #000000 !important;
+}
+.breadcrumbs ul li a::first-letter {
+  text-transform: uppercase;
 }
 .breadcrumbs ul li strong {
+  text-transform: lowercase;
   color: #000000 !important;
+}
+.breadcrumbs ul li strong::first-letter {
+  text-transform: uppercase;
 }
 .breadcrumbs ul li::after {
   line-height: 32px !important;
@@ -489,9 +504,18 @@ body header nav ol li ul li a:hover {
   float: left !important;
   font-size: 30px !important;
 }
+.product-view .product-shop .product-name h3 a {
+  text-transform: lowercase !important;
+}
+.product-view .product-shop .product-name h3 a:first-letter {
+  text-transform: uppercase !important;
+}
 .product-view .product-shop .product-name span {
-  text-transform: capitalize !important;
+  text-transform: lowercase !important;
   color: #000000 !important;
+}
+.product-view .product-shop .product-name span:first-letter {
+  text-transform: uppercase !important;
 }
 .product-view .product-shop .product-options {
   padding: 0 !important;
@@ -703,6 +727,13 @@ body.cms-home .col-main {
   font-family: 'galano_grotesqueregular' !important;
   text-transform: capitalize;
   font-size: 18px;
+  text-transform: lowercase;
+}
+.widget-products ul li h3 a:first-letter {
+  text-transform: uppercase !important;
+}
+.widget-products ul li h3 a:first-letter {
+  text-transform: uppercase !important;
 }
 .widget-products ul li span.price {
   font-family: 'galano_grotesquebold' !important;
@@ -730,5 +761,14 @@ body.cms-page-view .col-main {
   display: none !important;
 }
 .btn-o {
+  display: none !important;
+}
+h3.product-name a {
+  text-transform: lowercase;
+}
+h3.product-name a:first-letter {
+  text-transform: uppercase;
+}
+.atc_s addthis_button_compact {
   display: none !important;
 }
