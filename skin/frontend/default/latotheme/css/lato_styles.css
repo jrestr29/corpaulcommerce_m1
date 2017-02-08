@@ -389,6 +389,8 @@ body header nav ol li ul li:hover {
   vertical-align: middle;
   width: 29%;
   text-align: center;
+  position: relative;
+  top: -2em;
 }
 .footer-container .footer .getsocial span {
   display: block;
@@ -449,10 +451,10 @@ body header nav ol li ul li:hover {
   text-transform: uppercase;
 }
 .breadcrumbs ul li strong {
+  text-transform: lowercase;
   color: #000000 !important;
-  text-transform: lowercase !important;
 }
-.breadcrumbs ul li strong:first-letter {
+.breadcrumbs ul li strong::first-letter {
   text-transform: uppercase;
 }
 .breadcrumbs ul li::after {
@@ -759,5 +761,14 @@ body.cms-page-view .col-main {
   display: none !important;
 }
 .btn-o {
+  display: none !important;
+}
+h3.product-name a {
+  text-transform: lowercase;
+}
+h3.product-name a:first-letter {
+  text-transform: uppercase;
+}
+.atc_s addthis_button_compact {
   display: none !important;
 }

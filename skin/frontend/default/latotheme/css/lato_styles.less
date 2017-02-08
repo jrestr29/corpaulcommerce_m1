@@ -498,6 +498,8 @@ body {
      vertical-align: middle;
      width:29%;
      text-align: center;
+     position: relative;
+     top: -2em;
 
      span {
       display: block;
@@ -581,12 +583,13 @@ body {
 
 
       strong {
-        color: #000000 !important;
-        text-transform: lowercase !important;
-
-        &:first-letter{
+        &::first-letter{
           text-transform: uppercase;
         }
+        text-transform: lowercase;
+        color: #000000 !important;
+
+
       }
 
       &::after{
@@ -1027,3 +1030,16 @@ body {
   display: none !important;
 }
 
+h3.product-name{
+  a{
+    text-transform: lowercase;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.atc_s addthis_button_compact{
+  display: none !important;
+}
