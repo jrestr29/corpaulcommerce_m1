@@ -95,15 +95,15 @@ body header .account-cart-wrapper .account-link {
   vertical-align: middle;
 }
 body header .account-cart-wrapper .account-link a {
-  color: #636363;
+  color: #000000;
 }
 body header .account-cart-wrapper .account-link a span {
-  color: #636363 !important;
+  color: #000000 !important;
 }
-body header .account-cart-wrapper .account-link a::hover {
+body header .account-cart-wrapper .account-link a:hover {
   color: #636363;
 }
-body header .account-cart-wrapper .account-link a::hover span {
+body header .account-cart-wrapper .account-link a:hover span {
   color: #636363 !important;
 }
 body header .account-cart-wrapper .contact-phone {
@@ -771,4 +771,12 @@ h3.product-name a:first-letter {
 }
 .atc_s addthis_button_compact {
   display: none !important;
+}
+#header-account {
+  background: #fff !important;
+  border: solid 2px #000 !important;
+  top: 60px !important;
+}
+#header-account ul li a {
+  font-family: 'galano_grotesqueregular' !important;
 }
