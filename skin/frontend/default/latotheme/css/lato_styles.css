@@ -396,7 +396,10 @@ body .main-container {
 }
 .footer-container .footer .links-block .links ul li {
   color: #000000;
-  text-transform: capitalize;
+  text-transform: lowercase;
+}
+.footer-container .footer .links-block .links ul li:first-letter {
+  text-transform: uppercase !important;
 }
 .footer-container .footer .links-block .links ul li a {
   font-size: 13px !important;
@@ -640,7 +643,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 35.6%;
+  width: 34%;
 }
 .coleccion-destacada .title {
   display: inline-block;
@@ -660,7 +663,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 38.8%;
+  width: 37.6%;
 }
 .widget-title .title {
   display: inline-block;
