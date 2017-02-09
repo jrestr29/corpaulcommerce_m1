@@ -804,6 +804,7 @@ h3.product-name a:first-letter {
 #header-account {
   background: #fff !important;
   top: 60px !important;
+  right: 0 !important;
 }
 #header-account ul li {
   text-transform: lowercase;
