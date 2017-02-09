@@ -258,10 +258,6 @@ body header nav ol li a:active {
   border-color: #000000 !important;
 }
 body header nav ol li ul {
-  border-left: 2px solid #000 !important;
-  border-right: 2px solid #000 !important;
-  border-bottom: 2px solid #000 !important;
-  border-top: 2px solid #000 !important;
   z-index: 9999999 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -279,6 +275,8 @@ body header nav ol li ul li a {
   height: 10px;
   border: none !important;
   text-transform: lowercase;
+  text-align: left;
+  padding-left: 1.5em !important;
 }
 body header nav ol li ul li a:first-letter {
   text-transform: uppercase !important;
