@@ -258,10 +258,6 @@ body header nav ol li a:active {
   border-color: #000000 !important;
 }
 body header nav ol li ul {
-  border-left: 2px solid #000 !important;
-  border-right: 2px solid #000 !important;
-  border-bottom: 2px solid #000 !important;
-  border-top: 2px solid #000 !important;
   z-index: 9999999 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -279,6 +275,8 @@ body header nav ol li ul li a {
   height: 10px;
   border: none !important;
   text-transform: lowercase;
+  text-align: left;
+  padding-left: 1.5em !important;
 }
 body header nav ol li ul li a:first-letter {
   text-transform: uppercase !important;
@@ -396,7 +394,10 @@ body .main-container {
 }
 .footer-container .footer .links-block .links ul li {
   color: #000000;
-  text-transform: capitalize;
+  text-transform: lowercase;
+}
+.footer-container .footer .links-block .links ul li:first-letter {
+  text-transform: uppercase !important;
 }
 .footer-container .footer .links-block .links ul li a {
   font-size: 13px !important;
@@ -640,7 +641,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 35.6%;
+  width: 34%;
 }
 .coleccion-destacada .title {
   display: inline-block;
@@ -660,7 +661,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 38.8%;
+  width: 37.6%;
 }
 .widget-title .title {
   display: inline-block;
@@ -802,11 +803,19 @@ h3.product-name a:first-letter {
 }
 #header-account {
   background: #fff !important;
-  border: solid 2px #000 !important;
   top: 60px !important;
+  right: 0 !important;
+}
+#header-account ul li {
+  text-transform: lowercase;
+}
+#header-account ul li:first-letter {
+  text-transform: uppercase !important;
 }
 #header-account ul li a {
   font-family: 'galano_grotesqueregular' !important;
+  text-align: left;
+  padding-left: 1.5em !important;
 }
 a.mz-thumb {
   margin-bottom: 10px !important;
