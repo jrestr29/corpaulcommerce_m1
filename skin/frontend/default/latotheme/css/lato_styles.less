@@ -1072,13 +1072,19 @@ h3.product-name{
 
 #header-account{
   background: #fff !important;
-  border: solid 2px #000 !important;
   top: 60px !important;
 
   ul {
     li{
+      text-transform: lowercase;
+
+      &:first-letter {
+        text-transform: uppercase !important;
+      }
       a {
         font-family: 'galano_grotesqueregular' !important;
+        text-align: left;
+        padding-left: 1.5em !important;
       }
     }
   }

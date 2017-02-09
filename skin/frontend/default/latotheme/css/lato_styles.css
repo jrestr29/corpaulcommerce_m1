@@ -803,11 +803,18 @@ h3.product-name a:first-letter {
 }
 #header-account {
   background: #fff !important;
-  border: solid 2px #000 !important;
   top: 60px !important;
+}
+#header-account ul li {
+  text-transform: lowercase;
+}
+#header-account ul li:first-letter {
+  text-transform: uppercase !important;
 }
 #header-account ul li a {
   font-family: 'galano_grotesqueregular' !important;
+  text-align: left;
+  padding-left: 1.5em !important;
 }
 a.mz-thumb {
   margin-bottom: 10px !important;
