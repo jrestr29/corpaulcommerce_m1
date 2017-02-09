@@ -62,12 +62,18 @@
   font-style: normal;
 }
 
+a,p,span,strong,input,button,label,h1,h2,h3,h4,h5 {
+  font-family: 'galano_grotesqueregular' !important;
+}
+
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
   background-color: #ffffff;
 
   header {
+    max-width: 1100px !important;
+
     .logo {
       max-width: 200px !important;
       padding-left: 0 !important;
@@ -136,7 +142,6 @@ body {
         }
       }
 
-
       .contact-phone{
         display: inline-block;
         vertical-align: middle;
@@ -186,7 +191,7 @@ body {
         }
 
         form {
-          width:86%;
+          width:84%;
           float: left;
 
           .input-box {
@@ -360,6 +365,9 @@ body {
 
   }
 
+  .main-container{
+    max-width: 1100px !important;
+  }
 
 }
 
@@ -455,7 +463,7 @@ body {
   }
 
  .footer {
-   max-width: 1200px !important;
+   max-width: 1100px !important;
    padding-left: 0px;
    padding-right: 0px;
    margin: 0 auto;
@@ -482,7 +490,7 @@ body {
            color: #000000;
            text-transform: capitalize;
            a {
-             font-size: 15px !important;
+             font-size: 13px !important;
            }
          }
        }
@@ -499,7 +507,7 @@ body {
      width:29%;
      text-align: center;
      position: relative;
-     top: -2em;
+     top: -2em;d
 
      span {
       display: block;
@@ -509,6 +517,7 @@ body {
        font-weight: 900;
        line-height: 30px;
        margin-bottom: 15px;
+       font-size: 12px;
      }
 
      img {
@@ -695,6 +704,21 @@ body {
    .product-options{
      padding: 0 !important;
      border: none !important;
+
+     ul {
+       li {
+         a {
+           border:none !important;
+         }
+       }
+     }
+
+     .swatch-attr{
+       label {
+         color: #000 !important;
+         font-size: 15px !important;
+       }
+     }
    }
 
    .product-options-bottom{
@@ -712,7 +736,6 @@ body {
 .product-cart-sku{
   font-family: 'galano_grotesqueregular' !important;
 }
-
 
 button {
   &.btn-checkout, &#onepage-guest-register-button, &.button {
@@ -1054,6 +1077,55 @@ h3.product-name{
       a {
         font-family: 'galano_grotesqueregular' !important;
       }
+    }
+  }
+}
+
+//Magiczoom Modification
+a{
+  &.mz-thumb {
+    margin-bottom: 10px !important;
+
+    &:last-of-type {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.yotpo-label {
+  display: none !important;
+}
+
+//PDPs
+.product-view{
+  .short-description{
+    .std {
+      color: #000000 !important;
+    }
+  }
+
+  .add-to-cart{
+    .qty-wrapper {
+      .qty {
+        font-size: 18px !important;
+        color: #000 !important;
+      }
+
+      input {
+        font-size: 16px;
+        color: #000000;
+      }
+    }
+  }
+
+  .extra-info{
+    width: 100% !important;
+    max-width: 100% !important;
+
+    .value {
+      color: #000;
+      font-size: 12px;
+      float: right;
     }
   }
 }

@@ -46,10 +46,27 @@
   font-weight: normal;
   font-style: normal;
 }
+a,
+p,
+span,
+strong,
+input,
+button,
+label,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'galano_grotesqueregular' !important;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
   background-color: #ffffff;
+}
+body header {
+  max-width: 1100px !important;
 }
 body header .logo {
   max-width: 200px !important;
@@ -147,7 +164,7 @@ body header .header-search-container #header-search .minicart-wrapper .block-sub
   font-size: 11px !important;
 }
 body header .header-search-container #header-search form {
-  width: 86%;
+  width: 84%;
   float: left;
 }
 body header .header-search-container #header-search form .input-box {
@@ -282,6 +299,9 @@ body header nav ol li ul li a:hover {
 body header nav ol li ul li:hover {
   background-color: #ccc;
 }
+body .main-container {
+  max-width: 1100px !important;
+}
 .addthis-animated a {
   margin-bottom: 2px !important;
 }
@@ -353,7 +373,7 @@ body header nav ol li ul li:hover {
   margin-right: 70px;
 }
 .footer-container .footer {
-  max-width: 1200px !important;
+  max-width: 1100px !important;
   padding-left: 0px;
   padding-right: 0px;
   margin: 0 auto;
@@ -379,7 +399,7 @@ body header nav ol li ul li:hover {
   text-transform: capitalize;
 }
 .footer-container .footer .links-block .links ul li a {
-  font-size: 15px !important;
+  font-size: 13px !important;
 }
 .footer-container .footer .links-block .links:nth-child(2) {
   width: 26% !important;
@@ -400,6 +420,7 @@ body header nav ol li ul li:hover {
   font-weight: 900;
   line-height: 30px;
   margin-bottom: 15px;
+  font-size: 12px;
 }
 .footer-container .footer .getsocial img {
   display: inline-block;
@@ -520,6 +541,13 @@ body header nav ol li ul li:hover {
 .product-view .product-shop .product-options {
   padding: 0 !important;
   border: none !important;
+}
+.product-view .product-shop .product-options ul li a {
+  border: none !important;
+}
+.product-view .product-shop .product-options .swatch-attr label {
+  color: #000 !important;
+  font-size: 15px !important;
 }
 .product-view .product-shop .product-options-bottom {
   padding: 0 !important;
@@ -779,4 +807,33 @@ h3.product-name a:first-letter {
 }
 #header-account ul li a {
   font-family: 'galano_grotesqueregular' !important;
+}
+a.mz-thumb {
+  margin-bottom: 10px !important;
+}
+a.mz-thumb:last-of-type {
+  margin-bottom: 0 !important;
+}
+.yotpo-label {
+  display: none !important;
+}
+.product-view .short-description .std {
+  color: #000000 !important;
+}
+.product-view .add-to-cart .qty-wrapper .qty {
+  font-size: 18px !important;
+  color: #000 !important;
+}
+.product-view .add-to-cart .qty-wrapper input {
+  font-size: 16px;
+  color: #000000;
+}
+.product-view .extra-info {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.product-view .extra-info .value {
+  color: #000;
+  font-size: 12px;
+  float: right;
 }
