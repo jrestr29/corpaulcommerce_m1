@@ -1,0 +1,11 @@
+<?php
+    $category =  Mage::registry('current_category');
+?>
+
+<?php if($_description=$category->getDescription()): ?>
+    <section id="category-head">
+        <h1><?php echo $category->getName() ?></h1>
+        <p><?php echo $_description ?></p>
+    </section>
+<?php endif; ?>
+

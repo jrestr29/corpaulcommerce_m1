@@ -846,3 +846,24 @@ a.mz-thumb:last-of-type {
   font-size: 12px;
   float: right;
 }
+section#category-head {
+  padding-bottom: 2em;
+}
+section#category-head h1,
+section#category-head p {
+  display: block;
+}
+section#category-head h1 {
+  text-transform: lowercase;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 0.5em;
+}
+section#category-head h1:first-letter {
+  text-transform: uppercase;
+}
+section#category-head p {
+  color: #686565;
+}
+section#category-head p:first-letter {
+  text-transform: uppercase;
+}
