@@ -584,6 +584,16 @@ body {
 
   ul {
     li {
+      &:last-of-type {
+        &:first-letter{
+          text-transform: uppercase !important;
+        }
+
+        text-transform: lowercase;
+
+      }
+
+
       font-size: 15px !important;
       line-height: 31px;
 
@@ -601,10 +611,6 @@ body {
 
 
       strong {
-        &::first-letter{
-          text-transform: uppercase;
-        }
-        text-transform: lowercase;
         color: #000000 !important;
 
 
@@ -1062,12 +1068,14 @@ body {
   display: none !important;
 }
 
-h3.product-name{
-  a{
-    text-transform: lowercase;
+.product-info {
+  h3 {
+    &.product-name {
+      &:first-letter{
+        text-transform: uppercase !important;
+      }
 
-    &:first-letter {
-      text-transform: uppercase;
+      text-transform: lowercase;
     }
   }
 }

@@ -467,6 +467,12 @@ body .main-container {
   font-size: 15px !important;
   line-height: 31px;
 }
+.breadcrumbs ul li:last-of-type {
+  text-transform: lowercase;
+}
+.breadcrumbs ul li:last-of-type:first-letter {
+  text-transform: uppercase !important;
+}
 .breadcrumbs ul li a {
   text-transform: lowercase !important;
 }
@@ -477,11 +483,7 @@ body .main-container {
   text-transform: uppercase;
 }
 .breadcrumbs ul li strong {
-  text-transform: lowercase;
   color: #000000 !important;
-}
-.breadcrumbs ul li strong::first-letter {
-  text-transform: uppercase;
 }
 .breadcrumbs ul li::after {
   line-height: 32px !important;
@@ -796,11 +798,11 @@ body.cms-page-view .col-main {
 .btn-o {
   display: none !important;
 }
-h3.product-name a {
+.product-info h3.product-name {
   text-transform: lowercase;
 }
-h3.product-name a:first-letter {
-  text-transform: uppercase;
+.product-info h3.product-name:first-letter {
+  text-transform: uppercase !important;
 }
 .atc_s addthis_button_compact {
   display: none !important;
