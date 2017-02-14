@@ -1018,7 +1018,7 @@ body.catalog-category-view .category-products .toolbar label:first-letter {
 body.catalog-category-view .category-products .toolbar .count-container p {
   margin-left: 0 !important;
 }
-body.catalog-category-view .category-products .toolbar .count-container p.amount amount--no-pages span {
+body.catalog-category-view .category-products .toolbar .count-container p span {
   display: inline-block;
   color: #ccc !important;
   margin-left: 0.5em !important;
@@ -1026,9 +1026,31 @@ body.catalog-category-view .category-products .toolbar .count-container p.amount
 body.catalog-category-view .category-products .toolbar .count-container p strong {
   display: inline-block;
 }
+body.catalog-category-view .category-products .toolbar .pages {
+  float: left;
+}
+body.catalog-category-view .category-products .toolbar .pages ol li {
+  margin-right: 0.5em !important;
+  padding-right: 0 !important;
+}
+body.catalog-category-view .category-products .toolbar .pages ol li.current {
+  width: 25px !important;
+}
+body.catalog-category-view .category-products .toolbar .pages ol li a {
+  border-radius: 0 !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  padding-top: 0 !important;
+}
+body.catalog-category-view .category-products .toolbar .pages ol li a.next:before {
+  border-left: 4px solid #000 !important;
+}
+body.catalog-category-view .category-products .toolbar .pages ol li a.previous:before {
+  border-right: 4px solid #000 !important;
+}
 body.catalog-category-view .category-products .toolbar .pager {
   float: left !important;
-  width: 15vw;
+  width: 32vw;
 }
 body.catalog-category-view .category-products .toolbar .sorter {
   float: right !important;

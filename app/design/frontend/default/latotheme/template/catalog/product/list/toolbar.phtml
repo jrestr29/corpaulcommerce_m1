@@ -37,7 +37,8 @@
         <div class="count-container">
             <?php if($this->getLastPageNum()>1): ?>
                 <p class="amount amount--has-pages">
-                    <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+                    <span>Mostrando: </span>
+                    <strong><?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?></strong>
                 </p>
             <?php else: ?>
                 <p class="amount amount--no-pages">
