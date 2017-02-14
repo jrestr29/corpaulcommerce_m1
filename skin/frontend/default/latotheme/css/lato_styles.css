@@ -63,6 +63,18 @@ h5 {
 .pager {
   margin: 0 !important;
 }
+img {
+  vertical-align: initial !important;
+}
+.label {
+  padding: 0 !important;
+  position: relative;
+  top: 0;
+  font-size: inherit !important;
+}
+body.catalog-category-view .label {
+  top: -3px;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
@@ -345,13 +357,13 @@ body .main-container {
   vertical-align: middle;
 }
 .footer-container .newsletter form input {
-  height: 50px!important;
+  height: 45px!important;
   color: #000000 !important;
   display: inline-block;
   vertical-align: middle;
 }
 .footer-container .newsletter form button {
-  height: 50px!important;
+  height: 46px!important;
   background-color: #fff;
   border-radius: 2px;
   border: 1px solid silver;
@@ -943,11 +955,19 @@ body.catalog-category-view .price-box {
   padding-top: 0.5em;
 }
 body.catalog-category-view .product-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-transform: lowercase;
   color: #3f3f3f !important;
 }
 body.catalog-category-view .product-name:first-letter {
   text-transform: uppercase !important;
+}
+body.catalog-category-view .product-name h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body.catalog-category-view .product-name h2 a {
   color: #3f3f3f !important;
@@ -1023,10 +1043,10 @@ body.catalog-category-view .category-products .toolbar .count-container p {
 body.catalog-category-view .category-products .toolbar .count-container p span {
   display: inline-block;
   color: #ccc !important;
-  margin-left: 0.5em !important;
 }
 body.catalog-category-view .category-products .toolbar .count-container p strong {
   display: inline-block;
+  margin-left: 0.5em;
 }
 body.catalog-category-view .category-products .toolbar .pages {
   float: left;
@@ -1058,8 +1078,8 @@ body.catalog-category-view .category-products .toolbar .sorter {
   float: right !important;
 }
 body.catalog-category-view .category-products .toolbar .sorter select {
-  width: 6vw !important;
-  height: 3vh !important;
+  width: 7vw !important;
+  height: 4vh !important;
   border-radius: 0 !important;
   font-size: 1.1em !important;
 }

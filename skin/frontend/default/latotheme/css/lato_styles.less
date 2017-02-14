@@ -70,6 +70,25 @@ a,p,span,strong,input,button,label,h1,h2,h3,h4,h5 {
   margin: 0 !important;
 }
 
+img {
+  vertical-align: initial !important;
+}
+
+.label {
+  padding:0 !important;
+  position: relative;
+  top: 0;
+  font-size: inherit !important;
+}
+
+body {
+  &.catalog-category-view {
+    .label {
+      top:-3px
+    }
+  }
+}
+
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
@@ -429,7 +448,7 @@ body {
       }
 
       input {
-        height: 50px!important;
+        height: 45px!important;
         display: inline-block;
         color: #000000 !important;
         display: inline-block;
@@ -437,7 +456,7 @@ body {
       }
 
       button {
-        height: 50px!important;
+        height: 46px!important;
         display: inline-block;
         background-color: #fff;
         border-radius: 2px;
@@ -1287,10 +1306,17 @@ body {
         text-transform: uppercase !important;
       }
 
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-transform: lowercase;
       color: #3f3f3f !important;
 
       h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
         a{
           color: #3f3f3f !important;
         }
@@ -1392,12 +1418,12 @@ body {
             span{
               display: inline-block;
               color: #ccc !important;
-              margin-left: 0.5em !important;
             }
 
 
             strong {
               display: inline-block;
+              margin-left: 0.5em;
             }
           }
         }
@@ -1445,8 +1471,8 @@ body {
           float: right !important;
 
           select {
-            width: 6vw !important;
-            height: 3vh !important;
+            width: 7vw !important;
+            height: 4vh !important;
             border-radius: 0 !important;
             font-size: 1.1em !important;
           }
