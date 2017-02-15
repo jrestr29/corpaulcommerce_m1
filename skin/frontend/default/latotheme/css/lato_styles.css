@@ -75,6 +75,10 @@ img {
 body.catalog-category-view .label {
   top: -3px;
 }
+body.catalog-category-view .col1-layout .col-main {
+  width: 88% !important;
+  margin: 0 auto !important;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
@@ -407,6 +411,9 @@ body .main-container {
   font-weight: 900;
   color: #000;
   font-size: 15px !important;
+}
+.footer-container .footer .links-block .links abbr {
+  text-transform: uppercase !important;
 }
 .footer-container .footer .links-block .links ul li {
   color: #000000;
@@ -1072,7 +1079,7 @@ body.catalog-category-view .category-products .toolbar .pages ol li a.previous:b
 }
 body.catalog-category-view .category-products .toolbar .pager {
   float: left !important;
-  width: 32vw;
+  width: 26vw;
 }
 body.catalog-category-view .category-products .toolbar .sorter {
   float: right !important;
@@ -1080,6 +1087,7 @@ body.catalog-category-view .category-products .toolbar .sorter {
 body.catalog-category-view .category-products .toolbar .sorter select {
   width: 7vw !important;
   height: 4vh !important;
+  max-height: 27px !important;
   border-radius: 0 !important;
   font-size: 1.1em !important;
 }
