@@ -14,6 +14,6 @@ jQuery(document).ready(function() {
             }
         });
 
-        jQuery("ul.products-grid").find("li").css("min-height",maxHeight+"px");
+        jQuery("ul.products-grid").find("li.item").css("min-height",maxHeight+"px");
     }
 });
