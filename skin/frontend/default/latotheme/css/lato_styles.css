@@ -866,9 +866,6 @@ body.cms-page-view .col-main {
 .product-info h3.product-name {
   text-transform: lowercase;
 }
-.product-info h3.product-name:first-letter {
-  text-transform: uppercase !important;
-}
 .atc_s addthis_button_compact {
   display: none !important;
 }
