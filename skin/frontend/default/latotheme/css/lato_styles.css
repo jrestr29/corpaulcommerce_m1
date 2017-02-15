@@ -72,8 +72,57 @@ img {
   top: 0;
   font-size: inherit !important;
 }
+.float_social_networks {
+  position: fixed;
+  top: 25%;
+  width: 3pc;
+  z-index: 100020;
+  background: none;
+}
+.float_social_networks .social {
+  position: relative;
+  display: block;
+  width: 3pc;
+  margin: 0;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+  z-index: 100030;
+  margin-bottom: 3px;
+}
+.float_social_networks .social span {
+  background-color: #000000 !important;
+  display: block;
+  height: 48px;
+  padding-top: 8px;
+}
+.float_social_networks .social span svg {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 2pc;
+  height: 2pc;
+  line-height: 2pc;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 0.3em;
+  margin-left: 0.7em;
+}
 body.catalog-category-view .label {
   top: -3px;
+}
+body.catalog-category-view .col1-layout .col-main {
+  width: 88% !important;
+  margin: 0 auto !important;
+}
+body.catalog-category-view .col1-layout .col-main ul.products-grid li {
+  width: 11vw;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
@@ -82,6 +131,7 @@ body {
 }
 body header {
   max-width: 1100px !important;
+  border-bottom: none !important;
   margin: 0 auto !important;
 }
 body header .logo {
@@ -408,6 +458,9 @@ body .main-container {
   color: #000;
   font-size: 15px !important;
 }
+.footer-container .footer .links-block .links abbr {
+  text-transform: uppercase !important;
+}
 .footer-container .footer .links-block .links ul li {
   color: #000000;
   text-transform: lowercase;
@@ -439,7 +492,7 @@ body .main-container {
   margin-bottom: 15px;
   font-size: 12px;
 }
-.footer-container .footer .getsocial img {
+.footer-container .footer a.socialimg img {
   display: inline-block;
   vertical-align: middle;
   height: 25px !important;
@@ -987,7 +1040,7 @@ body.catalog-category-view ul.products-grid li {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 0;
-  width: 11vw;
+  width: 9vw;
   padding-left: 0.4em;
   padding-right: 0.4em;
   padding-bottom: 0;
@@ -1072,7 +1125,7 @@ body.catalog-category-view .category-products .toolbar .pages ol li a.previous:b
 }
 body.catalog-category-view .category-products .toolbar .pager {
   float: left !important;
-  width: 32vw;
+  width: 26vw;
 }
 body.catalog-category-view .category-products .toolbar .sorter {
   float: right !important;
@@ -1080,6 +1133,7 @@ body.catalog-category-view .category-products .toolbar .sorter {
 body.catalog-category-view .category-products .toolbar .sorter select {
   width: 7vw !important;
   height: 4vh !important;
+  max-height: 27px !important;
   border-radius: 0 !important;
   font-size: 1.1em !important;
 }
