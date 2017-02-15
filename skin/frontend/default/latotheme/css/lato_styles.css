@@ -79,6 +79,9 @@ body.catalog-category-view .col1-layout .col-main {
   width: 88% !important;
   margin: 0 auto !important;
 }
+body.catalog-category-view .col1-layout .col-main ul.products-grid li {
+  width: 11vw;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
@@ -86,6 +89,7 @@ body {
 }
 body header {
   max-width: 1100px !important;
+  border-bottom: none !important;
   margin: 0 auto !important;
 }
 body header .logo {
@@ -994,7 +998,7 @@ body.catalog-category-view ul.products-grid li {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 0;
-  width: 11vw;
+  width: 9vw;
   padding-left: 0.4em;
   padding-right: 0.4em;
   padding-bottom: 0;

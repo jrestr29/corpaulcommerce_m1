@@ -96,6 +96,8 @@ Category default layout
                     </text>
                 </action>
             </block>
+
+            <action method="addItem"><type>skin_js</type><name>js/lato.js</name></action>
         </reference>
 
         <reference name="left_first">
@@ -164,6 +166,7 @@ Category layered navigation layout
                     </text>
                 </action>
             </block>
+            <action method="addItem"><type>skin_js</type><name>js/lato.js</name></action>
         </reference>
 
         <reference name="left_first">
