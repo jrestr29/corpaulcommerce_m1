@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
                 maxHeight = height;
             }
         });
-        console.log("new grid height "+maxHeight);
+
         jQuery("ul.products-grid").find("li").css("min-height",maxHeight+"px");
     }
 });

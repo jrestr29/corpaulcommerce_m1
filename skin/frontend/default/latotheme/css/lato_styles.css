@@ -72,6 +72,46 @@ img {
   top: 0;
   font-size: inherit !important;
 }
+.float_social_networks {
+  position: fixed;
+  top: 25%;
+  width: 3pc;
+  z-index: 100020;
+  background: none;
+}
+.float_social_networks .social {
+  position: relative;
+  display: block;
+  width: 3pc;
+  margin: 0;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+  z-index: 100030;
+  margin-bottom: 3px;
+}
+.float_social_networks .social span {
+  background-color: #000000 !important;
+  display: block;
+  height: 48px;
+  padding-top: 8px;
+}
+.float_social_networks .social span svg {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 2pc;
+  height: 2pc;
+  line-height: 2pc;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+}
 body.catalog-category-view .label {
   top: -3px;
 }
@@ -450,7 +490,7 @@ body .main-container {
   margin-bottom: 15px;
   font-size: 12px;
 }
-.footer-container .footer .getsocial img {
+.footer-container .footer a.socialimg img {
   display: inline-block;
   vertical-align: middle;
   height: 25px !important;
