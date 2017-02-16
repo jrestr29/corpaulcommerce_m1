@@ -194,6 +194,18 @@ body {
   }
 
   &.checkout-cart-index{
+    .link-wishlist, .btn-continue {
+      display: none !important;
+    }
+
+    .cart-footer-actions{
+      button{
+        &:nth-child(3) {
+          display: block;
+        }
+      }
+    }
+
     .cart-totals{
       table {
         td {
