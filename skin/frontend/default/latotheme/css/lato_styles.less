@@ -149,6 +149,21 @@ body {
       }
     }
   }
+
+  &.customer-account-login {
+   .new-users {
+     height:306px;
+     .buttons-set {
+       padding-top: 101px;
+       a {
+         background-color: #000 !important;
+         span {
+           color: #fff !important;
+         }
+       }
+     }
+   }
+  }
 }
 
 
@@ -195,16 +210,19 @@ body {
           color: #626262;
 
           span {
-            color: #626262 !important;
+            color: #000 !important;
+
+            &.customer_name {
+              padding-right: 25px !important;
+            }
           }
 
           &:hover {
-            color: #626262;
+            color: #000 !important;
             text-decoration: none !important;
 
             span {
-              color: #636363 !important;
-              opacity: 0.8;
+              color: #000 !important;
             }
           }
         }
