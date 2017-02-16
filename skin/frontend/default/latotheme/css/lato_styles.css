@@ -122,7 +122,7 @@ body.catalog-category-view .col1-layout .col-main {
   margin: 0 auto !important;
 }
 body.catalog-category-view .col1-layout .col-main ul.products-grid li {
-  width: 11vw;
+  width: 22.5%;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
@@ -936,6 +936,18 @@ section#category-head p {
 section#category-head p:first-letter {
   text-transform: uppercase;
 }
+body.catalog-category-view ol.configurable-swatch-list {
+  border-bottom: 1px solid #ccc;
+}
+body.catalog-category-view ol.configurable-swatch-list li a span {
+  border: none !important;
+}
+body.catalog-category-view ol.configurable-swatch-list li a span img[alt="White"] {
+  border: 1px solid #ccc;
+}
+body.catalog-category-view ol.configurable-swatch-list li:last-of-type {
+  border-bottom: none !important;
+}
 body.catalog-category-view .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -1037,7 +1049,7 @@ body.catalog-category-view ul.products-grid li {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 0;
-  width: 12vw;
+  width: 22.5%;
   padding-left: 0.4em;
   padding-right: 0.4em;
   padding-bottom: 0;
@@ -1056,6 +1068,21 @@ body.catalog-category-view ul.products-grid li:hover {
 }
 body.catalog-category-view ul.products-grid li:hover .product-info .actions {
   display: block !important;
+}
+body.catalog-category-view ul.products-grid li:hover .product-info .actions button {
+  display: inline-block;
+}
+body.catalog-category-view ul.products-grid li:hover .product-info .actions div.add-to-links {
+  display: inline-block;
+  width: 36%;
+  margin-top: 3px;
+}
+body.catalog-category-view ul.products-grid li:hover .product-info .actions div.add-to-links div {
+  display: inline-block;
+  width: 45%;
+}
+body.catalog-category-view ul.products-grid li:hover .product-info .actions div.add-to-links div img {
+  width: 100%;
 }
 body.catalog-category-view ul.add-to-links {
   display: inline-block;
@@ -1135,5 +1162,17 @@ body.catalog-category-view .category-products .toolbar .sorter select {
   font-size: 1.1em !important;
 }
 body.catalog-category-view .category-products .toolbar-bottom {
-  visibility: hidden !important;
+  display: none !important;
+}
+body.catalog-category-view .toolbar_pager {
+  height: 26px;
+}
+body.catalog-category-view .toolbar_pager .pager {
+  width: 50% !important;
+  float: left !important;
+}
+body.catalog-category-view .toolbar_pager .limiter {
+  float: right;
+  width: 50%;
+  text-align: right;
 }

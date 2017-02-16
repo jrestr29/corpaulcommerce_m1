@@ -206,6 +206,9 @@ Category layered navigation layout
                     <!-- Since the addColumnCountLayoutDepend does not work, we are manually setting the max columns -->
                     <action method="setColumnCount"><count>4</count></action>
                 </block>
+                <block type="catalog/product_list_toolbar" name="product_list_bottom_toolbar" template="catalog/product/list/bottom_toolbar.phtml" >
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
             </block>
         </reference>
     </catalog_category_layered>
