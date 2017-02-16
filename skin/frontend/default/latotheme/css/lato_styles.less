@@ -142,7 +142,7 @@ body {
         ul {
           &.products-grid{
             li {
-              width: 11vw;
+              width: 22.5%;
             }
           }
         }
@@ -1421,7 +1421,7 @@ body {
           border: 1px solid #ccc;
           border-radius: 4px;
           margin-right: 0;
-          width: 12vw;
+          width: 22.5%;
           padding-left: 0.4em;
           padding-right: 0.4em;
           padding-bottom: 0;
@@ -1437,6 +1437,27 @@ body {
 
             .product-info {
               .actions {
+                button {
+                  display: inline-block;
+                }
+
+                div {
+                  &.add-to-links {
+                    display: inline-block;
+                    width: 36%;
+                    margin-top: 3px;
+
+                    div {
+                      display: inline-block;
+                      width: 45%;
+
+                      img {
+                        width: 100%;
+                      }
+                    }
+                  }
+                }
+
                 display: block !important;
               }
             }
@@ -1554,7 +1575,23 @@ body {
       }
 
       .toolbar-bottom{
-        visibility: hidden !important;
+        display: none !important;
+      }
+
+
+    }
+    .toolbar_pager{
+      height:26px;
+
+      .pager {
+        width: 50% !important;
+        float: left !important;
+      }
+
+      .limiter {
+        float: right;
+        width: 50%;
+        text-align: right;
       }
     }
   }

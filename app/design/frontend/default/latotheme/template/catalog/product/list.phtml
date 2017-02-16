@@ -156,22 +156,22 @@
                         <?php else: ?>
                             <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                         <?php endif; ?>
-                        <ul class="add-to-links">
+                        <div class="add-to-links">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                <li>
+                                <div>
                                     <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist">
                                         <img src="<?php echo $this->getSkinUrl('images/wishlist_icon.png') ?>">
                                     </a>
-                                </li>
+                                </div>
                             <?php endif; ?>
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                                <li>
+                                <div>
                                     <a href="<?php echo $_compareUrl ?>" class="link-compare">
-                                    <img src="<?php echo $this->getSkinUrl('images/compare_bars_icon.png') ?>">
+                                        <img src="<?php echo $this->getSkinUrl('images/compare_bars_icon.png') ?>">
                                     </a>
-                                </li>
+                                </div>
                             <?php endif; ?>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </li>

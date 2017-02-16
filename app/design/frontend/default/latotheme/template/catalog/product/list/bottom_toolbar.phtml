@@ -1,0 +1,17 @@
+<div class="toolbar_pager">
+    <div class="pager">
+
+    </div>
+
+    <div class="limiter">
+        <label><?php echo $this->__('Mostrando') ?></label>
+        <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Results per page')); ?>">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                    <?php echo $_limit ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <span><?php echo $this->__('Por pagina') ?></span>
+    </div>
+</div>
