@@ -151,7 +151,7 @@ body header .logo {
   padding-left: 0 !important;
 }
 body header .account-cart-wrapper {
-  width: 40%;
+  width: 50%;
   text-align: right;
   font-family: 'galano_grotesqueregular' !important;
   top: 20px;
@@ -176,6 +176,9 @@ body header .account-cart-wrapper .msg a {
 }
 body header .account-cart-wrapper .msg a span {
   color: #000 !important;
+}
+body header .account-cart-wrapper .msg a span.customer_name {
+  padding-right: 25px !important;
 }
 body header .account-cart-wrapper .msg a:hover {
   color: #000 !important;
