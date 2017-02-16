@@ -136,6 +136,22 @@ body.customer-account-login .new-users .buttons-set a {
 body.customer-account-login .new-users .buttons-set a span {
   color: #fff !important;
 }
+body.customer-account-create .input-box .checkbox {
+  margin-left: 0 !important;
+}
+body.customer-account-create .input-box label[for="is_subscribed"] {
+  text-transform: lowercase;
+  padding: 6px 10px 6px 20px !important;
+}
+body.customer-account-create .input-box label[for="is_subscribed"]:first-letter {
+  text-transform: uppercase !important;
+}
+body.customer-account-create select {
+  border: 1px solid silver !important;
+}
+body.customer-account-create .required:after {
+  display: none !important;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;

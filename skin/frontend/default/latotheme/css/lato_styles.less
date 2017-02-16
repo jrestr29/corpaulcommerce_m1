@@ -163,6 +163,34 @@ body {
        }
      }
    }
+
+
+  }
+
+  &.customer-account-create{
+    .input-box {
+      .checkbox {
+        margin-left: 0 !important;
+      }
+
+      label[for="is_subscribed"] {
+        &:first-letter{
+          text-transform: uppercase !important;
+        }
+
+        text-transform: lowercase;
+        padding: 6px 10px 6px 20px !important;
+      }
+    }
+    select {
+      border: 1px solid silver !important;
+    }
+
+    .required {
+      &:after{
+        display: none !important;
+      }
+    }
   }
 }
 
