@@ -936,6 +936,18 @@ section#category-head p {
 section#category-head p:first-letter {
   text-transform: uppercase;
 }
+body.catalog-category-view ol.configurable-swatch-list {
+  border-bottom: 1px solid #ccc;
+}
+body.catalog-category-view ol.configurable-swatch-list li a span {
+  border: none !important;
+}
+body.catalog-category-view ol.configurable-swatch-list li a span img[alt="White"] {
+  border: 1px solid #ccc;
+}
+body.catalog-category-view ol.configurable-swatch-list li:last-of-type {
+  border-bottom: none !important;
+}
 body.catalog-category-view .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;

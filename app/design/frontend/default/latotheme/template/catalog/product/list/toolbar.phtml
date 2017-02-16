@@ -40,13 +40,13 @@
                     <span>Mostrando: </span>
                     <strong><?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?></strong>
                 </p>
-                <?php echo $this->getPagerHtml() ?>
             <?php else: ?>
                 <p class="amount amount--no-pages">
                 <span>Resultados: </span><strong><?php echo $this->__('%s Productos', $this->getTotalNum()) ?></strong>
                 </p>
             <?php endif; ?>
         </div>
+        <?php echo $this->getPagerHtml() ?>
     </div>
 
     <?php if( $this->isExpanded() ): ?>

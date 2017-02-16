@@ -50,6 +50,8 @@
                     <?php
                     $categories = Mage::getModel('catalog/category')->getCollection()
                         ->addAttributeToFilter('parent_id', array('eq' => 2))
+                        ->addAttributeToFilter('is_active', 1)
+                        ->addAttributeToSort('position')
                         ->load();
 
                     foreach ($categories as $category) {

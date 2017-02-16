@@ -1280,6 +1280,26 @@ section {
 
 body {
   &.catalog-category-view {
+    ol {
+      &.configurable-swatch-list {
+        li {
+          a {
+            span {
+              border:none !important;
+              img[alt="White"] {
+                border: 1px solid #ccc;
+              }
+            }
+          }
+
+          &:last-of-type {
+            border-bottom: none !important;
+          }
+        }
+        border-bottom:1px solid #ccc;
+      }
+    }
+
     .container-fluid{
       padding-left: 0 !important;
       padding-right: 0 !important;
