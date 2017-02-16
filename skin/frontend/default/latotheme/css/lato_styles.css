@@ -163,6 +163,21 @@ body.checkout-cart-index .cart-footer-actions button:nth-child(3) {
 body.checkout-cart-index .cart-totals table td {
   font-size: 17px !important;
 }
+body.wishlist-index-index .wishlist-sku {
+  display: none !important;
+}
+body.wishlist-index-index .item-manage button span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-update span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-cart span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-cart a {
+  display: none !important;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
