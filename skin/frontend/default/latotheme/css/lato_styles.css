@@ -152,6 +152,13 @@ body.customer-account-create select {
 body.customer-account-create .required:after {
   display: none !important;
 }
+body.checkout-cart-index .link-wishlist,
+body.checkout-cart-index .btn-continue {
+  display: none !important;
+}
+body.checkout-cart-index .cart-footer-actions button:nth-child(3) {
+  display: block;
+}
 body.checkout-cart-index .cart-totals table td {
   font-size: 17px !important;
 }
