@@ -152,6 +152,9 @@ body.customer-account-create select {
 body.customer-account-create .required:after {
   display: none !important;
 }
+body.checkout-cart-index .cart-totals table td {
+  font-size: 17px !important;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
