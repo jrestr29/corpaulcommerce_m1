@@ -1418,6 +1418,21 @@ body {
 
     ul {
       &.products-grid {
+        p {
+          &.laststock {
+            color: #ff0000;
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 7px;
+          }
+
+          &.hidden {
+            display: block !important;
+            visibility: hidden!important;
+          }
+        }
+
         .product-image {
           border: none !important;
         }
@@ -1479,6 +1494,22 @@ body {
                 }
 
                 display: block !important;
+              }
+
+              .outofstock_warning{
+                opacity: 0.5;
+                position: absolute;
+                width: 100%;
+                min-height: 161px;
+                top: -160%;
+                background-color: #fff;
+
+                span{
+                  text-transform: uppercase;
+                  text-align: center;
+                  font-size: 14px;
+                  color: #0a263d;
+                }
               }
             }
           }
@@ -1617,5 +1648,29 @@ body {
   }
 }
 
+.outofstock{
+  position: absolute;
+  width: 95%;
+  min-height: 161px;
+  top: 9%;
+  background-color: rgba(255, 255, 255, 0.7);
 
+  div {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ffffff;
+    margin-top: 45%;
+
+    span {
+      text-align: center;
+      font-size: 12px;
+      color: #5e5d5d;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #fff;
+    }
+  }
+}
 
