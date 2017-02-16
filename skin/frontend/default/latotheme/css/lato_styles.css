@@ -153,7 +153,8 @@ body.customer-account-create .required:after {
   display: none !important;
 }
 body.checkout-cart-index .link-wishlist,
-body.checkout-cart-index .btn-continue {
+body.checkout-cart-index .btn-continue,
+body.checkout-cart-index .or {
   display: none !important;
 }
 body.checkout-cart-index .cart-footer-actions button:nth-child(3) {
