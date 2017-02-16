@@ -241,6 +241,7 @@ body header .account-cart-wrapper .account-link {
 }
 body header .account-cart-wrapper .account-link a {
   color: #000000;
+  padding-top: 1px;
 }
 body header .account-cart-wrapper .account-link a span {
   color: #000000 !important;
