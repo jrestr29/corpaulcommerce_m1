@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_CityDropdown>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Ditosas_ColombiaRegions />
+            </depends>
+        </Ditosas_CityDropdown>
+    </modules>
+</config>
