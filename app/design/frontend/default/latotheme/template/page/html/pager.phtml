@@ -70,18 +70,6 @@
     <div class="pages">
         <strong><?php echo $this->__('Page:') ?></strong>
         <ol>
-        <?php if (!$this->isFirstPage()): ?>
-            <li>
-                <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Previous')) ?>">
-                    <?php if(!$this->getAnchorTextForPrevious()): ?>
-                        <?php echo $this->__('Previous') ?>
-                    <?php else: ?>
-                        <?php echo $this->getAnchorTextForPrevious() ?>
-                    <?php endif;?>
-                </a>
-            </li>
-        <?php endif;?>
-
         <?php if ($this->canShowFirst()): ?>
             <li><a class="first" href="<?php echo $this->getFirstPageUrl() ?>">1</a></li>
         <?php endif;?>
@@ -105,6 +93,18 @@
 
         <?php if ($this->canShowLast()): ?>
           <li><a class="last" href="<?php echo $this->getLastPageUrl() ?>"><?php echo $this->getLastPageNum() ?></a></li>
+        <?php endif;?>
+
+        <?php if (!$this->isFirstPage()): ?>
+            <li>
+                <a class="previous<?php if(!$this->getAnchorTextForPrevious()): ?> i-previous<?php endif;?>" href="<?php echo $this->getPreviousPageUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Previous')) ?>">
+                    <?php if(!$this->getAnchorTextForPrevious()): ?>
+                        <?php echo $this->__('Previous') ?>
+                    <?php else: ?>
+                        <?php echo $this->getAnchorTextForPrevious() ?>
+                    <?php endif;?>
+                </a>
+            </li>
         <?php endif;?>
 
         <?php if (!$this->isLastPage()): ?>
