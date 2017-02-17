@@ -4,7 +4,7 @@
             <?php if($this->isFreeShipping()) : ?>
                 <?php echo $this->__('Tu envío aplica para un envío gratuito') ?>
             <?php else : ?>
-                <?php echo $this->__('A tu envío le falta $%s para aplicar para envío gratuito', $this->getRemainingValue()) ?>
+                <?php echo $this->__('A tu pedido le falta $%s para aplicar para envío gratuito', $this->getRemainingValue()) ?>
             <?php endif; ?>
         </span>
     </div>
