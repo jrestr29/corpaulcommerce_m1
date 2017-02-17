@@ -1407,15 +1407,18 @@ body.catalogsearch-result-index .msg a {
 #pager-wrapper .pages ol li {
   margin-right: 0.5em !important;
   padding-right: 0 !important;
+  border: none !important;
 }
 #pager-wrapper .pages ol li.current {
   width: 25px !important;
+  border: 1px solid #cccccc !important;
 }
 #pager-wrapper .pages ol li a {
   border-radius: 0 !important;
   padding-left: 3px !important;
   padding-right: 3px !important;
   padding-top: 0 !important;
+  border: none !important;
 }
 #pager-wrapper .pages ol li a.next:before {
   border-left: 4px solid #000 !important;
