@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_CityDropdown>
+            <version>1.0.0</version>
+        </Ditosas_CityDropdown>
+    </modules>
+    <global>
+        <models>
+            <ditosas_citydropdown>
+                <class>Ditosas_CityDropdown_Model</class>
+                <resourceModel>ditosas_citydropdown_resource</resourceModel>
+            </ditosas_citydropdown>
+            <ditosas_citydropdown_resource>
+                <class>Ditosas_CityDropdown_Model_Resource</class>
+                <entities>
+                    <city>
+                        <table>directory_country_region_city</table>
+                    </city>
+                </entities>
+            </ditosas_citydropdown_resource>
+        </models>
+        <helpers>
+            <ditosas_citydropdown>
+                <class>Ditosas_CityDropdown_Helper</class>
+            </ditosas_citydropdown>
+        </helpers>
+        <resources>
+            <ditosas_citydropdown_setup>
+                <setup>
+                    <module>Ditosas_CityDropdown</module>
+                </setup>
+            </ditosas_citydropdown_setup>
+        </resources>
+    </global>
+</config>
