@@ -33,9 +33,9 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    //$_productCollection=$this->getLoadedProductCollection();
+    $_productCollection = $this->getLoadedProductCollection();
 
-    if(!Mage::registry('current_category')) {
+    /*if(!Mage::registry('current_category')) {
         $_productCollection = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getId())
             ->getProductCollection()
             ->addAttributeToSelect('*')
@@ -49,7 +49,7 @@
             ->addAttributeToFilter('status', 1)
             ->addAttributeToFilter('visibility', 4)
             ->addAttributeToSort('name','ASC');
-    }
+    }*/
 
     $_helper = $this->helper('catalog/output');
 ?>
