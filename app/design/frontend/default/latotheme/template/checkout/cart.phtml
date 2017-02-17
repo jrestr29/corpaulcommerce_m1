@@ -162,6 +162,7 @@
     <div class="cart-totals-wrapper">
         <div class="cart-totals">
             <?php echo $this->getChildHtml('totals'); ?>
+
             <?php if(!$this->hasError()): ?>
             <ul class="checkout-types bottom">
             <?php foreach ($this->getMethods('methods') as $method): ?>
@@ -172,6 +173,9 @@
             </ul>
             <?php endif; ?>
         </div>
+    </div>
+    <div class="cart-freeshipping-advice">
+        <?php echo $this->getChildHtml('free_advice') ?>
     </div>
     <?php echo $this->getChildHtml('crosssell') ?>
 </div>

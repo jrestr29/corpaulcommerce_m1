@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Ditosas_FreeshippingAdvice>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ditosas_FreeshippingAdvice>
+    </modules>
+</config>
