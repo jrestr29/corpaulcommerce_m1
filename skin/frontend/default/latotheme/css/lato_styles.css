@@ -1306,34 +1306,6 @@ body.catalogsearch-result-index .category-products .toolbar .count-container p s
   display: inline-block;
   margin-left: 0.5em;
 }
-body.catalog-category-view .category-products .toolbar .pages,
-body.catalogsearch-result-index .category-products .toolbar .pages {
-  float: left;
-}
-body.catalog-category-view .category-products .toolbar .pages ol li,
-body.catalogsearch-result-index .category-products .toolbar .pages ol li {
-  margin-right: 0.5em !important;
-  padding-right: 0 !important;
-}
-body.catalog-category-view .category-products .toolbar .pages ol li.current,
-body.catalogsearch-result-index .category-products .toolbar .pages ol li.current {
-  width: 25px !important;
-}
-body.catalog-category-view .category-products .toolbar .pages ol li a,
-body.catalogsearch-result-index .category-products .toolbar .pages ol li a {
-  border-radius: 0 !important;
-  padding-left: 3px !important;
-  padding-right: 3px !important;
-  padding-top: 0 !important;
-}
-body.catalog-category-view .category-products .toolbar .pages ol li a.next:before,
-body.catalogsearch-result-index .category-products .toolbar .pages ol li a.next:before {
-  border-left: 4px solid #000 !important;
-}
-body.catalog-category-view .category-products .toolbar .pages ol li a.previous:before,
-body.catalogsearch-result-index .category-products .toolbar .pages ol li a.previous:before {
-  border-right: 4px solid #000 !important;
-}
 body.catalog-category-view .category-products .toolbar .pager,
 body.catalogsearch-result-index .category-products .toolbar .pager {
   float: left !important;
@@ -1424,4 +1396,27 @@ body.catalogsearch-result-index .msg a {
 }
 .block-layered-nav ol li span.value {
   color: #636363 !important;
+}
+#pager-wrapper .pages {
+  float: left;
+  margin-left: 0 !important;
+}
+#pager-wrapper .pages ol li {
+  margin-right: 0.5em !important;
+  padding-right: 0 !important;
+}
+#pager-wrapper .pages ol li.current {
+  width: 25px !important;
+}
+#pager-wrapper .pages ol li a {
+  border-radius: 0 !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  padding-top: 0 !important;
+}
+#pager-wrapper .pages ol li a.next:before {
+  border-left: 4px solid #000 !important;
+}
+#pager-wrapper .pages ol li a.previous:before {
+  border-right: 4px solid #000 !important;
 }

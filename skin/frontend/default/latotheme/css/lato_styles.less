@@ -1736,40 +1736,6 @@ body {
           }
         }
 
-        .pages {
-          float: left;
-
-          ol {
-            li {
-              &.current{
-                width:25px !important;
-              }
-
-              margin-right:0.5em !important;
-              padding-right: 0 !important;
-
-              a {
-                border-radius: 0 !important;
-                padding-left: 3px !important;
-                padding-right: 3px !important;
-                padding-top: 0 !important;
-
-                &.next{
-                  &:before{
-                    border-left:4px solid #000 !important;
-                  }
-                }
-
-                &.previous {
-                  &:before{
-                    border-right:4px solid #000 !important;
-                  }
-                }
-              }
-            }
-          }
-        }
-
         .pager {
           float:left !important;
           width:26vw;
@@ -1884,6 +1850,42 @@ body {
 
         &.value {
           color: #636363 !important;
+        }
+      }
+    }
+  }
+}
+#pager-wrapper {
+  .pages {
+    float: left;
+    margin-left: 0 !important;
+
+    ol {
+      li {
+        &.current{
+          width:25px !important;
+        }
+
+        margin-right:0.5em !important;
+        padding-right: 0 !important;
+
+        a {
+          border-radius: 0 !important;
+          padding-left: 3px !important;
+          padding-right: 3px !important;
+          padding-top: 0 !important;
+
+          &.next{
+            &:before{
+              border-left:4px solid #000 !important;
+            }
+          }
+
+          &.previous {
+            &:before{
+              border-right:4px solid #000 !important;
+            }
+          }
         }
       }
     }
