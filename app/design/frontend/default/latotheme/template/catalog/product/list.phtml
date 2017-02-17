@@ -35,13 +35,21 @@
 <?php
     //$_productCollection=$this->getLoadedProductCollection();
 
-    $_productCollection = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getId())
-        ->getProductCollection()
-        ->addAttributeToSelect('*')
-        ->addAttributeToFilter('status', 1)
-        ->addAttributeToFilter('visibility', 4)
-        ->addAttributeToSort('name','ASC');
-
+    if(!Mage::registry('current_category')) {
+        $_productCollection = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getId())
+            ->getProductCollection()
+            ->addAttributeToSelect('*')
+            ->addAttributeToFilter('status', 1)
+            ->addAttributeToFilter('visibility', 4)
+            ->addAttributeToSort('name','ASC');
+    } else {
+        $_productCollection = Mage::getModel('catalog/category')->load(Mage::registry('current_category')->getId())
+            ->getProductCollection()
+            ->addAttributeToSelect('*')
+            ->addAttributeToFilter('status', 1)
+            ->addAttributeToFilter('visibility', 4)
+            ->addAttributeToSort('name','ASC');
+    }
 
     $_helper = $this->helper('catalog/output');
 ?>

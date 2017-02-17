@@ -119,6 +119,8 @@ Default layout, loads most of the pages
                 <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
 
                 <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+
+                <block type="ditosas_freeshippingadvice/advice" name="checkout.cart.freeshipping.advice" as="free_advice" template="checkout/cart/free_advice.phtml"  />
             </block>
         </reference>
         <block type="core/text_list" name="additional.product.info" translate="label">

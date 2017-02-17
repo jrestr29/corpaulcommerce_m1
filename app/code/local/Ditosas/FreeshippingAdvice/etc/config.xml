@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_FreeshippingAdvice>
+            <version>1.0.0</version>
+        </Ditosas_FreeshippingAdvice>
+    </modules>
+    <global>
+        <blocks>
+            <ditosas_freeshippingadvice>
+                <class>Ditosas_FreeshippingAdvice_Block</class>
+            </ditosas_freeshippingadvice>
+        </blocks>
+    </global>
+</config>
