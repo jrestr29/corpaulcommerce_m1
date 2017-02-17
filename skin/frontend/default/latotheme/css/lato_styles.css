@@ -1397,6 +1397,9 @@ body.catalogsearch-result-index .msg a {
 .block-layered-nav ol li span.value {
   color: #636363 !important;
 }
+.toolbar .pages {
+  display: none !important;
+}
 #pager-wrapper .pages {
   float: left;
   margin-left: 0 !important;
