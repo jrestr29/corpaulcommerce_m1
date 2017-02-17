@@ -28,7 +28,7 @@ class Ditosas_FreeshippingAdvice_Block_Advice extends Mage_Core_Block_Template {
         $cart = Mage::getModel('checkout/cart')->getQuote();
 
         foreach ($cart->getAllItems() as $item) {
-            $cartTotal += $item->getProduct()->getFinalPrice();
+            $cartTotal += $item->getProduct()->getFinalPrice()*$item->getProduct()->getQty();
         }
 
         return $cartTotal;
