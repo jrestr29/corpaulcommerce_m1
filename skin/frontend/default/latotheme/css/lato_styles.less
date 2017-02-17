@@ -130,6 +130,18 @@ img {
 
 body {
   &.catalog-category-view {
+    .account-link {
+      a {
+        span {
+          font-weight: 100;
+        }
+      }
+    }
+
+    .contact-phone{
+      margin-top: -12px !important;
+    }
+
     .label {
       top:-3px
     }
@@ -149,7 +161,7 @@ body {
       }
     }
   }
-
+  
   &.checkout-cart-index{
     .cart-freeshipping-advice{
       float: right;
@@ -173,6 +185,98 @@ body {
         padding-top: 3px;
         padding-left: 5px;
         padding-bottom: 3px;
+
+  &.customer-account-login {
+   .new-users {
+     height:306px;
+     .buttons-set {
+       padding-top: 101px;
+       a {
+         background-color: #000 !important;
+         span {
+           color: #fff !important;
+         }
+       }
+     }
+   }
+
+
+  }
+
+  &.customer-account-create{
+    .input-box {
+      .checkbox {
+        margin-left: 0 !important;
+      }
+
+      label[for="is_subscribed"] {
+        &:first-letter{
+          text-transform: uppercase !important;
+        }
+
+        text-transform: lowercase;
+        padding: 6px 10px 6px 20px !important;
+      }
+    }
+    select {
+      border: 1px solid silver !important;
+    }
+
+    .required {
+      &:after{
+        display: none !important;
+      }
+    }
+  }
+
+  &.checkout-cart-index{
+    .link-wishlist, .btn-continue, .or {
+      display: none !important;
+    }
+
+    .cart-footer-actions{
+      button{
+        &:nth-child(3) {
+          display: block;
+        }
+      }
+    }
+
+    .cart-totals{
+      table {
+        td {
+          font-size: 17px !important;
+        }
+      }
+    }
+  }
+
+  &.wishlist-index-index {
+    .wishlist-sku {
+      display: none !important;
+    }
+
+    .item-manage {
+      button {
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .btn-update {
+      span {
+        color: #ffffff;
+      }
+    }
+
+    .btn-cart{
+      span {
+        color: #ffffff;
+      }
+
+      a {
+        display: none !important;
       }
     }
   }
@@ -195,7 +299,7 @@ body {
     }
 
     .account-cart-wrapper {
-      width: 40%;
+      width: 50%;
       text-align: right;
       font-family: 'galano_grotesqueregular' !important;
       top:20px;
@@ -222,16 +326,19 @@ body {
           color: #626262;
 
           span {
-            color: #626262 !important;
+            color: #000 !important;
+
+            &.customer_name {
+              padding-right: 25px !important;
+            }
           }
 
           &:hover {
-            color: #626262;
+            color: #000 !important;
             text-decoration: none !important;
 
             span {
-              color: #636363 !important;
-              opacity: 0.8;
+              color: #000 !important;
             }
           }
         }
@@ -242,6 +349,7 @@ body {
         vertical-align: middle;
         a {
           color: #000000;
+          padding-top: 1px;
 
           span {
             color: #000000 !important;

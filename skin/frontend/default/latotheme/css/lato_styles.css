@@ -114,6 +114,12 @@ img {
   margin-top: 0.3em;
   margin-left: 0.7em;
 }
+body.catalog-category-view .account-link a span {
+  font-weight: 100;
+}
+body.catalog-category-view .contact-phone {
+  margin-top: -12px !important;
+}
 body.catalog-category-view .label {
   top: -3px;
 }
@@ -124,6 +130,7 @@ body.catalog-category-view .col1-layout .col-main {
 body.catalog-category-view .col1-layout .col-main ul.products-grid li {
   width: 22.5%;
 }
+
 body.checkout-cart-index .cart-freeshipping-advice {
   float: right;
   clear: right;
@@ -144,6 +151,60 @@ body.checkout-cart-index .cart-freeshipping-advice div {
   padding-top: 3px;
   padding-left: 5px;
   padding-bottom: 3px;
+
+body.customer-account-login .new-users {
+  height: 306px;
+}
+body.customer-account-login .new-users .buttons-set {
+  padding-top: 101px;
+}
+body.customer-account-login .new-users .buttons-set a {
+  background-color: #000 !important;
+}
+body.customer-account-login .new-users .buttons-set a span {
+  color: #fff !important;
+}
+body.customer-account-create .input-box .checkbox {
+  margin-left: 0 !important;
+}
+body.customer-account-create .input-box label[for="is_subscribed"] {
+  text-transform: lowercase;
+  padding: 6px 10px 6px 20px !important;
+}
+body.customer-account-create .input-box label[for="is_subscribed"]:first-letter {
+  text-transform: uppercase !important;
+}
+body.customer-account-create select {
+  border: 1px solid silver !important;
+}
+body.customer-account-create .required:after {
+  display: none !important;
+}
+body.checkout-cart-index .link-wishlist,
+body.checkout-cart-index .btn-continue,
+body.checkout-cart-index .or {
+  display: none !important;
+}
+body.checkout-cart-index .cart-footer-actions button:nth-child(3) {
+  display: block;
+}
+body.checkout-cart-index .cart-totals table td {
+  font-size: 17px !important;
+}
+body.wishlist-index-index .wishlist-sku {
+  display: none !important;
+}
+body.wishlist-index-index .item-manage button span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-update span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-cart span {
+  color: #ffffff;
+}
+body.wishlist-index-index .btn-cart a {
+  display: none !important;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
@@ -160,7 +221,7 @@ body header .logo {
   padding-left: 0 !important;
 }
 body header .account-cart-wrapper {
-  width: 40%;
+  width: 50%;
   text-align: right;
   font-family: 'galano_grotesqueregular' !important;
   top: 20px;
@@ -184,15 +245,17 @@ body header .account-cart-wrapper .msg a {
   color: #626262;
 }
 body header .account-cart-wrapper .msg a span {
-  color: #626262 !important;
+  color: #000 !important;
+}
+body header .account-cart-wrapper .msg a span.customer_name {
+  padding-right: 25px !important;
 }
 body header .account-cart-wrapper .msg a:hover {
-  color: #626262;
+  color: #000 !important;
   text-decoration: none !important;
 }
 body header .account-cart-wrapper .msg a:hover span {
-  color: #636363 !important;
-  opacity: 0.8;
+  color: #000 !important;
 }
 body header .account-cart-wrapper .account-link {
   display: inline-block;
@@ -200,6 +263,7 @@ body header .account-cart-wrapper .account-link {
 }
 body header .account-cart-wrapper .account-link a {
   color: #000000;
+  padding-top: 1px;
 }
 body header .account-cart-wrapper .account-link a span {
   color: #000000 !important;
