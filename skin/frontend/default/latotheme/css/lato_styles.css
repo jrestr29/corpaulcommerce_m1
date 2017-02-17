@@ -1405,7 +1405,7 @@ body.catalogsearch-result-index .msg a {
   margin-left: 0 !important;
 }
 #pager-wrapper .pages ol li {
-  margin-right: 0.5em !important;
+  margin-right: 0 !important;
   padding-right: 0 !important;
   border: none !important;
 }
@@ -1422,6 +1422,9 @@ body.catalogsearch-result-index .msg a {
 }
 #pager-wrapper .pages ol li a.next:before {
   border-left: 4px solid #000 !important;
+}
+#pager-wrapper .pages ol li a.previous {
+  width: 17px !important;
 }
 #pager-wrapper .pages ol li a.previous:before {
   border-right: 4px solid #000 !important;
