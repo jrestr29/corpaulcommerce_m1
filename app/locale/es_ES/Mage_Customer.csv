@@ -352,7 +352,7 @@
 "Sign Up for Newsletter","Registrarse para boletín de noticias"
 "Skipping import row, required field ""%s"" is not defined.","Omitir la fila de importación, el campo obligatorio ""%s"" no está definido."
 "Skipping import row, website ""%s"" field does not exist.","Omitida la importación de la fila, el campo ""%s"" de la página web no existe"
-"State/Province","Estado/Provincia"
+"State/Province","Departamento"
 "Status","Estado"
 "Store","Tienda"
 "Store View","Ver Tienda"
