@@ -33,6 +33,14 @@
             <?php $_links = $this->getLinks(); ?>
             <?php $_index = 1; ?>
             <?php $_count = count($_links); ?>
+            <?php
+                unset($_links['tags']);
+                unset($_links['invitations']);
+                unset($_links['recurring_profiles']);
+                unset($_links['downloadable_products']);
+                unset($_links['billing_agreements']);
+                unset($_links['OAuth Customer Tokens']);
+            ?>
             <?php foreach ($_links as $_link): ?>
                 <?php $_last = ($_index++ >= $_count); ?>
                 <?php if ($this->isActive($_link)): ?>
