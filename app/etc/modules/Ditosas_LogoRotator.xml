@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Ditosas_LogoRotator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ditosas_LogoRotator>
+    </modules>
+</config>
