@@ -29,10 +29,43 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
 
             foreach($cities as $key => $city){
                 $isSelected = $selectedCity == $city ? ' selected="selected"' : null;
-                $options .= '<option value="' . $key . '"' . $isSelected . '>' . $city . '</option>';
+                $options .= '<option value="' . $city . '"' . $isSelected . '>' . $city . '</option>';
             }
         }
         return $options;
+    }
+
+    public function getDepartamentosDropdown()
+    {
+        $results = Mage::getModel('directory/region')->getResourceCollection()
+            ->addCountryFilter('CO')
+            ->load()
+            ->getData();
+
+        $options =  '';
+
+        foreach($results as $key => $dpto){
+            $options .= '<option value="' . $dpto['default_name'] . '">' . $dpto['default_name'] . '</option>';
+        }
+
+        return $options;
+    }
+
+    public function getCitiesJson()
+    {
+        $results = Mage::getModel('ditosas_citydropdown/city')->getCollection()
+            ->addFieldToFilter('country_id', array('eq' => 'CO'))
+            ->load()
+            ->getData();
+
+        $array = array();
+
+        foreach($results as $key => $city){
+            $dpto = Mage::getModel('directory/region')->load($city['region_id']);
+            $array[] = ['dpto' => $dpto->getDefaultName(), 'city' => $city['name']];
+        }
+
+        return json_encode($array);
     }
 
 }

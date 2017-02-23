@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_LogoRotator>
+            <version>1.0.0</version>
+        </Ditosas_LogoRotator>
+    </modules>
+    <global>
+        <helpers>
+            <ditosas_logorotator>
+                <class>Ditosas_LogoRotator_Helper</class>
+            </ditosas_logorotator>
+        </helpers>
+    </global>
+</config>
