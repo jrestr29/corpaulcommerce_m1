@@ -538,6 +538,7 @@ body .main-container {
 .footer-container .newsletter .content span {
   top: 4px;
   position: relative;
+  font-size: 13px;
 }
 .footer-container .newsletter form {
   display: inline-block;
