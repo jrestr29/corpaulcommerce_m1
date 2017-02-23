@@ -512,7 +512,7 @@
 "Sort Order","Orden de selección"
 "Specifies what the Authorization Honor Period is on the merchant’s PayPal account. It must mirror the setting in PayPal.","Especifica cuál es el período de autorización de la cuenta de PayPal del comerciante. Tiene que ser igual a la configuración de PayPal."
 "Specifies what the Order Valid Period is on the merchant’s PayPal account. It must mirror the setting in PayPal.","Especifica cuál es el período de validez del pedido de la cuenta de PayPal del comerciante. Tiene que ser igual a la configuración de PayPal."
-"State/Province","Estado/Provincia"
+"State/Province","Departamento"
 "Static","Estático"
 "Street Address","Dirección postal"
 "Street Address %s","Calle %s"
