@@ -510,6 +510,7 @@ body header nav ol li ul li:hover {
 }
 body .main-container {
   max-width: 1100px !important;
+  margin-bottom: 1em;
 }
 .addthis-animated a {
   margin-bottom: 2px !important;
@@ -858,7 +859,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 34%;
+  width: 34.55%;
 }
 .coleccion-destacada .title {
   display: inline-block;
@@ -869,6 +870,7 @@ a.swatch-link {
   color: #000000 !important;
   padding-left: 3.6%;
   padding-right: 3.6%;
+  font-family: 'Lato', sans-serif !important;
 }
 .widget-title {
   padding-top: 23px;
@@ -878,7 +880,7 @@ a.swatch-link {
   display: inline-block;
   vertical-align: middle;
   border-top: 1px solid #000000;
-  width: 37.6%;
+  width: 37.9%;
 }
 .widget-title .title {
   display: inline-block;
@@ -889,6 +891,7 @@ a.swatch-link {
   color: #000000 !important;
   padding-left: 3.6%;
   padding-right: 3.6%;
+  font-family: 'Lato', sans-serif !important;
 }
 .destacados_banner {
   position: relative;
@@ -915,31 +918,6 @@ a.swatch-link {
   width: 1114px;
   margin: 0 auto ;
 }
-.access_home .regala_text {
-  display: block;
-  margin-top: 40px;
-}
-.access_home .regala_text h3 {
-  font-family: 'galano_grotesquebold';
-  text-transform: uppercase;
-  color: #000000;
-  font-size: 15px;
-  line-height: 30px;
-}
-.access_home .regala_text span {
-  font-family: 'galano_grotesqueregular' !important;
-  color: #000000;
-  text-transform: capitalize;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 30px;
-}
-.access_home .regala_text a {
-  display: block;
-  color: #4478cc !important;
-  font-size: 12px;
-  font-family: 'galano_grotesqueregular' !important;
-}
 .access_home .left {
   display: inline-block;
   vertical-align: middle;
@@ -957,8 +935,34 @@ a.swatch-link {
 .access_home .right img:first-of-type {
   top: -4px;
 }
+.regala_text {
+  display: block;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.regala_text h3 {
+  font-family: 'galano_grotesquebold';
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 15px;
+  line-height: 30px;
+}
+.regala_text span {
+  font-family: 'galano_grotesqueregular' !important;
+  color: #000000;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+}
+.regala_text a {
+  display: block;
+  color: #4478cc !important;
+  font-size: 12px;
+  font-family: 'galano_grotesqueregular' !important;
+}
 body.cms-home .col-main {
-  height: 2250px;
+  height: auto;
 }
 .widget-products ul {
   margin-top: 2em;
@@ -1011,6 +1015,9 @@ body.cms-page-view .col-main {
 }
 .product-info h3.product-name {
   text-transform: lowercase;
+}
+.product-info h3.product-name:first-letter {
+  text-transform: uppercase !important;
 }
 .atc_s addthis_button_compact {
   display: none !important;
