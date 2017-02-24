@@ -83,6 +83,14 @@
                     <name>css/lato_styles.css</name>
                 </action>
 
+                <block type="core/text" name="google.fonts.lato">
+                    <action method="setText">
+                        <text>
+                            <![CDATA[<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">]]>
+                        </text>
+                    </action>
+                </block>
+
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">
                     <action method="setText"><text><![CDATA[<meta name="viewport" content="initial-scale=1.0, width=device-width" />]]>&#10;</text></action>
