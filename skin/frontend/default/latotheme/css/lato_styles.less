@@ -524,7 +524,7 @@ body {
             margin-right: 0 !important;
 
             .rating {
-              background-image: url('../images/rating_stars.svg');
+              background: none !important;
               background-position: inherit;
               background-repeat: no-repeat;
             }
@@ -574,14 +574,30 @@ body {
           width: 100%;
 
           table {
-            width: 50%;
+            width: 60%;
             float: left;
             border-bottom: none !important;
+
+            thead {
+              th {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+
+                .rating-box {
+                  width: 100% !important;
+                  background: none !important;
+
+                  .rating{
+                    background: none !important;
+                  }
+                }
+              }
+            }
           }
 
           ul {
             float: right;
-            width: 45%;
+            width: 38%;
           }
         }
         .buttons-set {

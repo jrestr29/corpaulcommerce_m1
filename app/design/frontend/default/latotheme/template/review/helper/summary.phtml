@@ -24,19 +24,37 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if ($this->getReviewsCount()): ?>
-    <div class="ratings">
-        <?php if ($this->getRatingSummary()):?>
-            <div class="rating-box">
-                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+
+<div class="ratings">
+    <?php if ($this->getRatingSummary()):?>
+        <div class="rating-box">
+            <div class="rating" style="width:100%">
+                <?php
+                    $summary = $this->getRatingSummary();
+
+                    if($summary >= 0 && $summary <= 20) {
+                        $ratingSrc = $this->getSkinUrl('images/reviews/Stars1.svg');
+                    } else if ($summary > 20 && $summary <= 40) {
+                        $ratingSrc = $this->getSkinUrl('images/reviews/Stars2.svg');
+                    } else if ($summary > 40 && $summary <= 60) {
+                        $ratingSrc = $this->getSkinUrl('images/reviews/Stars3.svg');
+                    } else if ($summary > 60 && $summary <= 80) {
+                        $ratingSrc = $this->getSkinUrl('images/reviews/Stars4.svg');
+                    } else if ($summary > 80 && $summary <= 100) {
+                        $ratingSrc = $this->getSkinUrl('images/reviews/Stars5.svg');
+                    } else {
+                        $ratingSrc = '';
+                    }
+
+                ?>
+
+                <img src="<?php echo $ratingSrc ?>">
             </div>
-        <?php endif;?>
-        <p class="rating-links">
-            <a href="#"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
-            <span class="separator">|</span>
-            <a href="#review-form"><?php echo $this->__('Add Your Review') ?></a>
-        </p>
-    </div>
-<?php elseif ($this->getDisplayIfEmpty()): ?>
-    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Be the first to review this product') ?></a></p>
-<?php endif; ?>
+        </div>
+    <?php endif;?>
+    <p class="rating-links">
+        <a href="#"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a>
+        <span class="separator">|</span>
+        <a href="#review-form"><?php echo $this->__('Add Your Review') ?></a>
+    </p>
+</div>

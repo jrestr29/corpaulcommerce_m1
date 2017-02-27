@@ -363,7 +363,7 @@ body.catalog-product-view .product-essential .extra-info .ratings .rating-box {
   margin-right: 0 !important;
 }
 body.catalog-product-view .product-essential .extra-info .ratings .rating-box .rating {
-  background-image: url('../images/rating_stars.svg');
+  background: none !important;
   background-position: inherit;
   background-repeat: no-repeat;
 }
@@ -398,13 +398,24 @@ body.catalog-product-view #customer-reviews .form-add .fieldset {
   width: 100%;
 }
 body.catalog-product-view #customer-reviews .form-add .fieldset table {
-  width: 50%;
+  width: 60%;
   float: left;
   border-bottom: none !important;
 }
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th .rating-box {
+  width: 100% !important;
+  background: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th .rating-box .rating {
+  background: none !important;
+}
 body.catalog-product-view #customer-reviews .form-add .fieldset ul {
   float: right;
-  width: 45%;
+  width: 38%;
 }
 body.catalog-product-view #customer-reviews .form-add .buttons-set {
   width: 100%;
