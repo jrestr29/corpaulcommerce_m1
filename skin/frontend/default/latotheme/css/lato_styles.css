@@ -266,6 +266,15 @@ body.customer-account-create form ul li select {
   background-repeat: no-repeat;
   padding-left: 7px !important;
 }
+body.catalog-product-view .product-essential .extra-info .ratings .rating-box {
+  background: none !important;
+  width: 130px;
+}
+body.catalog-product-view .product-essential .extra-info .ratings .rating-box .rating {
+  background-image: url('../images/rating_stars.svg');
+  background-position: inherit;
+  background-repeat: no-repeat;
+}
 body {
   font-family: 'galano_grotesqueregular' !important;
   font-weight: normal;
