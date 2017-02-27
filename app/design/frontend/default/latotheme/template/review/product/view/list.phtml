@@ -31,16 +31,16 @@
         <div class="review-heading">
             <h2>
                 <?php echo $this->__('Customer Reviews') ?>
-                <span><?php echo count($_items); ?> item(s)</span>
             </h2>
             <?php echo $this->getChildHtml('toolbar') ?>
         </div>
         <dl>
         <?php foreach ($_items as $_review):?>
             <dt>
-                <a href="<?php echo $this->getReviewUrl($_review->getId()) ?>">
-                    <?php echo $this->escapeHtml($_review->getTitle()) ?>
-                </a>
+                <?php echo $this->escapeHtml($_review->getTitle()) ?>
+                <div class="rating-box">
+                    <div class="rating" style="width:<?php echo $_review->getRatingSummary() ?>%;"></div>
+                </div>
             </dt>
             <dd>
                 <?php $_votes = $_review->getRatingVotes(); ?>

@@ -30,13 +30,14 @@
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <div class="qty-wrapper">
-            <label for="qty"><?php echo $this->__('Qty:') ?></label>
+            <label for="qty"><?php echo $this->__('Cantidad') ?></label>
             <input type="text" pattern="\d*(\.\d+)?" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
         </div>
         <?php endif; ?>
         <div class="add-to-cart-buttons">
             <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
             <?php echo $this->getChildHtml('', true, true) ?>
+            <a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;"><?php echo $this->__('Add to Wishlist') ?></a>
         </div>
     </div>
 <?php endif; ?>

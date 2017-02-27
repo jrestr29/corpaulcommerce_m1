@@ -19,21 +19,13 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-$_product = $this->getProduct(); ?>
-<?php if ($this->displayProductStockStatus()): ?>
-    <?php if ($_product->isAvailable()): ?>
-        <!--<p class="availability in-stock">
-            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-            <span class="value"><?php echo $this->helper('catalog')->__('In stock') ?></span>
-        </p>-->
-    <?php else: ?>
-        <!--<p class="availability out-of-stock">
-            <span class="label"><?php echo $this->helper('catalog')->__('Availability:') ?></span>
-            <span class="value"><?php echo $this->helper('catalog')->__('Out of stock') ?></span>
-        </p>-->
-    <?php endif; ?>
-<?php endif; ?>
+?>
+
+<?php $_product = Mage::registry('product'); ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $_product->getProductUrl() ?>"><small>&laquo; </small><?php echo $this->__('Back to Main Product Info') ?></a></p>
+</div>

@@ -57,7 +57,9 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+dd,
+dt {
   font-family: 'galano_grotesqueregular' !important;
 }
 .pager {
@@ -265,6 +267,150 @@ body.customer-account-create form ul li select {
   background-position: 100% 50%;
   background-repeat: no-repeat;
   padding-left: 7px !important;
+}
+body.catalog-product-view .block-title {
+  border-top: none !important;
+}
+body.catalog-product-view .block-related .block-title h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  text-transform: lowercase;
+  font-size: 15px;
+}
+body.catalog-product-view .block-related .block-title h2:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view .block-related .block-content ol li {
+  width: 20%;
+  display: inline-block;
+}
+body.catalog-product-view .block-related .block-content ol li .product {
+  margin-left: 10px !important;
+  margin-right: 10px;
+}
+body.catalog-product-view .block-related .block-content ol li .product a {
+  display: block;
+  border: none;
+  float: none;
+}
+body.catalog-product-view .block-related .block-content ol li .product .product-details {
+  margin-left: 0 !important;
+}
+body.catalog-product-view .block-related .block-content ol li .product .product-details p {
+  text-transform: lowercase;
+  text-align: center;
+}
+body.catalog-product-view .block-related .block-content ol li .product .product-details p:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view .block-related .block-content ol li .product .product-details .price-box span {
+  width: 100%;
+  text-align: center;
+  color: #000000;
+}
+body.catalog-product-view .add-to-cart {
+  border-bottom: none !important;
+}
+body.catalog-product-view .product-essential .price-tax-advise {
+  float: left;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+body.catalog-product-view .product-essential .price-tax-advise span {
+  font-size: 13px;
+  color: #000000;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: bolder;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .add-to-cart-buttons {
+  margin-left: 15px;
+  margin-right: 0 !important;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .qty-wrapper label {
+  color: #0e0e0e;
+  font-size: 18px;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .qty-wrapper input {
+  margin-left: 5px !important;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .add-to-cart-buttons {
+  width: 50% !important;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .add-to-cart-buttons button {
+  margin-bottom: 5px !important;
+}
+body.catalog-product-view .product-essential .add-to-cart-wrapper .add-to-box .add-to-cart-buttons a {
+  color: #4478cc !important;
+  font-size: 12px;
+  font-family: 'galano_grotesqueregular' !important;
+}
+body.catalog-product-view .product-essential .extra-info .ratings {
+  margin-top: 0 !important;
+}
+body.catalog-product-view .product-essential .extra-info .ratings .rating-links {
+  clear: none;
+}
+body.catalog-product-view .product-essential .extra-info .ratings .rating-links a,
+body.catalog-product-view .product-essential .extra-info .ratings .rating-links .separator {
+  color: #4478cc !important;
+  font-size: 12px;
+  font-family: 'galano_grotesqueregular' !important;
+}
+body.catalog-product-view .product-essential .extra-info .ratings .rating-box {
+  background: none !important;
+  width: 130px;
+  margin-top: 4px !important;
+  margin-right: 0 !important;
+}
+body.catalog-product-view .product-essential .extra-info .ratings .rating-box .rating {
+  background-image: url('../images/rating_stars.svg');
+  background-position: inherit;
+  background-repeat: no-repeat;
+}
+body.catalog-product-view #customer-reviews .review-heading {
+  border-top: none !important;
+}
+body.catalog-product-view #customer-reviews .review-heading h2 {
+  text-transform: lowercase;
+  font-size: 15px;
+}
+body.catalog-product-view #customer-reviews .review-heading h2:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view #customer-reviews dd {
+  margin-bottom: 40px;
+}
+body.catalog-product-view #customer-reviews dt {
+  font-size: 14px;
+}
+body.catalog-product-view #customer-reviews .review-meta {
+  display: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add h4 {
+  text-transform: lowercase;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+body.catalog-product-view #customer-reviews .form-add h4:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset {
+  width: 100%;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table {
+  width: 50%;
+  float: left;
+  border-bottom: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset ul {
+  float: right;
+  width: 45%;
+}
+body.catalog-product-view #customer-reviews .form-add .buttons-set {
+  width: 100%;
+}
+body.catalog-product-view #customer-reviews .ratings-table {
+  display: none;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
