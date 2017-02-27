@@ -77,6 +77,10 @@
                     <?php echo $this->getTierPriceHtml() ?>
                 </div>
 
+                <div class="price-tax-advise">
+                    <span><?php echo $this->__('iva incluido') ?></span>
+                </div>
+
                 <?php echo $this->getChildHtml('other');?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -108,8 +112,6 @@
                     </div>
                 <?php endif; ?>
             </div>
-
-            <?php echo $this->getChildHtml('related_products') ?>
 
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -186,3 +188,4 @@
     <?php echo $this->getChildHtml('product_additional_data') ?>
 
 </div>
+<?php echo $this->getChildHtml('related_products') ?>
