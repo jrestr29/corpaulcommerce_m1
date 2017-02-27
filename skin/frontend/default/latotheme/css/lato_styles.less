@@ -62,7 +62,7 @@
   font-style: normal;
 }
 
-a,p,span,strong,input,button,label,h1,h2,h3,h4,h5 {
+a,p,span,strong,input,button,label,h1,h2,h3,h4,h5,dd,dt {
   font-family: 'galano_grotesqueregular' !important;
 }
 
@@ -532,6 +532,68 @@ body {
         }
       }
     }
+
+    #customer-reviews {
+      .review-heading{
+        border-top: none !important;
+
+        h2{
+          &:first-letter{
+            text-transform: uppercase;
+          }
+
+          text-transform: lowercase;
+          font-size: 15px
+        }
+      }
+
+      dd {
+        margin-bottom: 40px;
+      }
+
+      dt {
+        font-size: 14px;
+      }
+
+      .review-meta{
+        display: none !important;
+      }
+
+      .form-add{
+        h4{
+          &:first-letter{
+            text-transform: uppercase;
+          }
+
+          text-transform: lowercase;
+          font-size: 15px;
+          padding-bottom: 10px;
+        }
+
+        .fieldset {
+          width: 100%;
+
+          table {
+            width: 50%;
+            float: left;
+            border-bottom: none !important;
+          }
+
+          ul {
+            float: right;
+            width: 45%;
+          }
+        }
+        .buttons-set {
+          width: 100%;
+        }
+      }
+      .ratings-table{
+        display: none;
+      }
+    }
+
+
   }
 
 }

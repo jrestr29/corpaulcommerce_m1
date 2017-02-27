@@ -57,7 +57,9 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+dd,
+dt {
   font-family: 'galano_grotesqueregular' !important;
 }
 .pager {
@@ -364,6 +366,51 @@ body.catalog-product-view .product-essential .extra-info .ratings .rating-box .r
   background-image: url('../images/rating_stars.svg');
   background-position: inherit;
   background-repeat: no-repeat;
+}
+body.catalog-product-view #customer-reviews .review-heading {
+  border-top: none !important;
+}
+body.catalog-product-view #customer-reviews .review-heading h2 {
+  text-transform: lowercase;
+  font-size: 15px;
+}
+body.catalog-product-view #customer-reviews .review-heading h2:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view #customer-reviews dd {
+  margin-bottom: 40px;
+}
+body.catalog-product-view #customer-reviews dt {
+  font-size: 14px;
+}
+body.catalog-product-view #customer-reviews .review-meta {
+  display: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add h4 {
+  text-transform: lowercase;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+body.catalog-product-view #customer-reviews .form-add h4:first-letter {
+  text-transform: uppercase;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset {
+  width: 100%;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table {
+  width: 50%;
+  float: left;
+  border-bottom: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset ul {
+  float: right;
+  width: 45%;
+}
+body.catalog-product-view #customer-reviews .form-add .buttons-set {
+  width: 100%;
+}
+body.catalog-product-view #customer-reviews .ratings-table {
+  display: none;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
