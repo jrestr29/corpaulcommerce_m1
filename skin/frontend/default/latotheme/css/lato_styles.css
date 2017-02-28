@@ -1246,11 +1246,8 @@ body.cms-page-view .col-main {
 .btn-o {
   display: none !important;
 }
-.product-info h3.product-name {
-  text-transform: lowercase;
-}
-.product-info h3.product-name:first-letter {
-  text-transform: uppercase !important;
+.product-info h3.product-name a {
+  text-transform: none !important;
 }
 .atc_s addthis_button_compact {
   display: none !important;
