@@ -130,6 +130,9 @@ select:first-letter {
   margin-top: 0.3em;
   margin-left: 0.7em;
 }
+body.cms-page-view .std p {
+  font-style: normal !important;
+}
 body.catalog-category-view .account-link a span {
   font-weight: 100;
 }
