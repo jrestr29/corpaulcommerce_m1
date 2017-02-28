@@ -274,10 +274,14 @@ Product view
 
                 <action method="setTierPriceTemplate"><template>catalog/product/view/tierprices.phtml</template></action>
 
-                <block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml">
+                <!--<block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products" template="catalog/product/list/upsell.phtml">
                     <action method="setColumnCount"><columns>6</columns></action>
                     <action method="setItemLimit"><type>upsell</type><limit>6</limit></action>
-                </block>
+                </block>-->
+
+                <remove name="product.info.upsell" />
+
+
 
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">

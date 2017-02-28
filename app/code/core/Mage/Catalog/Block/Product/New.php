@@ -87,25 +87,17 @@ class Mage_Catalog_Block_Product_New extends Mage_Catalog_Block_Product_Abstract
      */
     protected function _getProductCollection()
     {
-        $todayStartOfDayDate  = Mage::app()->getLocale()->date()
-            ->setTime('00:00:00')
-            ->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
-
-        $todayEndOfDayDate  = Mage::app()->getLocale()->date()
-            ->setTime('23:59:59')
-            ->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
 
         /** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
         $collection = Mage::getResourceModel('catalog/product_collection');
-        $collection->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds());
+        //$collection->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds());
 
 
         $collection = $this->_addProductAttributesAndPrices($collection)
             ->addStoreFilter()
             ->addAttributeToSort('entity_id', 'desc')
             ->setPageSize($this->getProductsCount())
-            ->setCurPage(1)
-        ;
+            ->setCurPage(1);
 
         return $collection;
     }

@@ -363,7 +363,7 @@ body.catalog-product-view .product-essential .extra-info .ratings .rating-box {
   margin-right: 0 !important;
 }
 body.catalog-product-view .product-essential .extra-info .ratings .rating-box .rating {
-  background-image: url('../images/rating_stars.svg');
+  background: none !important;
   background-position: inherit;
   background-repeat: no-repeat;
 }
@@ -380,8 +380,31 @@ body.catalog-product-view #customer-reviews .review-heading h2:first-letter {
 body.catalog-product-view #customer-reviews dd {
   margin-bottom: 40px;
 }
+body.catalog-product-view #customer-reviews dd.first {
+  display: block;
+}
+body.catalog-product-view #customer-reviews dd.hidden {
+  display: none;
+}
+body.catalog-product-view #customer-reviews dd.visible {
+  display: block;
+}
 body.catalog-product-view #customer-reviews dt {
-  font-size: 14px;
+  color: #000000 !important;
+  text-transform: lowercase;
+  font-size: 15px;
+}
+body.catalog-product-view #customer-reviews dt:first-letter {
+  text-transform: uppercase !important;
+}
+body.catalog-product-view #customer-reviews dt.first {
+  display: block;
+}
+body.catalog-product-view #customer-reviews dt.hidden {
+  display: none;
+}
+body.catalog-product-view #customer-reviews dt.visible {
+  display: block;
 }
 body.catalog-product-view #customer-reviews .review-meta {
   display: none !important;
@@ -398,19 +421,77 @@ body.catalog-product-view #customer-reviews .form-add .fieldset {
   width: 100%;
 }
 body.catalog-product-view #customer-reviews .form-add .fieldset table {
-  width: 50%;
+  width: 60%;
   float: left;
   border-bottom: none !important;
 }
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th .rating-box {
+  width: 100% !important;
+  background: none !important;
+}
+body.catalog-product-view #customer-reviews .form-add .fieldset table thead th .rating-box .rating {
+  background: none !important;
+  width: 100%;
+}
 body.catalog-product-view #customer-reviews .form-add .fieldset ul {
   float: right;
-  width: 45%;
+  width: 38%;
 }
 body.catalog-product-view #customer-reviews .form-add .buttons-set {
   width: 100%;
 }
+body.catalog-product-view #customer-reviews p.rating-desc {
+  display: inline-block;
+  width: 68%;
+}
 body.catalog-product-view #customer-reviews .ratings-table {
-  display: none;
+  display: inline-block;
+  width: 30%;
+  float: right;
+  margin-top: 0 !important;
+}
+body.catalog-product-view #customer-reviews .ratings-table tbody {
+  float: right;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box {
+  background: none !important;
+  height: 17px;
+  overflow: visible;
+  width: 170px;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box .rating {
+  background: none !Important;
+  text-indent: initial;
+  width: 100%;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box .rating:first-letter {
+  text-transform: uppercase !important;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box .rating span {
+  display: inline;
+  text-transform: lowercase;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box .rating span:first-letter {
+  text-transform: uppercase !important;
+}
+body.catalog-product-view #customer-reviews .ratings-table .rating-box .rating img {
+  display: inline;
+  float: right;
+}
+body.catalog-product-view #customer-reviews button#ver-mas-btn {
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  padding: 0px 30px;
+  border: 1px solid #000;
+  background-color: #000;
+}
+body.catalog-product-view #customer-reviews button#ver-mas-btn span {
+  color: #ffffff;
 }
 body {
   font-family: 'galano_grotesqueregular' !important;
@@ -1061,25 +1142,28 @@ a.swatch-link {
   display: block;
 }
 .access_home .content {
-  width: 1114px;
+  width: 1040px;
   margin: 0 auto ;
 }
 .access_home .left {
   display: inline-block;
   vertical-align: middle;
+  width: 48%;
+}
+.access_home .left img {
+  width: 100%;
 }
 .access_home .right {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 10px;
+  width: 48%;
+  float: right;
 }
 .access_home .right img {
   display: block;
   height: 360px;
   position: relative;
-}
-.access_home .right img:first-of-type {
-  top: -4px;
+  width: 100%;
 }
 .regala_text {
   display: block;
@@ -1144,7 +1228,7 @@ body.cms-page-view .col-main {
   padding-bottom: 30px;
 }
 .widget-products {
-  width: 1114px !important;
+  width: 1040px !important;
   margin: 0 auto;
 }
 .widget-products ul li:nth-child(2) {

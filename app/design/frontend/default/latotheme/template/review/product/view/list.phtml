@@ -34,18 +34,40 @@
             </h2>
             <?php echo $this->getChildHtml('toolbar') ?>
         </div>
-        <dl>
+        <dl id="reviews-list">
+        <?php $counter = 0; ?>
         <?php foreach ($_items as $_review):?>
-            <dt>
+            <?php $counter++; ?>
+
+            <dt class="<?php if($counter == 1) echo "first"; else echo "hidden" ?> ">
                 <?php echo $this->escapeHtml($_review->getTitle()) ?>
                 <div class="rating-box">
-                    <div class="rating" style="width:<?php echo $_review->getRatingSummary() ?>%;"></div>
+                    <div class="rating" style="width:100%;">
+                        <?php
+                            $summary = $this->getProduct()->getRatingSummary()->getRatingSummary();
+
+                            if($summary >= 0 && $summary <= 20) {
+                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars1.svg');
+                            } else if ($summary > 20 && $summary <= 40) {
+                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars2.svg');
+                            } else if ($summary > 40 && $summary <= 60) {
+                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars3.svg');
+                            } else if ($summary > 60 && $summary <= 80) {
+                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars4.svg');
+                            } else if ($summary > 80 && $summary <= 100) {
+                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars5.svg');
+                            } else {
+                                $ratingSrc = '';
+                            }
+                        ?>
+
+                    </div>
                 </div>
             </dt>
-            <dd>
+            <dd class="<?php if($counter == 1) echo "first"; else echo "hidden" ?> ">
                 <?php $_votes = $_review->getRatingVotes(); ?>
 
-                <?php echo nl2br($this->escapeHtml($_review->getDetail())) ?>
+                <p class="rating-desc"><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
 
 
                 <?php if (count($_votes)): ?>
@@ -57,10 +79,29 @@
                     <tbody>
                         <?php foreach ($_votes as $_vote): ?>
                         <tr>
-                            <th><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
                             <td>
                                 <div class="rating-box">
-                                    <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                                    <div class="rating" style="width:100%;">
+                                        <?php
+                                            $voteSummary = $_vote->getPercent();
+
+                                            if($voteSummary >= 0 && $voteSummary <= 20) {
+                                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars1.svg');
+                                            } else if ($voteSummary > 20 && $voteSummary <= 40) {
+                                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars2.svg');
+                                            } else if ($voteSummary > 40 && $voteSummary <= 60) {
+                                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars3.svg');
+                                            } else if ($voteSummary > 60 && $voteSummary <= 80) {
+                                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars4.svg');
+                                            } else if ($voteSummary > 80 && $voteSummary <= 100) {
+                                                $ratingSrc = $this->getSkinUrl('images/reviews/Stars5.svg');
+                                            } else {
+                                                $ratingSrc = '';
+                                            }
+                                        ?>
+                                        <span><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></span>
+                                        <img src="<?php echo $ratingSrc ?>">
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -79,9 +120,22 @@
         <?php endforeach; ?>
         </dl>
 
+        <button type="button" id="ver-mas-btn">
+            <span><?php echo $this->__('Ver más reseñas (%s)',count($_items)-1) ?></span>
+        </button>
+
         <?php // echo $this->getChildHtml('toolbar') ?>
     <?php elseif($this->getParentBlock()): ?>
         <?php echo $this->getParentBlock()->getReviewsSummaryHtml($this->getProduct(), 'short', true)?>
     <?php endif;?>
     <?php echo $this->getChildHtml('review_form') ?>
 </div>
+<script type="application/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#ver-mas-btn").click(function () {
+            jQuery("#reviews-list").find("dt.hidden").show();
+            jQuery("#reviews-list").find("dd.hidden").show();
+            jQuery(this).remove();
+        });
+    });
+</script>
