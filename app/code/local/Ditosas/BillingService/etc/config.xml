@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_BillingService>
+            <version>1.0.0</version>
+        </Ditosas_BillingService>
+    </modules>
+    <global>
+        <models>
+            <billingservice>
+                <class>Ditosas_BillingService_Model</class>
+            </billingservice>
+        </models>
+        <events>
+            <sales_order_invoice_save_after>
+                <observers>
+                    <billingservice_observer>
+                        <class>Ditosas_BillingService_Model_Observer</class>
+                        <method>billing</method>
+                    </billingservice_observer>
+                </observers>
+            </sales_order_invoice_save_after>
+        </events>
+    </global>
+</config>
