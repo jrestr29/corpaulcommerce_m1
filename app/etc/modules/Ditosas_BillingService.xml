@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_BillingService>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ditosas_BillingService>
+    </modules>
+</config>
