@@ -89,15 +89,7 @@
                     <div class="field">
                         <label for="billing:region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                         <div class="input-box">
-                            <!--<select id="billing:region_id" name="billing[region_id]" title="<?php echo Mage::helper('core')->quoteEscape($this->__('State/Province')) ?>" class="validate-select" style="display:none;">
-                                <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
-                            </select>-->
-                            <script type="text/javascript">
-                            //<![CDATA[
-                               //$('billing:region_id').setAttribute('defaultValue',  "<?php echo $this->getAddress()->getRegionId() ?>");
-                            //]]>
-                            </script>
-                            <select id="billing:region" name="billing[region]">
+                            <select id="billing:region" name="billing[region]" data-handle="region_billing">
                                 <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
                                 <?php echo Mage::helper('ditosas_citydropdown')->getDepartamentosDropdown() ?>
                             </select>
@@ -114,7 +106,8 @@
                     <div class="field">
                         <label for="billing:city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
                         <div class="input-box">
-                            <input type="text" title="<?php echo Mage::helper('core')->quoteEscape($this->__('City')) ?>" name="billing[city]" value="<?php echo $this->escapeHtml($this->getAddress()->getCity()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="billing:city" />
+                            <select id="billing:city" name="billing[city]" data-handle="city_billing">
+                            </select>
                         </div>
                     </div>
 
@@ -217,4 +210,24 @@
 
     var billingRegionUpdater = new RegionUpdater('billing:country_id', 'billing:region', 'billing:region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'billing:postcode');
 //]]>
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var cities = jQuery.parseJSON('<?php echo Mage::helper('ditosas_citydropdown')->getCitiesJson(); ?>');
+
+        jQuery("select[data-handle='region_billing']").change(function(){
+            var options = '';
+            var selectedValue = jQuery(this).val();
+            jQuery("select[data-handle='city_billing']").empty().html('<option value=""><?php echo $this->__('Por favor seleccione una ciudad') ?></option>');
+
+            for(i=0; i<cities.length; i++){
+                if(cities[i]['dpto'] == selectedValue){
+                    options += "<option value='"+cities[i]['city']+"'>"+cities[i]['city']+"</option>";
+                }
+            }
+
+            jQuery("select[data-handle='city_billing']").empty().html(options);
+        });
+
+    });
 </script>

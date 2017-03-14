@@ -33,7 +33,7 @@ class Ditosas_FedexCourrier_Model_Carrier extends Mage_Shipping_Model_Carrier_Ab
 
     protected function _getRate() {
         $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
-        $checkCost = Mage::helper('ditosas_fedexcourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegionId(), $address->getCity());
+        $checkCost = Mage::helper('ditosas_fedexcourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegion(), $address->getCity());
 
         $rate = Mage::getModel('shipping/rate_result_method');
 
