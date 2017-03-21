@@ -39,7 +39,9 @@ class Ditosas_BillingService_Model_Observer {
         $result = json_decode($result);
 
         if($result->MsgID=="-1"){
-            Mage::log(date('d/m/Y H:i:s').': Bill #'.$invoice->getIncrementId().' Error: '.$result->MsgStr);
+            Mage::log(date('d/m/Y H:i:s').': Bill #'.$invoice->getIncrementId().' Error: '.$result->MsgStr,null,'ws-billing.log');
+        } else {
+            Mage::log(date('d/m/Y H:i:s').': Bill #'.$invoice->getIncrementId().' created successfully',null,'ws-billing.log');
         }
     }
 }
