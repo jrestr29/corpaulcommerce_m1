@@ -5,6 +5,9 @@ define('ENABLE_LOG',true);
 require_once MAGENTO . '/../app/Mage.php';
 Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID); //Init magento
 
+//Check if WS is requested through browser
+$browser = ($_GET['prtbwsr']) ? true : false;
+
 //First query webservice prices
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -18,6 +21,12 @@ $prices = json_decode($result);
 if(ENABLE_LOG)
     Mage::log('----Execution date '.date('d/m/Y H:i:s'),null,'webservices-price');
 
+if($browser){
+    echo '<br>----Execution date '.date('d/m/Y H:i:s');
+    flush();
+    ob_flush();
+}
+
 foreach($prices->Precios as $precio) {
     $sku = $precio->CodPro;
     $productPrice = $precio->PV;
@@ -28,13 +37,30 @@ foreach($prices->Precios as $precio) {
         if(ENABLE_LOG)
             Mage::log('Product sku '.$sku.' not found on Magento',null,'webservices-price');
 
+        if($browser){
+            echo '<br>Product sku '.$sku.' not found on Magento';
+            flush();
+            ob_flush();
+        }
+
         continue;
     }
-
 
     $product->setPrice($productPrice)
         ->save();
 
     if(ENABLE_LOG)
         Mage::log('Product sku '.$sku.' price updated to $'.$productPrice,null,'webservices-price');
+
+    if($browser){
+        echo '<br>Product sku '.$sku.' price updated to $'.$productPrice;
+        flush();
+        ob_flush();
+    }
+}
+
+if($browser){
+    echo '<br>Execution finished at '.date('d/m/Y H:i:s');
+    flush();
+    ob_flush();
 }
