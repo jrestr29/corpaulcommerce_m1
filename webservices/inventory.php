@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 3600);
+ini_set('memory_limit','768M');
 error_reporting(E_ALL);
 define('MAGENTO', realpath(dirname(__FILE__)));
 define('ENABLE_LOG',true);
@@ -22,7 +24,7 @@ $fail = 0;
 $successfull = 0;
 
 if(ENABLE_LOG)
-    Mage::log('----Execution date '.date('d/m/Y H:i:s'),null,'webservices-inventory');
+    Mage::log('----Execution date '.date('d/m/Y H:i:s'),null,'webservices-inventory.log');
 
 if($browser){
     echo '<br>----Execution date '.date('d/m/Y H:i:s');
@@ -67,8 +69,8 @@ foreach($inventory->Inventario as $inventario) {
 }
 
 if(ENABLE_LOG){
-    Mage::log($successfull.' products where updated',null,'webservices-inventory');
-    Mage::log($fail.' products where not updated',null,'webservices-inventory');
+    Mage::log($successfull.' products where updated',null,'webservices-inventory.log');
+    Mage::log($fail.' products where not updated',null,'webservices-inventory.log');
 }
 
 if($browser){

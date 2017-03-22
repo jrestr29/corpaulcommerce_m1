@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 3600);
+ini_set('memory_limit','768M');
 error_reporting(E_ALL);
 define('MAGENTO', realpath(dirname(__FILE__)));
 define('ENABLE_LOG',true);
@@ -19,7 +21,7 @@ curl_close($ch);
 $prices = json_decode($result);
 
 if(ENABLE_LOG)
-    Mage::log('----Execution date '.date('d/m/Y H:i:s'),null,'webservices-price');
+    Mage::log('----Execution date '.date('d/m/Y H:i:s'),null,'webservices-price.log');
 
 if($browser){
     echo '<br>----Execution date '.date('d/m/Y H:i:s');
@@ -35,7 +37,7 @@ foreach($prices->Precios as $precio) {
 
     if(is_null($product) ||  !$product){
         if(ENABLE_LOG)
-            Mage::log('Product sku '.$sku.' not found on Magento',null,'webservices-price');
+            Mage::log('Product sku '.$sku.' not found on Magento',null,'webservices-price.log');
 
         if($browser){
             echo '<br>Product sku '.$sku.' not found on Magento';
@@ -50,7 +52,7 @@ foreach($prices->Precios as $precio) {
         ->save();
 
     if(ENABLE_LOG)
-        Mage::log('Product sku '.$sku.' price updated to $'.$productPrice,null,'webservices-price');
+        Mage::log('Product sku '.$sku.' price updated to $'.$productPrice,null,'webservices-price.log');
 
     if($browser){
         echo '<br>Product sku '.$sku.' price updated to $'.$productPrice;
