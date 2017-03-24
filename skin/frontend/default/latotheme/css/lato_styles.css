@@ -598,6 +598,7 @@ body header .header-search-container #header-search {
   display: inline-block;
   position: initial;
   width: 100% !important;
+  margin-top: 15px;
 }
 body header .header-search-container #header-search .minicart-wrapper .block-subtitle {
   color: #000000;
