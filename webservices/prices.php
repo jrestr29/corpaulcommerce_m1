@@ -36,10 +36,9 @@ foreach($prices->Precios as $precio) {
     //$product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
     $product = Mage::getModel('catalog/product')->getCollection()
                 ->addAttributeToSelect('price')
-                ->addAttributeToFilter('sku',$sku)
-                ->getFirstItem();
+                ->addAttributeToFilter('sku',$sku);
 
-    if(is_null($product) ||  !$product){
+    if($product->count()==0){
         if(ENABLE_LOG)
             Mage::log('Product sku '.$sku.' not found on Magento',null,'webservices-price.log');
 
@@ -51,6 +50,8 @@ foreach($prices->Precios as $precio) {
 
         continue;
     }
+
+    $product = $product->getFirstItem();
 
     $product->setPrice($productPrice)
         ->save();
