@@ -15,7 +15,7 @@ $browser = (isset($_GET['prtbwsr'])) ? true : false;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_URL, "http://190.14.230.242:60020/ServicioMovilDITO_v2/ServicioMovilDITO.svc/GetInventario/0040000002");
+curl_setopt($ch, CURLOPT_URL, "http://190.14.230.242:60020/ServicioMovilDITO_v2/ServicioMovilDITO.svc/GetInventario/0040000001");
 $result=curl_exec($ch);
 curl_close($ch);
 
