@@ -758,16 +758,16 @@ body .main-container {
 }
 .footer-container .newsletter {
   background-color: rgba(2, 2, 2, 0.82);
-  height: 85px;
+  height: 70px;
   text-align: center;
   display: block;
 }
 .footer-container .newsletter .content {
   position: relative;
-  top: 15px;
+  top: 10px;
 }
 .footer-container .newsletter .content span {
-  top: 4px;
+  top: 3px;
   position: relative;
   font-size: 13px;
 }
