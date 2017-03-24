@@ -33,7 +33,11 @@ foreach($prices->Precios as $precio) {
     $sku = $precio->CodPro;
     $productPrice = $precio->PVN;
 
-    $product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
+    //$product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
+    $product = Mage::getModel('catalog/product')->getCollection()
+                ->addAttributeToSelect('price')
+                ->addAttributeToFilter('sku',$sku)
+                ->getFirstItem();
 
     if(is_null($product) ||  !$product){
         if(ENABLE_LOG)
