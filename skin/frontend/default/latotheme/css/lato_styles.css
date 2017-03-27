@@ -1163,11 +1163,21 @@ a.swatch-link {
   width: 48%;
   float: right;
 }
-.access_home .right img {
+.access_home .right .img_container {
   display: block;
   height: 360px;
   position: relative;
+}
+.access_home .right .img_container img {
+  height: auto;
+  position: absolute;
   width: 100%;
+}
+.access_home .right .img_container img:nth-child(1) {
+  top: 0;
+}
+.access_home .right .img_container img:nth-child(2) {
+  bottom: 0;
 }
 .regala_text {
   display: block;

@@ -1613,11 +1613,25 @@ a {
     width: 48%;
     float: right;
 
-    img {
+    .img_container {
       display: block;
       height:360px;
       position: relative;
-      width: 100%;
+
+      img {
+        height:auto;
+        position: absolute;
+
+        &:nth-child(1) {
+          top:0;
+        }
+
+        &:nth-child(2) {
+          bottom:0;
+        }
+
+        width: 100%;
+      }
     }
   }
 }
