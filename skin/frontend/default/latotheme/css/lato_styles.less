@@ -1589,7 +1589,7 @@ a {
 }
 
 .access_home{
-  height: 730px;
+  height: auto;
   display: block;
 
   .content{
@@ -1618,18 +1618,24 @@ a {
       height:360px;
       position: relative;
 
-      img {
-        height:auto;
+      a {
         position: absolute;
+      }
 
-        &:nth-child(1) {
+      &:nth-child(1) {
+        a {
           top:0;
         }
+      }
 
-        &:nth-child(2) {
+      &:nth-child(2) {
+        a {
           bottom:0;
         }
+      }
 
+      img {
+        height:auto;
         width: 100%;
       }
     }

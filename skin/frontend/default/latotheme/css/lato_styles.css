@@ -1142,7 +1142,7 @@ a.swatch-link {
   width: 505px;
 }
 .access_home {
-  height: 730px;
+  height: auto;
   display: block;
 }
 .access_home .content {
@@ -1168,16 +1168,18 @@ a.swatch-link {
   height: 360px;
   position: relative;
 }
-.access_home .right .img_container img {
-  height: auto;
+.access_home .right .img_container a {
   position: absolute;
-  width: 100%;
 }
-.access_home .right .img_container img:nth-child(1) {
+.access_home .right .img_container:nth-child(1) a {
   top: 0;
 }
-.access_home .right .img_container img:nth-child(2) {
+.access_home .right .img_container:nth-child(2) a {
   bottom: 0;
+}
+.access_home .right .img_container img {
+  height: auto;
+  width: 100%;
 }
 .regala_text {
   display: block;
