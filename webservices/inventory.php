@@ -63,9 +63,6 @@ foreach($inventory->Inventario as $inventario) {
 
     $product->save();
 
-    $product->setPrice($productPrice)
-        ->save();
-
     if($browser){
         echo '<br>Inventory of product with sku '.$sku.' has been updated to '.$qty;
         flush();
