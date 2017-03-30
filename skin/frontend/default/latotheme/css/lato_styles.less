@@ -162,7 +162,13 @@ body {
     .account-link {
       a {
         span {
+          text-transform: uppercase;
+          display:block !important;
           font-weight: 100;
+
+          @media screen and (min-width: 750px) {
+            text-transform: none;
+          }
         }
       }
     }
