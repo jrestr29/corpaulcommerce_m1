@@ -882,19 +882,32 @@ body {
     }
 
     .header-search-container {
-      position: absolute;
-      top: 95px;
-      right: 0;
-      width: 100%;
-      height: 50px;
-      padding: 0;
+      position: initial;
+      height: auto;
       font-family: 'galano_grotesqueregular' !important;
 
+      @media screen and (min-width: 750px) {
+        position: absolute;
+        top: 95px;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        padding: 0;
+      }
+
       #header-search {
-        display: inline-block;
         position: initial;
         width:100% !important;
         margin-top: 15px;
+        background-color: #ffffff;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+
+        @media screen and (min-width: 750px) {
+          display: inline-block;
+          padding: initial;
+        }
 
         .minicart-wrapper {
           .block-subtitle {
@@ -905,8 +918,12 @@ body {
         }
 
         form {
-          width:84%;
-          float: left;
+          width: 100%;
+
+          @media screen and (min-width: 750px) {
+            width:84%;
+            float: left;
+          }
 
           .input-box {
             border: 1px solid #000000 !important;
@@ -931,11 +948,14 @@ body {
       }
 
       .header-minicart {
-        display: inline-block;
-        vertical-align: middle;
-        float: right;
-        width:150px;
+        display:none;
 
+        @media screen and (min-width: 750px) {
+          display: inline-block;
+          vertical-align: middle;
+          float: right;
+          width:150px;
+        }
 
         .minicart{
           height:50px;
@@ -986,6 +1006,10 @@ body {
           }
         }
       }
+    }
+
+    #header-nav {
+      background-color: #ffffff;
     }
 
 
@@ -1043,9 +1067,19 @@ body {
 
             li{
               display: block !important;
-              padding-bottom: 13px;
-              padding-right: 0 !important;
+              padding-top: 8px !important;
+              padding-bottom: 8px !important;
+              padding-left: 0 !important;
 
+              &:last-of-type {
+                padding-bottom: 2rem !important;
+              }
+
+              @media screen and  (min-width: 750px) {
+                padding-bottom: 13px;
+                padding-top: 0;
+                padding-right: 0 !important;
+              }
 
               a{
                 line-height: 20px !important;

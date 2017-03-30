@@ -638,19 +638,34 @@ body header .account-cart-wrapper .contact-phone {
   }
 }
 body header .header-search-container {
-  position: absolute;
-  top: 95px;
-  right: 0;
-  width: 100%;
-  height: 50px;
-  padding: 0;
+  position: initial;
+  height: auto;
   font-family: 'galano_grotesqueregular' !important;
 }
+@media screen and (min-width: 750px) {
+  body header .header-search-container {
+    position: absolute;
+    top: 95px;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+  }
+}
 body header .header-search-container #header-search {
-  display: inline-block;
   position: initial;
   width: 100% !important;
   margin-top: 15px;
+  background-color: #ffffff;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+@media screen and (min-width: 750px) {
+  body header .header-search-container #header-search {
+    display: inline-block;
+    padding: initial;
+  }
 }
 body header .header-search-container #header-search .minicart-wrapper .block-subtitle {
   color: #000000;
@@ -658,8 +673,13 @@ body header .header-search-container #header-search .minicart-wrapper .block-sub
   font-size: 11px !important;
 }
 body header .header-search-container #header-search form {
-  width: 84%;
-  float: left;
+  width: 100%;
+}
+@media screen and (min-width: 750px) {
+  body header .header-search-container #header-search form {
+    width: 84%;
+    float: left;
+  }
 }
 body header .header-search-container #header-search form .input-box {
   border: 1px solid #000000 !important;
@@ -679,10 +699,15 @@ body header .header-search-container #header-search form button {
   top: 7px !important;
 }
 body header .header-search-container .header-minicart {
-  display: inline-block;
-  vertical-align: middle;
-  float: right;
-  width: 150px;
+  display: none;
+}
+@media screen and (min-width: 750px) {
+  body header .header-search-container .header-minicart {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    width: 150px;
+  }
 }
 body header .header-search-container .header-minicart .minicart {
   height: 50px;
@@ -723,6 +748,9 @@ body header .header-search-container .header-minicart .minicart .counter {
   margin-top: 2px;
   color: #000000;
   vertical-align: middle;
+}
+body header #header-nav {
+  background-color: #ffffff;
 }
 body header nav {
   text-align: center !important;
@@ -773,8 +801,19 @@ body header nav ol li ul {
 }
 body header nav ol li ul li {
   display: block !important;
-  padding-bottom: 13px;
-  padding-right: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 0 !important;
+}
+body header nav ol li ul li:last-of-type {
+  padding-bottom: 2rem !important;
+}
+@media screen and (min-width: 750px) {
+  body header nav ol li ul li {
+    padding-bottom: 13px;
+    padding-top: 0;
+    padding-right: 0 !important;
+  }
 }
 body header nav ol li ul li a {
   line-height: 20px !important;
