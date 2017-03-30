@@ -881,10 +881,21 @@ body {
         float: right;
         width:150px;
 
-
         .minicart{
-          height:50px;
+          height:auto;
           border: 1px solid #000000;
+
+          ul {
+            li {
+              margin-bottom: 0 !important;
+
+              a{
+                &.checkout-button {
+                  width: 100% !important;
+                }
+              }
+            }
+          }
 
           .link {
             display: inline-block;

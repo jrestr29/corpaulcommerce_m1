@@ -633,8 +633,14 @@ body header .header-search-container .header-minicart {
   width: 150px;
 }
 body header .header-search-container .header-minicart .minicart {
-  height: 50px;
+  height: auto;
   border: 1px solid #000000;
+}
+body header .header-search-container .header-minicart .minicart ul li {
+  margin-bottom: 0 !important;
+}
+body header .header-search-container .header-minicart .minicart ul li a.checkout-button {
+  width: 100% !important;
 }
 body header .header-search-container .header-minicart .minicart .link {
   display: inline-block;
