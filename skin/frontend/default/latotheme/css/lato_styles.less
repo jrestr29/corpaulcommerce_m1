@@ -99,11 +99,16 @@ select {
 
 //Social networks always visible
 .float_social_networks{
-  position: fixed;
-  top: 25%;
-  width: 3pc;
-  z-index: 100020;
-  background: none;
+  display: none;
+
+  @media screen and (min-width: 750px) {
+    display: block;
+    position: fixed;
+    top: 25%;
+    width: 3pc;
+    z-index: 100020;
+    background: none;
+  }
 
   .social {
     position: relative;
@@ -727,10 +732,54 @@ body {
     max-width: 1100px !important;
     border-bottom: none !important;
     margin: 0 auto !important;
+    padding:15px;
+
+    @media screen and (min-width: 750px) {
+      padding: 0;
+    }
 
     .logo {
       max-width: 200px !important;
       padding-left: 0 !important;
+      display: inline-block;
+
+      @media screen and (min-width: 750px) {
+        display: block;
+      }
+
+      img {
+        &.large {
+          display: block !important;
+        }
+      }
+    }
+
+    .mobile_information {
+      display: inline-block;
+      width: 41%;
+
+      .contact-phone {
+        float:right;
+        margin-top: 1.7rem;
+        //padding-right: 1rem;
+      }
+
+
+      img {
+        height: 18px;
+        position: relative;
+        display: inline-block;
+        top: 5px;
+        margin-right: 2px;
+      }
+      span {
+        display: inline-block;
+        font-weight: 400 !important;
+      }
+
+      @media screen and (min-width: 750px) {
+        display: none;
+      }
     }
 
     .account-cart-wrapper {
@@ -801,29 +850,35 @@ body {
       }
 
       .contact-phone{
-        display: inline-block;
-        vertical-align: middle;
-        color:#2d2d2d !important;
-        margin-top: -3px;
+        display: none;
 
-        img {
-          height: 18px;
-          position: relative;
+        @media screen and (min-width:750px) {
           display: inline-block;
-          top: 5px;
-          margin-right: 2px;
-        }
-        span {
-          display: inline-block;
-          font-weight: 400 !important;
+          vertical-align: middle;
+          color:#2d2d2d !important;
+          margin-top: -3px;
+
+          img {
+            height: 18px;
+            position: relative;
+            display: inline-block;
+            top: 5px;
+            margin-right: 2px;
+          }
+          span {
+            display: inline-block;
+            font-weight: 400 !important;
+          }
         }
       }
     }
 
 
     #header-nav {
-      margin-top: 70px;
-      border-bottom: none !important;
+      @media screen and (min-width: 750px) {
+        margin-top: 70px;
+        border-bottom: none !important;
+      }
     }
 
     .header-search-container {
@@ -943,16 +998,28 @@ body {
         display: table !important;
 
         li {
-          padding-right: 5px !important;
-          margin-right: 0px;
-          display: table-cell !important;
+          display: block;
+          background-color: #fff;
+
+          @media screen and (min-width:750px) {
+            padding-right: 5px !important;
+            margin-right: 0px;
+            display: table-cell !important;
+          }
 
           a {
-            padding-right: 0 !important;
-            padding-left: 0 !important;
-            color: rgba(0, 0, 0, 0.78) !important;
-            font-weight: 300;
-            border-color: #000000 !important;
+            text-align: center;
+
+            @media screen and (min-width:750px) {
+              padding-right: 0 !important;
+              padding-left: 0 !important;
+              color: rgba(0, 0, 0, 0.78) !important;
+              font-weight: 300;
+              border-color: #000000 !important;
+              text-align: initial;
+            }
+
+
           }
 
           a:hover {
@@ -1054,33 +1121,65 @@ body {
 
   .newsletter {
     background-color: rgba(2, 2, 2, 0.82);
-    height:70px;
+    height: auto;
     text-align: center;
     display: block;
 
+    @media screen and (min-width: 750px) {
+      height:70px;
+    }
+
     .content{
-      position: relative;
+      position: initial;
       top: 10px;
 
+      @media screen and (min-width: 750px) {
+        position: relative;
+      }
+
       span {
+        margin: 0;
+
         top:3px;
         position: relative;
         font-size:13px;
+
+        @media screen and (min-width: 750px) {
+          margin-right: 70px;
+        }
       }
     }
 
     form {
-      display: inline-block;
-      vertical-align: middle;
+      display: block;
+      width: 100%;
 
-      .input-box {
+      @media screen and (min-width: 750px) {
         display: inline-block;
         vertical-align: middle;
+        width: auto;
+      }
+
+      .input-box {
+        width: 90%;
+        margin: 2% auto;
+
+        @media screen and (min-width: 750px) {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+          width: 73%;
+        }
       }
 
       .actions {
+        margin-bottom: 2%;
         display: inline-block;
         vertical-align: middle;
+
+        @media screen and (min-width: 750px) {
+          margin-bottom: 0;
+        }
       }
 
       input {
@@ -1109,6 +1208,7 @@ body {
           margin-right: 0 !important;
           font-weight: 600;
           top:0!important;
+
         }
       }
     }
@@ -1128,14 +1228,37 @@ body {
    margin: 0 auto;
 
    .links-block {
-     display: inline-block;
-     vertical-align: middle;
-     width: 70%;
-     padding-left: 45px;
+     width:100%;
+     padding-left: 0;
+     display: block;
+
+     @media screen and (min-width: 750px) {
+       display: inline-block;
+       vertical-align: middle;
+       width: 70%;
+       padding-left: 45px;
+     }
 
      .links {
-       padding-right: 0;
-       width: 24%;
+       width:100%;
+       padding: 0;
+       text-align: center;
+       padding-top: 5%;
+       padding-bottom: 5%;
+       border-top: 1px solid #cccccc;
+       margin: 0;
+       float: none;
+
+       @media screen and (min-width: 750px) {
+         padding-right: 0;
+         padding-top: 0;
+         padding-bottom: 0;
+         width: 24%;
+         border: none !important;
+         text-align: initial;
+         float: left;
+         margin-bottom: 30px;
+       }
 
        span {
          text-transform: uppercase;
@@ -1164,18 +1287,37 @@ body {
        }
 
        &:nth-child(2) {
-         width:26% !important;
+         @media screen and (min-width: 750px) {
+           width:26% !important;
+         }
+       }
+
+       &:nth-child(3){
+         @media screen and (min-width: 750px) {
+           margin-left: 7%
+         }
        }
      }
    }
 
    .getsocial {
-     display: inline-block;
-     vertical-align: middle;
-     width:29%;
+     display: block;
+     width: 100%;
+     top: 0;
+     border-top: 1px solid #cccccc;
+     margin-bottom: 5%;
+     padding-top: 5%;
      text-align: center;
-     position: relative;
-     top: -2em;
+
+     @media screen and (min-width: 750px) {
+       display: inline-block;
+       vertical-align: middle;
+       width:29%;
+       text-align: center;
+       position: relative;
+       top: -2em;
+       border: none;
+     }
 
      span {
       display: block;
@@ -1213,12 +1355,20 @@ body {
       max-width: 1260px;
 
       .copyright {
-        display: inline-block;
-        vertical-align: middle;
-        width: 40%;
-        width: 40%;
-        padding-left: 75px;
-        padding-top: 5px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 5%;
+
+
+        @media screen and (min-width: 750px) {
+          display: inline-block;
+          vertical-align: middle;
+          width: 40%;
+          padding-left: 75px;
+          padding-top: 5px;
+          text-align: initial;
+        }
 
         span {
           font-weight: 900;
@@ -1228,14 +1378,40 @@ body {
       }
 
       .paymethods {
-        display: inline-block;
-        vertical-align: middle;
-        width: 59%;
-        position: relative;
-        left:0 !important;
-        
-        img {
-          float: right;
+        display: block;
+        width:100%;
+
+        @media screen and (min-width: 750px) {
+          display: inline-block;
+          vertical-align: middle;
+          width: 59%;
+          position: relative;
+          left:0 !important;
+        }
+
+        .container {
+          float: none;
+          margin: 0 auto;
+          margin-top: 5%;
+          width:140px;
+
+          @media screen and (min-width: 750px) {
+            width: 140px;
+            float:right;
+          }
+
+          span {
+            text-align: center;
+            width: 133px;
+
+            @media screen and (min-width: 750px) {
+              width: 100%;
+            }
+          }
+
+          img {
+            display: block;
+          }
         }
       }
     }
@@ -1525,10 +1701,15 @@ a {
   padding-bottom: 16px;
 
   .borders {
-    display: inline-block;
     vertical-align: middle;
     border-top: 1px solid #000000;
-    width: 18.4rem;
+    width: 100%;
+    display: block;
+
+    @media screen and (min-width: 750px) {
+      width: 18.9rem;
+      display: inline-block;
+    }
   }
 
   .title {
@@ -1536,11 +1717,22 @@ a {
     vertical-align: middle;
     text-transform: uppercase;
     line-height: 1.55;
-    font-size: 20px;
+    font-size: 1rem;
     color: #000000 !important;
     padding-left: 3.6%;
     padding-right: 3.6%;
     font-family: 'Lato', sans-serif !important;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+
+    @media screen and (min-width: 750px) {
+      font-size: 1.2rem;
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -1549,10 +1741,16 @@ a {
   padding-bottom: 16px;
 
   .borders {
-    display: inline-block;
+    display: block;
+    width: 100%;
     vertical-align: middle;
     border-top: 1px solid #000000;
-    width: 37.9%;
+
+
+    @media screen and (min-width: 750px) {
+      width: 37.9%;
+      display: inline-block;
+    }
   }
 
   .title {
@@ -1565,6 +1763,19 @@ a {
     padding-left: 3.6%;
     padding-right: 3.6%;
     font-family: 'Lato', sans-serif !important;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 1rem;
+    text-align: center;
+    width:100%;
+
+    @media screen and (min-width: 750px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 1.2rem;
+      width: auto;
+    }
   }
 }
 
@@ -1572,6 +1783,16 @@ a {
   position: relative;
   height: 317px;
   margin-bottom: 0px;
+
+  iframe {
+    width: 100%;
+    margin:0;
+
+    @media screen and (min-width: 750px) {
+      width: 560px;
+      margin:0 auto;
+    }
+  }
 
   .img1 {
     display: inline-block;
@@ -1593,14 +1814,25 @@ a {
   display: block;
 
   .content{
-    width:1040px;
+    width: 100%;
     margin: 0 auto ;
+
+    @media screen and (min-width: 1100px) {
+      width:1040px;
+    }
   }
 
   .left {
-    display: inline-block;
-    vertical-align: middle;
-    width: 48%;
+    width:100%;
+    display: block;
+    padding-top: 4%;
+
+    @media screen and (min-width: 1100px) {
+      display: inline-block;
+      vertical-align: middle;
+      width: 48%;
+      padding-top: 0;
+    }
 
     img {
       width:100%;
@@ -1608,31 +1840,45 @@ a {
   }
 
   .right {
-    display: inline-block;
-    vertical-align: middle;
-    width: 48%;
-    float: right;
+    display: block;
+    width: 100%;
+
+    @media screen and (min-width: 1100px) {
+      display: inline-block;
+      vertical-align: middle;
+      width: 48%;
+      float: right;
+    }
 
     .img_container {
       display: block;
-      height:360px;
-      position: relative;
+      padding-top: 4%;
 
-      a {
-        position: absolute;
-      }
 
-      &:nth-child(1) {
+      @media screen and (min-width: 1100px) {
+        height:360px;
+        position: relative;
+        padding-top: 0;
+
         a {
-          top:0;
+          position: absolute;
+          &:nth-child(1) {
+            a {
+              top:0;
+            }
+          }
+
+          &:nth-child(2) {
+            a {
+              bottom:0;
+            }
+          }
         }
       }
 
-      &:nth-child(2) {
-        a {
-          bottom:0;
-        }
-      }
+
+
+
 
       img {
         height:auto;
@@ -1690,7 +1936,7 @@ body {
           border:none !important;
         }
       }
-      width:31% !important;
+
       h3 {
         a {
           font-family:  'galano_grotesqueregular' !important;
@@ -1733,19 +1979,33 @@ body {
 }
 
 .widget-products {
-  width:1040px !important;
-  margin: 0 auto;
+  width: 100%;
+
+  @media screen and (min-width: 750px) {
+    width:1040px !important;
+    margin: 0 auto;
+  }
+
 
   ul {
     li {
 
-      &:nth-child(2) {
-        margin-left: 22px !important;
+      width:100%;
+      display: block;
+
+      @media screen and (min-width: 750px) {
+        width:31% !important;
+
+        &:nth-child(2) {
+          margin-left: 22px !important;
+        }
+
+        &:nth-child(3) {
+          margin-right: 0 !important;
+        }
       }
 
-      &:nth-child(3) {
-        margin-right: 0 !important;
-      }
+
     }
   }
 }
