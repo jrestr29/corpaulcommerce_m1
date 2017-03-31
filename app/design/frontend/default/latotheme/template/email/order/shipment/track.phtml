@@ -27,11 +27,11 @@
 <?php $_shipment=$this->getShipment() ?>
 <?php $_order=$this->getOrder() ?>
 <?php if ($_shipment && $_order && $_shipment->getAllTracks()): ?>
-<table cellspacing="0" cellpadding="0" border="0" width="650" style="border:1px solid #EAEAEA;">
+<table cellspacing="0" cellpadding="0" border="0" width="650">
     <thead>
         <tr>
-            <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Shipped By') ?></th>
-            <th align="center" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Tracking Number') ?></th>
+            <th align="left"  style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em;text-align: center;background-color: #000;color: #ffffff;"><?php echo $this->__('Shipped By') ?></th>
+            <th align="center"  style="font-size:13px;padding:5px 9px 6px 9px;line-height:1em;text-align: center;background-color: #000;color: #ffffff;"><?php echo $this->__('Tracking Number') ?></th>
         </tr>
     </thead>
     <tbody>
