@@ -53,7 +53,7 @@ foreach($inventory->Inventario as $inventario) {
     $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product->getId());
 
     $stockItem->setData('qty',$qty);
-    $stockItem->save();
+
 
     if($qty == 0) {
         $stockItem->setData('is_in_stock', '0');
@@ -61,6 +61,7 @@ foreach($inventory->Inventario as $inventario) {
         $stockItem->setData('is_in_stock', '1');
     }
 
+    $stockItem->save();
     $product->save();
 
     if($browser){
