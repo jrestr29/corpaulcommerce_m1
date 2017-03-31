@@ -54,10 +54,14 @@ foreach($inventory->Inventario as $inventario) {
 
     $stockItem->setData('qty',$qty);
     $stockItem->save();
-    $product->save();
 
-    $product->setPrice($productPrice)
-        ->save();
+    if($qty == 0) {
+        $stockItem->setData('is_in_stock', '0');
+    } else {
+        $stockItem->setData('is_in_stock', '1');
+    }
+
+    $product->save();
 
     if($browser){
         echo '<br>Inventory of product with sku '.$sku.' has been updated to '.$qty;

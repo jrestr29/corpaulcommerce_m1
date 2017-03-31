@@ -956,6 +956,32 @@ body {
       .header-minicart {
         display:none;
 
+        .minicart-wrapper {
+          .info-wrapper {
+            .price {
+              color: #000 !important;
+            }
+          }
+
+          .subtotal {
+            .price {
+              color: #000 !important;
+            }
+          }
+          ul {
+            &.minicart {
+              border: none !important;
+
+              li {
+                a {
+                  background-color: #000;
+                  color: #ffffff !important;
+                }
+              }
+            }
+          }
+        }
+
         @media screen and (min-width: 750px) {
           display: inline-block;
           vertical-align: middle;
@@ -964,8 +990,23 @@ body {
         }
 
         .minicart{
-          height:50px;
+          height:auto;
           border: 1px solid #000000;
+
+          ul {
+            border: none !important;
+          }
+
+
+          li {
+            margin-bottom: 0 !important;
+
+            a{
+              &.checkout-button {
+                width: 100% !important;
+              }
+            }
+          }
 
           .link {
             display: inline-block;
