@@ -2,7 +2,7 @@
 <layout version="0.1.0">
     <default>
         <reference name="root">
-            <block type="core/template" name="ditosas.promobanner" as="promobanner" template="ditosas/promobanner/banner.phtml" />
+            <block type="ditosas_promobanner/banner" name="ditosas.promobanner" as="promobanner" template="ditosas/promobanner/banner.phtml" />
         </reference>
     </default>
 </layout>

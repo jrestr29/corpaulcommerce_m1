@@ -1,12 +1,15 @@
-<div id="promobanner">
+<div id="promobanner" style="<?php if($this->checkIfFirst()) { $this->setCookie(); echo "display:block"; } ?>">
     <div class="modal-content">
         <span class="close">&times;</span>
         <img src="<?php echo $this->getSkinUrl('images/promobanner/banner.png') ?>">
     </div>
 </div>
 
-<script>
-    jQuery(document).ready(function() {
 
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".close").click(function () {
+            jQuery("#promobanner").hide();
+        });
     });
 </script>
