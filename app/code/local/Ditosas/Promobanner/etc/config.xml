@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_Promobanner>
+            <version>1.0.0</version>
+        </Ditosas_Promobanner>
+    </modules>
+    <global>
+        <blocks>
+            <ditosas_promobanner>
+                <class>Ditosas_Promobanner_Block</class>
+            </ditosas_promobanner>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <mymodule>
+                    <file>ditosas_promobanner.xml</file>
+                </mymodule>
+            </updates>
+        </layout>
+    </frontend>
+</config>
