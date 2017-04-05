@@ -2113,3 +2113,16 @@ body.catalogsearch-result-index .msg a {
 .checkout-review-table tr td {
   font-family: 'galano_grotesqueregular' !important;
 }
+.block-progress dd address {
+  font-style: initial;
+}
+.data-table tbody td {
+  font-family: 'galano_grotesqueregular' !important;
+}
+address,
+.box-content {
+  font-family: 'galano_grotesqueregular' !important;
+}
+.linearize-table-large tr td {
+  font-family: 'galano_grotesqueregular' !important;
+}
