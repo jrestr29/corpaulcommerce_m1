@@ -2119,6 +2119,12 @@ body.catalogsearch-result-index .msg a {
 .data-table tbody td {
   font-family: 'galano_grotesqueregular' !important;
 }
+.data-table tbody td.status {
+  font-style: initial;
+}
+.data-table tbody td.status em {
+  font-style: initial !important;
+}
 address,
 .box-content {
   font-family: 'galano_grotesqueregular' !important;
