@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_FreeshippingPromotion>
+            <version>1.0.0</version>
+        </Ditosas_FreeshippingPromotion>
+    </modules>
+    <global>
+        <models>
+            <ditosas_freeshippingpromotion>
+                <class>Ditosas_FreeshippingPromotion_Model</class>
+                <resourceModel>ditosas_freeshippingpromotion_resource</resourceModel>
+            </ditosas_freeshippingpromotion>
+        </models>
+        <helpers>
+            <ditosas_freeshippingpromotion>
+                <class>Ditosas_FreeshippingPromotion_Helper</class>
+            </ditosas_freeshippingpromotion>
+        </helpers>
+    </global>
+    <default>
+        <carriers>
+            <ditosas_freeshippingpromotion>
+                <active>1</active>
+                <sallowspecific>1</sallowspecific>
+                <model>ditosas_freeshippingpromotion/carrier</model>
+                <name>Envío gratuito</name>
+                <price>0</price>
+                <title>Promoción envío gratuito</title>
+            </ditosas_freeshippingpromotion>
+        </carriers>
+    </default>
+</config>
