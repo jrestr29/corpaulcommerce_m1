@@ -1683,7 +1683,7 @@ body.catalogsearch-result-index ol.configurable-swatch-list li a span {
 }
 body.catalog-category-view ol.configurable-swatch-list li a span img[alt="White"],
 body.catalogsearch-result-index ol.configurable-swatch-list li a span img[alt="White"] {
-  border: 1px solid #ccc;
+  border: 1px solid #ccc !important;
 }
 body.catalog-category-view ol.configurable-swatch-list li:last-of-type,
 body.catalogsearch-result-index ol.configurable-swatch-list li:last-of-type {
