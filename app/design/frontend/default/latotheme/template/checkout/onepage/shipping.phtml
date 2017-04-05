@@ -82,7 +82,7 @@
                         <div class="field">
                             <label for="shipping:region" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                             <div class="input-box">
-                                <select id="shipping:region" name="shipping[region]" data-handle="region_shipping">
+                                <select id="shipping:region" name="shipping[region]" data-handle="region_shipping" class="input-text-format">
                                     <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
                                     <?php echo Mage::helper('ditosas_citydropdown')->getDepartamentosDropdown() ?>
                                 </select>
@@ -99,7 +99,7 @@
                         <div class="field">
                             <label for="shipping:city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
                             <div class="input-box">
-                                <select id="shipping:city" name="shipping[city]" data-handle="city_shipping">
+                                <select id="shipping:city" name="shipping[city]" data-handle="city_shipping" class="input-text-format">
                                 </select>
                             </div>
                         </div>
