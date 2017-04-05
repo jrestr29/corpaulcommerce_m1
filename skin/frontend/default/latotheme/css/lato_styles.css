@@ -2109,3 +2109,6 @@ body.catalogsearch-result-index .msg a {
   text-decoration: none;
   cursor: pointer;
 }
+.input-text-format {
+  text-transform: none !important;
+}
