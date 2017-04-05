@@ -834,19 +834,16 @@ body header nav ol li ul li {
   padding-bottom: 8px !important;
   padding-left: 0 !important;
 }
-body header nav ol li ul li:last-of-type {
-  padding-bottom: 2rem !important;
-}
 @media screen and (min-width: 750px) {
   body header nav ol li ul li {
-    padding-bottom: 13px;
-    padding-top: 0;
+    padding-bottom: 4px !important;
+    padding-top: 4px !important;
     padding-right: 0 !important;
   }
 }
 body header nav ol li ul li a {
   line-height: 20px !important;
-  height: 10px;
+  height: auto;
   border: none !important;
   text-transform: lowercase;
   text-align: left;
