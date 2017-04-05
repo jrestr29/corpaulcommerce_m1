@@ -4,10 +4,10 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
 
     public function getCities($country_id, $region_id) {
         $results = Mage::getModel('ditosas_citydropdown/city')->getCollection()
-                    ->addFieldToFilter('region_id', array('eq' => $region_id))
-                    ->addFieldToFilter('country:id', array('eq' => $country_id))
-                    ->load()
-                    ->getData();
+            ->addFieldToFilter('region_id', array('eq' => $region_id))
+            ->addFieldToFilter('country:id', array('eq' => $country_id))
+            ->load()
+            ->getData();
 
         $cities = array();
 
@@ -62,7 +62,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
 
         foreach($results as $key => $city){
             $dpto = Mage::getModel('directory/region')->load($city['region_id']);
-            $array[] = ['dpto' => $dpto->getDefaultName(), 'city' => ucfirst(strtolowe($city['name']))];
+            $array[] = ['dpto' => $dpto->getDefaultName(), 'city' => ucfirst(strtolower($city['name']))];
         }
 
         return json_encode($array);
