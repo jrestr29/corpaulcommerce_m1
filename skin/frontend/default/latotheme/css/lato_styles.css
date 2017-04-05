@@ -1679,6 +1679,7 @@ body.catalogsearch-result-index ol.configurable-swatch-list {
 body.catalog-category-view ol.configurable-swatch-list li a span,
 body.catalogsearch-result-index ol.configurable-swatch-list li a span {
   border: none !important;
+  background: none !important;
 }
 body.catalog-category-view ol.configurable-swatch-list li a span img[alt="White"],
 body.catalogsearch-result-index ol.configurable-swatch-list li a span img[alt="White"] {
