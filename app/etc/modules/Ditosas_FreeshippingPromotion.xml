@@ -1,8 +1,11 @@
 <config>
     <modules>
         <Ditosas_FreeshippingPromotion>
-            <active>false</active>
+            <active>true</active>
             <codePool>local</codePool>
+            <depends>
+                <Mage_Shipping />
+            </depends>
         </Ditosas_FreeshippingPromotion>
     </modules>
 </config>

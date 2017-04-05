@@ -25,7 +25,7 @@
                 <sallowspecific>1</sallowspecific>
                 <model>ditosas_freeshippingpromotion/carrier</model>
                 <name>Envío gratuito</name>
-                <price>0</price>
+                <price>1</price>
                 <title>Promoción envío gratuito</title>
             </ditosas_freeshippingpromotion>
         </carriers>

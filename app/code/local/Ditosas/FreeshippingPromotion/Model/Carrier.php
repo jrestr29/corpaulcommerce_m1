@@ -3,19 +3,19 @@
 class Ditosas_FreeshippingPromotion_Model_Carrier extends Mage_Shipping_Model_Carrier_Abstract
     implements Mage_Shipping_Model_Carrier_Interface {
 
-    protected $_code = 'ditosas_freeshipping';
+    protected $_code = 'ditosas_freeshippingpromotion';
 
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
         $result = Mage::getModel('shipping/rate_result');
 
-        $rate = $this->_getRate();
+        $rate = $this->_getRate($request->getBaseSubtotalInclTax());
 
         if(!$rate){
-            return;
+            return $this;
         }
 
-        $result->append($this->_getRate());
+        $result->append($rate);
 
         return $result;
     }
@@ -27,7 +27,7 @@ class Ditosas_FreeshippingPromotion_Model_Carrier extends Mage_Shipping_Model_Ca
         );
     }
 
-    protected function _getRate() {
+    protected function _getRate($subtotal) {
         $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
         $checkCost = Mage::helper('ditosas_coordinadoracourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegion(), $address->getCity());
 
@@ -39,9 +39,18 @@ class Ditosas_FreeshippingPromotion_Model_Carrier extends Mage_Shipping_Model_Ca
         $rate->setMethodTitle($this->getConfigData('name'));
 
         if(!$checkCost){ //Si no es area metropolitana
-            $rate->setPrice(0);
+            if($subtotal <= "250000"){
+                return false;
+            } else {
+                $rate->setPrice(0);
+            }
         } else { // Si es area metropolitana
-            $rate->setPrice(0       );
+            if($subtotal <= "65000"){
+                return false;
+            } else {
+                $rate->setPrice(0);
+            }
+            $rate->setPrice(0);
         }
 
         $rate->setCost(0);
