@@ -2110,3 +2110,6 @@ body.catalogsearch-result-index .msg a {
 .input-text-format {
   text-transform: none !important;
 }
+.checkout-review-table tr td {
+  font-family: 'galano_grotesqueregular' !important;
+}
