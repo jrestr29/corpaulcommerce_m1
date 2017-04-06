@@ -1112,25 +1112,25 @@ body {
             left: -53%;
             display:none;
 
-            li{
+            li {
               display: block !important;
               padding-top: 8px !important;
               padding-bottom: 8px !important;
               padding-left: 0 !important;
 
               &:last-of-type {
-                padding-bottom: 2rem !important;
+                //padding-bottom: 2rem !important;
               }
 
               @media screen and  (min-width: 750px) {
-                padding-bottom: 13px;
-                padding-top: 0;
+                padding-bottom: 4px !important;
+                padding-top: 4px !important;
                 padding-right: 0 !important;
               }
 
               a{
                 line-height: 20px !important;
-                height: 10px;
+                height: auto;
                 border:none !important;
                 text-transform: lowercase;
                 text-align: left;
@@ -1161,9 +1161,7 @@ body {
                 background-color: #ccc;
               }
             }
-
           }
-
         }
       }
     }
@@ -1939,29 +1937,27 @@ a {
 
 
       @media screen and (min-width: 1100px) {
-        height:360px;
+        height:358px;
         position: relative;
         padding-top: 0;
 
         a {
-          position: absolute;
-          &:nth-child(1) {
-            a {
-              top:0;
-            }
-          }
+          position:absolute;
+        }
 
-          &:nth-child(2) {
-            a {
-              bottom:0;
-            }
+        &:nth-child(1) {
+          a{
+            top:0;
           }
         }
+
+        &:nth-child(2) {
+          a{
+            bottom: 0;
+          }
+
+        }
       }
-
-
-
-
 
       img {
         height:auto;
@@ -2239,8 +2235,9 @@ body {
           a {
             span {
               border:none !important;
+              background: none !important;
               img[alt="White"] {
-                border: 1px solid #ccc;
+                border: 1px solid #ccc !important;
               }
             }
           }
@@ -2767,4 +2764,47 @@ body {
 
 .input-text-format{
   text-transform: none !important;
+}
+
+.checkout-review-table {
+  tr {
+    td {
+      font-family: 'galano_grotesqueregular' !important;
+    }
+  }
+}
+
+.block-progress {
+  dd {
+    address {
+      font-style: initial;
+    }
+  }
+}
+
+.data-table {
+  tbody {
+    td {
+      font-family: 'galano_grotesqueregular' !important;
+
+      &.status {
+        font-style: initial;
+        em {
+          font-style: initial !important;
+        }
+      }
+    }
+  }
+}
+
+address, .box-content {
+  font-family: 'galano_grotesqueregular' !important;
+}
+
+.linearize-table-large {
+  tr {
+    td {
+      font-family: 'galano_grotesqueregular' !important;
+    }
+  }
 }
