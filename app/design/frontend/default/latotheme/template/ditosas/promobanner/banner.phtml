@@ -1,7 +1,16 @@
-<div id="promobanner" style="<?php if($this->checkIfFirst()) { $this->setCookie(); echo "display:block"; } ?>">
+<div id="promobanner" style="display: block; <?php if($this->checkIfFirst()) { $this->setCookie(); echo "display:block"; } ?>">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <img src="<?php echo $this->getSkinUrl('images/promobanner/banner.png') ?>">
+        <img src="<?php echo $this->getSkinUrl('images/promobanner/modal-01.png') ?>">
+
+        <section id="newsletterform">
+            <h5>Suscripctión boletín de noticias</h5>
+            <form>
+                <input required type="text" name="name" id="name" placeholder="Nombre">
+                <input required type="text" name="email" id="email" placeholder="Correo electrónico">
+                <button type="submit">Yo quiero</button>
+            </form>
+        </section>
     </div>
 </div>
 
