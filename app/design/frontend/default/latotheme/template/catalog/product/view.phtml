@@ -188,5 +188,12 @@
     <?php echo $this->getChildHtml('product_additional_data') ?>
 
 </div>
+
+<?php if($_product->getDescription()) : ?>
+    <div class="product-description">
+        <h4><?php echo $this->__('Descripción del producto') ?></h4>
+        <p><?php echo $_product->getDescription() ?></p>
+    </div>
+<?php endif; ?>
 <?php echo $this->getChildHtml('related_products') ?>
 <?php echo $this->getChildHtml('product_reviews') ?>
