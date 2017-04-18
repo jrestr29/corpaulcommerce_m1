@@ -1,59 +1,33 @@
 <?php
 
-class MagicToolbox_MagicZoom_Block_Adminhtml_Settings_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
+namespace MagicToolbox\MagicZoom\Block\Adminhtml\Settings;
 
-    public function __construct() {
+use Magento\Backend\Block\Widget\Form\Container;
 
-        parent::__construct();
+class Edit extends \Magento\Backend\Block\Widget\Form\Container
+{
+    /**
+     * Class constructor
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_objectId = 'object_id';
+        $this->_controller = 'adminhtml_settings';
+        $this->_blockGroup = 'MagicToolbox_MagicZoom';
+        $this->_headerText = 'Magic Zoom Config';
 
-        $this->_objectId = 'id';
-        $this->_blockGroup = 'magiczoom';//module name
-        $this->_controller = 'adminhtml_settings';//the path to your block class
+        parent::_construct();
 
-        $this->_removeButton('delete');
+        $this->_formScripts[] = '
+            require([\'magiczoom\'], function(magiczoom){
+                magiczoom.initSettings();
+            });
+        ';
 
-        $this->_addButton('saveandcontinue', array(
-            'label'     => Mage::helper('adminhtml')->__('Save And Continue Edit'),
-            'onclick'   => 'saveAndContinueEdit(\''.$this->getSaveAndContinueUrl().'\')',
-            'class'     => 'save',
-        ), -100);
-
-        $this->_formScripts[] = "
-            function saveAndContinueEdit(urlTemplate) {
-                var template = new Template(urlTemplate, /(^|.|\\r|\\n)({{(\w+)}})/);
-                var url = template.evaluate({tab_id:magiczoom_config_tabsJsTabs.activeTab.id.replace('magiczoom_config_tabs_', '')});
-                editForm.submit(url);
-            }
-        ";
-
+        $this->removeButton('back');
+        $this->removeButton('reset');
+        $this->updateButton('save', 'label', __('Save Settings'));
     }
-
-    public function getHeaderText() {
-
-        //$package = Mage::registry('magiczoom_model_data')->getPackage();
-        //$theme = Mage::registry('magiczoom_model_data')->getTheme();
-        //return Mage::helper('magiczoom')->__("Edit setting for <i>%s</i> package".($package=='all'?"s":"").", <i>%s</i> theme".($theme=='all'?"s":""), $this->htmlEscape($package), $this->htmlEscape($theme));
-        $title = Mage::registry('magiczoom_model_data')->getCustom_settings_title();
-        return Mage::helper('magiczoom')->__("%s", $this->htmlEscape($title));
-
-    }
-
-    public function getValidationUrl() {
-
-        return $this->getUrl('*/*/validate', array(
-            '_current'  => false
-        ));
-
-    }
-
-    public function getSaveAndContinueUrl() {
-
-        return $this->getUrl('*/*/save', array(
-            '_current'  => true,
-            'back'      => 'edit',
-            'tab'       => '{{tab_id}}'
-        ));
-
-    }
-
 }
