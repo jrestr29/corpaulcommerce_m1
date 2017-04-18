@@ -37,25 +37,14 @@ class Ditosas_FreeshippingPromotion_Model_Carrier extends Mage_Shipping_Model_Ca
         $rate->setCarrierTitle($this->getConfigData('title'));
         $rate->setMethod($this->_code);
         $rate->setMethodTitle($this->getConfigData('name'));
-
-        if(!$checkCost){ //Si no es area metropolitana
-            if($subtotal <= "250000"){
-                return false;
-            } else {
-                $rate->setPrice(0);
-            }
-        } else { // Si es area metropolitana
-            if($subtotal <= "65000"){
-                return false;
-            } else {
-                $rate->setPrice(0);
-            }
-            $rate->setPrice(0);
-        }
-
         $rate->setCost(0);
+
+        if(Mage::helper('ditosas_freeshippingpromotion')->checkAppliesPromotion($subtotal,$checkCost)){
+            $rate->setPrice(0);
+        } else {
+            return false;
+        }
 
         return $rate;
     }
-
 }

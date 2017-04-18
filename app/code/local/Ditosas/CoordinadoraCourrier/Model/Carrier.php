@@ -14,7 +14,14 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
         $result = Mage::getModel('shipping/rate_result');
-        $result->append($this->_getRate());
+
+        $rate = $this->_getRate($request->getBaseSubtotalInclTax());
+
+        if(!$rate){
+            return $this;
+        }
+
+        $result->append($rate);
 
         return $result;
     }
@@ -31,7 +38,7 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
         );
     }
 
-    protected function _getRate() {
+    protected function _getRate($subtotal) {
         $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
         $checkCost = Mage::helper('ditosas_coordinadoracourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegion(), $address->getCity());
 
@@ -41,14 +48,17 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
         $rate->setCarrierTitle($this->getConfigData('title'));
         $rate->setMethod($this->_code);
         $rate->setMethodTitle($this->getConfigData('name'));
-
-        if(!$checkCost){
-            $rate->setPrice($this->getConfigData('price'));
-        } else {
-            $rate->setPrice($checkCost);
-        }
-
         $rate->setCost(0);
+
+        if(Mage::helper('ditosas_freeshippingpromotion')->checkAppliesPromotion($subtotal,$checkCost)){
+            return false;
+        } else {
+            if(!$checkCost){
+                $rate->setPrice($this->getConfigData('price'));
+            } else {
+                $rate->setPrice($checkCost);
+            }
+        }
 
         return $rate;
     }
