@@ -2620,26 +2620,33 @@ body {
 
 .outofstock{
   position: absolute;
-  width: 95%;
+  width: 93%;
   min-height: 161px;
   top: 9%;
-  background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  //background-color: rgba(255, 255, 255, 0.7);
 
   div {
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: #ffffff;
-    margin-top: 45%;
+    background-color: #ff0000;
+    margin-top: 40%;
+    margin-left: -10%;
+    width: 119%;
+    -webkit-transform: rotate(-23deg);
+    -moz-transform: rotate(-23deg);
+    -o-transform: rotate(-23deg);
+    -ms-transform: rotate(-23deg);
+    transform: rotate(-23deg);
 
     span {
       text-align: center;
       font-size: 12px;
-      color: #5e5d5d;
-      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2;
       text-transform: uppercase;
-      background-color: #fff;
     }
   }
 }
