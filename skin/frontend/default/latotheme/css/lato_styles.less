@@ -2201,6 +2201,8 @@ a{
   }
 }
 .product-description{
+  margin-bottom: 2em;
+
   &:first-letter {
     text-transform: uppercase !important;
   }
@@ -2208,14 +2210,36 @@ a{
   h4 {
     font-size: 15px;
     padding-bottom: 10px;
-    font-family: 'galano_grotesquebold';
+    font-family: 'galano_grotesqueregular' !important;
     text-transform: lowercase;
     border-bottom: 1px solid #cccccc;
   }
-
-
 }
 
+#customer-reviews {
+  form {
+    table {
+      tbody {
+        visibility: hidden;
+      }
+
+      thead {
+        tr{
+          th {
+            &:first-of-type {
+              display: none  !important;
+            }
+            width:20% !important;
+
+            div {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 section {
   &#category-head {

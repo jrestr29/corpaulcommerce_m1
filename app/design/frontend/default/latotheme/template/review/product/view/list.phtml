@@ -48,14 +48,19 @@
 
                             if($summary >= 0 && $summary <= 20) {
                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars1.svg');
+                                $ratingValue = 1;
                             } else if ($summary > 20 && $summary <= 40) {
                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars2.svg');
+                                $ratingValue = 2;
                             } else if ($summary > 40 && $summary <= 60) {
                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars3.svg');
+                                $ratingValue = 3;
                             } else if ($summary > 60 && $summary <= 80) {
                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars4.svg');
+                                $ratingValue = 4;
                             } else if ($summary > 80 && $summary <= 100) {
                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars5.svg');
+                                $ratingValue = 5;
                             } else {
                                 $ratingSrc = '';
                             }
@@ -87,20 +92,25 @@
 
                                             if($voteSummary >= 0 && $voteSummary <= 20) {
                                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars1.svg');
+                                                $ratingValue = 1;
                                             } else if ($voteSummary > 20 && $voteSummary <= 40) {
                                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars2.svg');
+                                                $ratingValue = 2;
                                             } else if ($voteSummary > 40 && $voteSummary <= 60) {
                                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars3.svg');
+                                                $ratingValue = 3;
                                             } else if ($voteSummary > 60 && $voteSummary <= 80) {
                                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars4.svg');
+                                                $ratingValue = 4;
                                             } else if ($voteSummary > 80 && $voteSummary <= 100) {
                                                 $ratingSrc = $this->getSkinUrl('images/reviews/Stars5.svg');
+                                                $ratingValue = 5;
                                             } else {
                                                 $ratingSrc = '';
                                             }
                                         ?>
                                         <span><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></span>
-                                        <img src="<?php echo $ratingSrc ?>">
+                                        <img data-action='select-star' data-value="<?php echo $ratingValue ?>" src="<?php echo $ratingSrc ?>">
                                     </div>
                                 </div>
                             </td>
@@ -136,6 +146,10 @@
             jQuery("#reviews-list").find("dt.hidden").show();
             jQuery("#reviews-list").find("dd.hidden").show();
             jQuery(this).remove();
+        });
+
+        jQuery("img[data-action='select-star']").click(function() {
+
         });
     });
 </script>
