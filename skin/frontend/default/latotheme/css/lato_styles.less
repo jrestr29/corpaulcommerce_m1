@@ -151,6 +151,47 @@ select {
 
 body {
 
+  &.cms-contacto {
+
+    .contact-information {
+      margin-top: 60px;
+    }
+
+    form {
+      padding-left: 0 !important;
+
+      ul {
+        list-style: none !important;
+
+        li {
+          font-style: initial !important;
+          margin-left: 0 !important;
+
+          input, textarea {
+            max-width: 500px;
+            width: 500px;
+          }
+        }
+      }
+    }
+
+    .contact-information{
+      p {
+        margin-bottom: 5px;
+
+        &.head {
+          margin-bottom: 8px;
+          margin-top: 22px;
+          border-bottom: 1px solid #ededed;
+
+          &:first-of-type {
+            margin-top: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
   &.customer-account-index{
     .dashboard{
       .box-head {
