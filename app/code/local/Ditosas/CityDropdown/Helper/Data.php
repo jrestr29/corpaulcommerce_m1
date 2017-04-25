@@ -29,7 +29,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
 
             foreach($cities as $key => $city){
                 $isSelected = $selectedCity == $city ? ' selected="selected"' : null;
-                $options .= '<option value="' . $city . '"' . $isSelected . '>' . ucfirst(strtolower($city)) . '</option>';
+                $options .= '<option value="' . $city . '"' . $isSelected . '>' . $city . '</option>';
             }
         }
         return $options;
@@ -45,7 +45,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
         $options =  '';
 
         foreach($results as $key => $dpto){
-            $options .= '<option value="' . $dpto['default_name'] . '">' . ucfirst(strtolower($dpto['default_name'])) . '</option>';
+            $options .= '<option value="' . $dpto['default_name'] . '">' . $dpto['default_name'] . '</option>';
         }
 
         return $options;
@@ -62,7 +62,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
 
         foreach($results as $key => $city){
             $dpto = Mage::getModel('directory/region')->load($city['region_id']);
-            $array[] = ['dpto' => $dpto->getDefaultName(), 'city' => ucfirst(strtolower($city['name']))];
+            $array[] = ['dpto' => $dpto->getDefaultName(), 'city' => $city['name']];
         }
 
         return json_encode($array);
