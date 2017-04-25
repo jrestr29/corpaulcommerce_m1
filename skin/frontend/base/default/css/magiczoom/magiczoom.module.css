@@ -198,6 +198,20 @@ div.MagicToolboxContainer.selectorsRight .MagicToolboxSelectorsContainer .MagicS
         margin-left:0;
     }
 
+    div.MagicToolboxContainer.selectorsLeft .MagicToolboxSelectorsContainer:after,
+    div.MagicToolboxContainer.selectorsRight .MagicToolboxSelectorsContainer:after {
+        display: none !important;
+    }
+
+}
+
+
+div.MagicToolboxContainer.selectorsLeft .MagicToolboxSelectorsContainer:after,
+div.MagicToolboxContainer.selectorsRight .MagicToolboxSelectorsContainer:after {
+    content: "";
+    padding-top: 100%;
+    position: relative;
+    display: inline-block;
 }
 .invisible,
 .hidden-selector {
