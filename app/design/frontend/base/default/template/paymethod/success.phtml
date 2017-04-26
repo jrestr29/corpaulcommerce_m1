@@ -1,4 +1,9 @@
+<?php
+if(!empty(Mage::app()->getRequest()->getParam('codunicocomercio')))
+{
+?>
 	<center>
+		<div id= "imprimir">
 		<table class="table-response" id="comprobante-de-pago">
 			<tr align="center">
 				<th colspan="2"><h1 class="md-h1" align="center">CREDIBANCO</h1></th>
@@ -82,23 +87,79 @@
 				<td>Descripcion Respuesta</td>
 				<td><?php print_r (Mage::app()->getRequest()->getParam('desresp')); ?></td>
 			</tr>
-			<tr align="left">
-				<td>Cuotas</td>
-				<td><?php print_r (Mage::app()->getRequest()->getParam('cuotas')); ?></td>
+			<?php
+			if (empty(Mage::app()->getRequest()->getParam('pse') ))
+			{ ?>
+				<tr align="left">
+					<td>Cuotas</td>
+					<td><?php print_r (Mage::app()->getRequest()->getParam('cuotas')); ?></td>
+				</tr>
+				<tr align="left">
+					<td>Tarjeta</td>
+					<td><?php print_r (Mage::app()->getRequest()->getParam('tarjeta')); ?></td>
+				</tr>
+				<tr align="left">
+					<td>Tipo Tarjeta</td>
+					<td><?php print_r (Mage::app()->getRequest()->getParam('cardType')); ?></td>
+				</tr>
+			<?php 
+			}			
+			?>
+			<?php
+			if (!empty(Mage::app()->getRequest()->getParam('entidadpse') ))
+			{ ?>
+			<tr align='left'>
+				<td>Entidad</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('entidadpse')); ?></td>
 			</tr>
-			<tr align="left">
-				<td>Tarjeta</td>
-				<td><?php print_r (Mage::app()->getRequest()->getParam('tarjeta')); ?></td>
+			<?php 
+			} 
+			?>
+			<?php
+			if (!empty(Mage::app()->getRequest()->getParam('identificacionpse') ))
+			{ ?>
+			<tr align='left'>
+				<td>Identificación Cliente</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('identificacionpse')); ?></td>
 			</tr>
-			<tr align="left">
-				<td>Tipo Tarjeta</td>
-				<td><?php print_r (Mage::app()->getRequest()->getParam('cardType')); ?></td>
+			<?php 
+			} 
+			?>
+			<?php
+			if (!empty(Mage::app()->getRequest()->getParam('nitpse') ))
+			{ ?>
+			<tr align='left'>
+				<td>NIT Establecimiento</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('nitpse')); ?></td>
 			</tr>
+			<?php 
+			} 
+			?>
+			<?php
+			if (!empty(Mage::app()->getRequest()->getParam('ippse') ))
+			{ ?>
+			<tr align='left'>
+				<td>Dirección IP</td>
+				<td><?php print_r (Mage::app()->getRequest()->getParam('ippse')); ?></td>
+			</tr>
+			<?php 
+			} 
+			?>
+			<?php
+			if (!empty(Mage::app()->getRequest()->getParam('pendientepse') ))
+			{ ?>
+			<tr align='left'>
+				<td colspan='2'><?php print_r (Mage::app()->getRequest()->getParam('pendientepse')); ?></td>
+			</tr>
+			<?php 
+			} 
+			?>
 			<tr align="center">
-				<td colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size:11px !important;"><a href="javascript:imprSelec('comprobante-de-pago')">Imprimir Comprobante</a></h5></td>
+				<td colspan="2" align="center"><h5 class="md-h5" align="center" style="font-size:11px !important;"><a href="javascript:imprSelec('imprimir')">Imprimir Comprobante</a></h5></td>
 			</tr>
 			
 		</table>
+		</div>
 		<p/>
 	</center>
 	<script type="text/javascript">
@@ -110,8 +171,16 @@ var ficha=document.getElementById(muestra);
 	var ventimp=window.open(' ','popimpr');	
 	ventimp.document.write(ficha.innerHTML);
 	ventimp.document.close();
-	ventimp.close();
 	ventimp.print();
-	
+	ventimp.close();
 }
 </script>
+<?php
+}
+else
+{
+?>
+<h2>La transacción ha sido exitosa</h2>
+<?php
+}	
+?>
