@@ -13,6 +13,6 @@ class Ditosas_Promobanner_Block_Banner extends Mage_Core_Block_Template
 
     public function setCookie()
     {
-        setcookie("first_visit_buenosmotivos", true);
+        setcookie("first_visit_buenosmotivos", true, time()+10800);
     }
 }

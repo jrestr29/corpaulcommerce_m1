@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_ReasingUserGroup>
+            <version>1.0.0</version>
+        </Ditosas_ReasingUserGroup>
+    </modules>
+    <global>
+        <models>
+            <reasinggroup>
+                <class>Ditosas_ReasingUserGroup_Model</class>
+            </reasinggroup>
+        </models>
+        <events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <reasinggroup>
+                        <type>singleton</type>
+                        <class>Ditosas_ReasingUserGroup_Model_Observer</class>
+                        <method>reasing</method>
+                    </reasinggroup>
+                </observers>
+            </checkout_onepage_controller_success_action>
+        </events>
+    </global>
+</config>

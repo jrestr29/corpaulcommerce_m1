@@ -47,31 +47,31 @@
                             <th>
                                 <div class="rating-box">
                                     <span class="rating-number">1</span>
-                                    <span class="rating nobr"><img src="<?php echo $this->getSkinUrl('images/reviews/Stars1.svg') ?>"></span>
+                                    <span class="rating nobr"><img data-action='select-star' data-value="1" src="<?php echo $this->getSkinUrl('images/reviews/Stars1.svg') ?>"></span>
                                 </div>
                             </th>
                             <th>
                                 <div class="rating-box">
                                     <span class="rating-number">2</span>
-                                    <span class="rating nobr"><img src="<?php echo $this->getSkinUrl('images/reviews/Stars2.svg') ?>"></span>
+                                    <span class="rating nobr"><img data-action='select-star' data-value="2" src="<?php echo $this->getSkinUrl('images/reviews/Stars2.svg') ?>"></span>
                                 </div>
                             </th>
                             <th>
                                 <div class="rating-box">
                                     <span class="rating-number">3</span>
-                                    <span class="rating nobr"><img src="<?php echo $this->getSkinUrl('images/reviews/Stars3.svg') ?>"></span>
+                                    <span class="rating nobr"><img data-action='select-star' data-value="3" src="<?php echo $this->getSkinUrl('images/reviews/Stars3.svg') ?>"></span>
                                 </div>
                             </th>
                             <th>
                                 <div class="rating-box">
                                     <span class="rating-number">4</span>
-                                    <span class="rating nobr"><img src="<?php echo $this->getSkinUrl('images/reviews/Stars4.svg') ?>"></span>
+                                    <span class="rating nobr"><img data-action='select-star' data-value="4" src="<?php echo $this->getSkinUrl('images/reviews/Stars4.svg') ?>"></span>
                                 </div>
                             </th>
                             <th>
                                 <div class="rating-box">
                                     <span class="rating-number">5</span>
-                                    <span class="rating nobr"><img src="<?php echo $this->getSkinUrl('images/reviews/Stars5.svg') ?>"></span>
+                                    <span class="rating nobr"><img data-action='select-star' data-value="5" src="<?php echo $this->getSkinUrl('images/reviews/Stars5.svg') ?>"></span>
                                 </div>
                             </th>
                         </tr>
@@ -159,3 +159,13 @@
     </p>
     <?php endif ?>
 </div>
+
+<script>
+    jQuery(document).ready(function() {
+        jQuery("img[data-action='select-star']").click(function() {
+            var ratingValue = jQuery(this).attr('data-value') ;
+
+            jQuery('#General_'+ratingValue).trigger('click');
+        });
+    });
+</script>
