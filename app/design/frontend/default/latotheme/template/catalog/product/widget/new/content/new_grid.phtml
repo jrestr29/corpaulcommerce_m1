@@ -25,7 +25,9 @@
  */
 ?>
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
-<div class="widget widget-new-products">
+<?php echo get_class($this) ?>
+
+    <div class="widget widget-new-products">
     <div class="widget-title">
         <div class="borders"></div>
         <div class="title">LO MÁS VENDIDO</div>

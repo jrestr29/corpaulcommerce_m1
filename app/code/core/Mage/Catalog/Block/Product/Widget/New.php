@@ -105,7 +105,12 @@ class Mage_Catalog_Block_Product_Widget_New extends Mage_Catalog_Block_Product_N
     {
         /** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
         $collection = Mage::getResourceModel('catalog/product_collection');
-        $collection->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds());
+        $collection->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds())
+                    ->addFieldToFilter('entity_id', array('in'=> array(1388,1323,936)));
+        /*$collection->joinField(
+            'category_id', 'catalog/category_product', 'category_id',
+            'product_id = entity_id', null, 'left'
+        );*/
 
         $collection = $this->_addProductAttributesAndPrices($collection)
             ->addStoreFilter()
