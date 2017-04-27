@@ -3,6 +3,8 @@
 class Ditosas_CoordinadoraCourrier_Helper_Data extends Mage_Core_Helper_Abstract{
 
     public function checkDefinedShippingCost($country_id, $region, $city){
+        var_dump($region);
+
         if(!$region == "" && !is_null($region)) {
             $region = Mage::getModel('directory/region')->getCollection()
                 ->addFieldToFilter('country_id', array('eq' => $country_id))
