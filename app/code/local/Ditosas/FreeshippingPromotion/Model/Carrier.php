@@ -30,8 +30,6 @@ class Ditosas_FreeshippingPromotion_Model_Carrier extends Mage_Shipping_Model_Ca
     protected function _getRate($subtotal) {
         $address = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress();
 
-        echo $address->getRegion();
-        echo "---".$address->getCity();
         $checkCost = Mage::helper('ditosas_coordinadoracourrier')->checkDefinedShippingCost($address->getCountryId(), $address->getRegion(), $address->getCity());
 
         $rate = Mage::getModel('shipping/rate_result_method');
