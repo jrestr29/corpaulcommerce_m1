@@ -15,12 +15,18 @@ class Ditosas_CoordinadoraCourrier_Helper_Data extends Mage_Core_Helper_Abstract
             ->addFieldToFilter('name', array('eq' => $city))
             ->getFirstItem();
 
-        $model = Mage::getModel('ditosas_coordinadoracourrier/costos')->getCollection()
-            ->addFieldToFilter('country_id', array('eq' => $country_id))
-            ->addFieldToFilter('region_id', array('eq' => $region_id))
-            ->addFieldToFilter('city_id', array('eq' => $city->getId()))
-            ->getFirstItem();
-
+        if(!is_null($region) && ($region !="")) {
+            $model = Mage::getModel('ditosas_coordinadoracourrier/costos')->getCollection()
+                ->addFieldToFilter('country_id', array('eq' => $country_id))
+                ->addFieldToFilter('region_id', array('eq' => $region_id))
+                ->addFieldToFilter('city_id', array('eq' => $city->getId()))
+                ->getFirstItem();
+        } else {
+            $model = Mage::getModel('ditosas_coordinadoracourrier/costos')->getCollection()
+                ->addFieldToFilter('country_id', array('eq' => $country_id))
+                ->addFieldToFilter('city_id', array('eq' => $city->getId()))
+                ->getFirstItem();
+        }
 
         if($model)
             return $model->getCost();
