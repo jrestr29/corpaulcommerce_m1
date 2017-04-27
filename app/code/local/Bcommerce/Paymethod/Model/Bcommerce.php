@@ -114,7 +114,7 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 			$genero = "F";
 		}
 		
-		$amount = $quoteData['grand_total'];
+		$amount = Mage::getModel('checkout/session')->getQuote()->getGrandTotal();
 		$iva = Mage::helper('checkout')->getQuote()->getShippingAddress()->getData('tax_amount');
 		
 		print_r("Valor: ". $amount."<br/>");
