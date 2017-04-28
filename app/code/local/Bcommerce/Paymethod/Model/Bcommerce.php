@@ -101,7 +101,7 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 		}
 		
 		$customer = Mage::getSingleton('customer/session')->getCustomer();
-		$quote = Mage::getModel('checkout/session')->getQuote();
+		$quote = Mage::getSingleton('checkout/session')->getQuote();
 		//$quote = Mage::helper('checkout')->getQuote();
 		$quoteData= $quote->getData();
 		
