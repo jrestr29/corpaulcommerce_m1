@@ -38,7 +38,7 @@
     </div>
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
-    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="scaffold-form" enctype="multipart/form-data">
+    <a action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" class="scaffold-form" enctype="multipart/form-data">
         <div class="fieldset">
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
@@ -172,10 +172,11 @@
         </div>
         <div class="buttons-set">
             <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            <button type="submit" title="<?php echo $this->quoteEscape($this->__('Register')) ?>" class="button"><span><span><?php echo $this->__('Register') ?></span></span></button>
+            <button type="submit" data-handle="envio" title="<?php echo $this->quoteEscape($this->__('Register')) ?>" class="button" style="display: none"><span><span><?php echo $this->__('Register') ?></span></span></button>
+            <input type="checkbox" name="politicas">Acepto que mis datos sean tratados conforme a la <a href="<?php echo Mage::getBaseUrl() ?>politica-privacidad"> política de privacidad</a> de BUENOSMOTIVOS
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
-            <input name="context" type="hidden" value="checkout" />
+        <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
     <script type="text/javascript">
@@ -187,3 +188,16 @@
     //]]>
     </script>
 </div>
+
+
+<script>
+    jQuery(document).ready(function() {
+        jQuery("input[name='politicas']").click(function() {
+            if(jQuery(this).is(":checked")){
+                jQuery("button[data-handle='envio']").show();
+            } else {
+                jQuery("button[data-handle='envio']").hide();
+            }
+        });
+    });
+</script>
