@@ -39,9 +39,9 @@
                 <active>1</active>
                 <sallowspecific>1</sallowspecific>
                 <model>ditosas_coordinadoracourrier/carrier</model>
-                <name>Coordinadora</name>
+                <name>Envío con costo</name>
                 <price>25000</price>
-                <title>Coordinadora</title>
+                <title>Envío con costo</title>
             </ditosas_coordinadoracourrier>
         </carriers>
     </default>
