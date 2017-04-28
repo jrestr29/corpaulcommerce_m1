@@ -173,7 +173,7 @@
         <div class="buttons-set">
             <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
             <button type="submit" data-handle="envio" title="<?php echo $this->quoteEscape($this->__('Register')) ?>" class="button" style="display: none"><span><span><?php echo $this->__('Register') ?></span></span></button>
-            <input type="checkbox" name="politicas">Acepto que mis datos sean tratados conforme a la <a href="<?php echo Mage::getBaseUrl() ?>politica-privacidad"> política de privacidad</a> de BUENOSMOTIVOS
+            <input type="checkbox" name="politicas"><span>Acepto que mis datos sean tratados conforme a la <a href="<?php echo Mage::getBaseUrl() ?>politica-privacidad"> política de privacidad</a> de BUENOSMOTIVOS</span>
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
         <input name="context" type="hidden" value="checkout" />
@@ -195,6 +195,7 @@
         jQuery("input[name='politicas']").click(function() {
             if(jQuery(this).is(":checked")){
                 jQuery("button[data-handle='envio']").show();
+                jQuery(this).hide();
             } else {
                 jQuery("button[data-handle='envio']").hide();
             }
