@@ -34,7 +34,7 @@ class Ditosas_CoordinadoraCourrier_Model_Carrier extends Mage_Shipping_Model_Car
     public function getAllowedMethods()
     {
         return array(
-            'ditosas_fedex' => $this->getConfigData('name'),
+            'ditosas_coordinadoracourrier' => $this->getConfigData('name'),
         );
     }
 
