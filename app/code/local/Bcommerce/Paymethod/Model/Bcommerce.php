@@ -114,8 +114,8 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 			$genero = "F";
 		}
 		
-		$amount = Mage::getSingleton('checkout/session')->getQuote()->getGrandTotal(); //Get session again
-		$iva = Mage::helper('checkout')->getQuote()->getShippingAddress()->getData('tax_amount');
+		$amount = $quote->getGrandTotal(); //Get session again
+		$iva = $quote->getShippingAddress()->getData('tax_amount');
 		
 		print_r("Valor: ". $amount."<br/>");
 		print_r("Iva: ". $iva."<br/>");
@@ -179,10 +179,10 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 		$nacionalidad = "CO";
 		
 		// nombre cliente
-		if(!empty($customer->getFirstname()))
+		if(!$customer->getFirstname())
 		{
 			$nombre = $customer->getFirstname();
-			if(!empty ($customer->getMiddlename()))
+			if(!$customer->getMiddlename())
 			{
 				$nombre .= " " . $customer->getMiddlename();
 			}
@@ -190,13 +190,13 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 		else
 		{
 			$nombre = $nombreEnvio;
-			if(!empty ($direccionEnvioArreglo['middlename']))
+			if(!$direccionEnvioArreglo['middlename'])
 			{
 				$nombre .= " " . $direccionEnvioArreglo['middlename'];
 			}
 		}
 		// apellidos del cliente
-		if(!empty($customer->getLastname()))
+		if(!$customer->getLastname())
 		{
 			$apellidos = $customer->getLastname();
 		}
@@ -206,7 +206,7 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 		}
 		
 		// email cliente
-		if(!empty($customer->getEmail()))
+		if(!$customer->getEmail())
 		{
 			$email = $customer->getEmail();
 		}
