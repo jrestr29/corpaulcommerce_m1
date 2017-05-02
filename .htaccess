@@ -190,8 +190,8 @@
 ## Prevent character encoding issues from server overrides
 ## If you still have problems, use the second line instead
 
-    AddDefaultCharset Off
-    #AddDefaultCharset UTF-8
+    #AddDefaultCharset Off
+    AddDefaultCharset UTF-8
 
 <IfModule mod_expires.c>
 

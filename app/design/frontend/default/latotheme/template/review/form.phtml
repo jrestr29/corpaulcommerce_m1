@@ -166,6 +166,12 @@
             var ratingValue = jQuery(this).attr('data-value') ;
 
             jQuery('#General_'+ratingValue).trigger('click');
+
+            jQuery('#product-review-table').find('th').each(function () {
+                jQuery(this).removeClass('selected');
+            });
+
+            jQuery(this).parent().parent().parent().addClass('selected');
         });
     });
 </script>

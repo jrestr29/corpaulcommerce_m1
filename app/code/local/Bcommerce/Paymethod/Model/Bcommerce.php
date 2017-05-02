@@ -94,14 +94,15 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 		// numero de la terminal de pago
 		$numterminal = Mage::getStoreConfig('payment/paymethod/terminal_id');
 		$tmp = strlen($numterminal);
-		while($tmp < 8){
+
+		while($tmp < 8) {
 			$numterminal = '0'.$numterminal;
 			$tmp = $tmp + 1;
 		}
 		
 		$customer = Mage::getSingleton('customer/session')->getCustomer();
-		//$quote = Mage::getModel('checkout/session')->getQuote();
-		$quote = Mage::helper('checkout')->getQuote();
+		$quote = Mage::getSingleton('checkout/session')->getQuote();
+		//$quote = Mage::helper('checkout')->getQuote();
 		$quoteData= $quote->getData();
 		
 		// Genero
@@ -113,7 +114,7 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 			$genero = "F";
 		}
 		
-		$amount = $quoteData['grand_total'];
+		$amount = Mage::getSingleton('checkout/session')->getQuote()->getGrandTotal(); //Get session again
 		$iva = Mage::helper('checkout')->getQuote()->getShippingAddress()->getData('tax_amount');
 		
 		print_r("Valor: ". $amount."<br/>");

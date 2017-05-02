@@ -320,6 +320,13 @@ body {
   }
 
   &.customer-account-login {
+    form {
+      .form-instructions{
+        font-style: normal !important;
+      }
+
+    }
+
      .new-users {
        height:306px;
        .buttons-set {
@@ -395,6 +402,15 @@ body {
   }
 
   &.customer-account-create{
+    .buttons-set {
+      max-width: 100%;
+      span {
+        &.politicas {
+          margin-left: 10px;
+        }
+      }
+    }
+
     .input-box {
       .checkbox {
         margin-left: 0 !important;
@@ -709,9 +725,21 @@ body {
                 padding-left: 10px !important;
                 padding-right: 10px !important;
 
+                &.selected {
+                  border-bottom: 2px solid #000;
+                }
+
                 .rating-box {
                   width: 100% !important;
                   background: none !important;
+
+                  span {
+                    &.rating {
+                      img {
+                        margin: 0 auto !important;
+                      }
+                    }
+                  }
 
                   .rating {
                     background: none !important;
