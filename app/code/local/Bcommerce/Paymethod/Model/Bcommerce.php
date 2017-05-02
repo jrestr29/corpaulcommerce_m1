@@ -280,7 +280,7 @@ class Bcommerce_Paymethod_Model_Bcommerce extends Mage_Payment_Model_Method_Abst
 			'statee'=>$state_envio
 		);
 
-		Mage::log('DEBUG Credibanco '.date('d/m/Y H:i:s').' : '.print_r($data),null,'credibanco_debug.log');
+		Mage::log('DEBUG Credibanco '.date('d/m/Y H:i:s').' : '.var_dump($data).'\n \n',null,'credibanco_debug.log');
 		
 		// WEB Service
 		$response = "";
