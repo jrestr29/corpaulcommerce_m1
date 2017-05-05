@@ -33,7 +33,7 @@
     <?php $_items     = $_order->getAllItems() ?>
     <?php $_itemCount = count($_items) ?>
     <table class="items" cellpadding="0" cellspacing="0" border="0" style="width: 100%;  margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; font-size: 14px;">
-        <thead style=" border-bottom: 1px solid #000; background-color: #000; color: #fff;">
+        <thead style=" border-bottom: 1px solid #000;  color: #ccc;">
             <tr>
             <th style="font-weight: 100; padding-bottom: 10px; border-bottom: 1px solid #ccc;" class="cell-name">
                 Tu orden
@@ -55,7 +55,7 @@
         <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
             <?php
                 $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-                $granTotal += $_product->getFinalPrice();
+                $granTotal += $_product->getFinalPrice()*$_item->getQty();
             ?>
             <?php echo $this->getItemHtml($_item) ?>
         <?php endforeach; ?>
