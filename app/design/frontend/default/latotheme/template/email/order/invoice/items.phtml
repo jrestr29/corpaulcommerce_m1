@@ -60,11 +60,6 @@
         <?php endforeach; ?>
 
         <tfoot>
-            <tr>
-                <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Total</td>
-                <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right"><?php echo "$ ".$granTotal ?></td>
-            </tr>
-
             <?php echo $this->getChildHtml('invoice_totals')?>
         </tfoot>
     </table>
