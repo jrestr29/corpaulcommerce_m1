@@ -25,6 +25,20 @@
  */
 ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
+<?php
+    $order = Mage::getModel('sales/order');
+    $incrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+    $order->loadByIncrementId($incrementId);
+
+    try{
+        $order->sendNewOrderEmail();
+    } catch (Exception $ex) {
+        echo "Email Not Sent...";
+    }
+    $customer = Mage::getSingleton('customer/session')->getCustomer();
+    $email = $customer->getEmail();
+?>
+
 <h2 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h2>
 
 <?php if ($this->getOrderId()):?>
@@ -59,3 +73,5 @@
 <div class="buttons-set">
     <button type="button" class="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Continue Shopping')) ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
+
+
