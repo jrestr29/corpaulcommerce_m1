@@ -29,20 +29,20 @@
 
 <tbody style="color: #000000 !important;">
     <tr>
-        <td class="cell-content product-info">
+        <td class="cell-content product-info" style="max-width: 250px; font-size: 13px; color: #676767;">
             <p class="product-name"><?php echo $this->escapeHtml($_item->getName()) ?></p>
-            <img src="<?php echo (string)Mage::helper('catalog/image')->init($_product, 'thumbnail') ?>" />
+            <img src="<?php echo (string)Mage::helper('catalog/image')->init($_product, 'thumbnail') ?>" style="max-width: 150px"/>
         </td>
 
-        <td class="cell-content align-center">
+        <td class="cell-content align-center" style="font-size: 13px; color: #676767; text-align: center">
             <?php echo $_item->getQty()*1 ?>
         </td>
-        <td class="cell-content align-center">
-            <?php echo $_product->getFinalPrice() ?>
+            <td class="cell-content align-center" style="font-size: 13px; color: #676767; text-align: center">
+            $ <?php echo $_product->getFinalPrice() ?>
         </td>
 
-        <td class="cell-content align-center">
-            <?php echo $_product->getFinalPrice()*$_item->getQty()*1 ?>
+        <td class="cell-content align-center" style="font-size: 13px; color: #676767;  text-align: center">
+            $ <?php echo $_product->getFinalPrice()*$_item->getQty()*1 ?>
         </td>
     </tr>
 </tbody>
