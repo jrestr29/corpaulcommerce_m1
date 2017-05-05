@@ -31,27 +31,40 @@
 
     <?php $_items     = $_order->getAllItems() ?>
     <?php $_itemCount = count($_items) ?>
-    <table class="items" cellpadding="0" cellspacing="0" border="0">
-        <thead>
+    <table class="items" cellpadding="0" cellspacing="0" border="0" style="width: 100%;  margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; font-size: 14px;">
+        <thead style=" border-bottom: 1px solid #000;  color: #ccc;">
             <tr>
-                <th class="cell-name">
-                    <?php if($_itemCount > 1): echo $this->__('Productos en tu pedido'); else: echo $this->__('Producto en tu pedido'); endif; ?>
+                <th style="font-weight: 100; padding-bottom: 10px; border-bottom: 1px solid #ccc;" class="cell-name">
+                    Tu orden
                 </th>
-                <th class="cell-name align-center">
-                    <?php echo $this->__('Qty'); ?>
+                <th style="font-weight: 100;padding-bottom: 10px; border-bottom: 1px solid #ccc;" class="cell-name">
+                    Cantidad
                 </th>
-                <th class="cell-name align-right">
-                    <?php echo $this->__('Price'); ?>
+                <th style="font-weight: 100;padding-bottom: 10px; border-bottom: 1px solid #ccc;" class="cell-name">
+                    Precio unidad
+                </th>
+                <th style="font-weight: 100;padding-bottom: 10px; border-bottom: 1px solid #ccc;" class="cell-name">
+                    Precio
                 </th>
             </tr>
         </thead>
 
         <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
         <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
+            <?php
+                $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
+                $granTotal += $_product->getFinalPrice()*$_item->getQty();
+            ?>
+
             <?php echo $this->getItemHtml($_item) ?>
         <?php endforeach; ?>
 
         <tfoot>
+            <tr>
+                <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Total</td>
+                <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right"><?php echo "$ ".$granTotal ?></td>
+            </tr>
+
             <?php echo $this->getChildHtml('invoice_totals')?>
         </tfoot>
     </table>
