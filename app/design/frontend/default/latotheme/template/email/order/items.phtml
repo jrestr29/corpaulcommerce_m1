@@ -51,8 +51,19 @@
                 </thead>
             <?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
             <?php if($_item->getParentItem()) continue; else $i++; ?>
+                <?php
+                    $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
+                    $granTotal += $_product->getFinalPrice()*$_item->getQty();
+                ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach; ?>
+
+                <tfoot style="color: #ccc;">
+                    <tr>
+                        <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Total</td>
+                        <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right; color:#000"><?php echo "$ ".$granTotal ?></td>
+                    </tr>
+                </tfoot>
             </table>
         </td>
     </tr>
