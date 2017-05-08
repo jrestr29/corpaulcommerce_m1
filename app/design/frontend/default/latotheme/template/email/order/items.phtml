@@ -32,7 +32,7 @@
     <?php $_itemCount = count($_items); ?>
     <tr>
         <td colspan="2">
-            <table class="items" cellpadding="0" cellspacing="0" border="0" style="width: 100%;  margin-bottom: 15px; border: 1px solid #ccc; padding: 15px; font-size: 14px;">
+            <table class="items" cellpadding="0" cellspacing="0" border="0" style="width: 100%;  border: 1px solid #ccc; padding: 15px; font-size: 14px;">
                 <thead style="border-bottom: 1px solid #000;  color: #ccc;">
                 <tr>
                     <th style="font-weight: 100; padding-bottom: 10px; border-bottom: 1px solid #ccc; text-align: left;" class="cell-name">
@@ -67,18 +67,13 @@
             </table>
         </td>
     </tr>
-    <tr>
-        <td>
-            <?php echo $this->getChildHtml('order_totals') ?>
-        </td>
-    </tr>
     <?php if ($this->helper('giftmessage/message')->isMessagesAvailable('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
         <?php $_giftMessage = $this->helper('giftmessage/message')->getGiftMessage($_order->getGiftMessageId()); ?>
         <?php if ($_giftMessage): ?>
             <br />
             <table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:1px solid #EAEAEA;">
                 <thead>
-                    <tr>f
+                    <tr>
                         <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><strong><?php echo $this->__('Gift Message for this Order') ?></strong></th>
                     </tr>
                 </thead>
