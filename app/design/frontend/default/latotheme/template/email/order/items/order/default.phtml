@@ -35,15 +35,15 @@
             <img src="<?php echo (string)Mage::helper('catalog/image')->init($_product, 'thumbnail') ?>" style="max-width: 100px"/>
         </td>
 
-        <td class="cell-content align-center" style="font-size: 17px; color: #676767; text-align: center">
+        <td class="cell-content align-center" style="font-size: 17px; color: #676767; text-align: left">
             <?php echo $_item->getQtyOrdered()*1 ?>
         </td>
 
-        <td class="cell-content align-center" style="font-size: 17px; color: #676767; text-align: center">
+        <td class="cell-content align-center" style="font-size: 17px; color: #676767; text-align: left">
             $<?php echo $_product->getFinalPrice() ?>
         </td>
 
-        <td class="cell-content align-center" style="font-size: 17px; color: #676767;  text-align: center">
+        <td class="cell-content align-center" style="font-size: 17px; color: #676767;  text-align: left">
             $<?php echo $_product->getFinalPrice()*$_item->getQtyOrdered()*1 ?>
         </td>
     </tr>
