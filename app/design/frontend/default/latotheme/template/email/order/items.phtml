@@ -31,7 +31,7 @@
     <?php $_items = $_order->getAllItems(); ?>
     <?php $_itemCount = count($_items); ?>
     <tr>
-        <td colspan="2">
+        <td colspan="2" style="0 50px 0 50px">
             <table class="items" cellpadding="0" cellspacing="0" border="0" style="width: 100%;  margin-bottom: 15px; border: 1px solid #ccc; padding: 15px; font-size: 14px;">
                 <thead style="border-bottom: 1px solid #000;  color: #ccc;">
                 <tr>
@@ -49,11 +49,12 @@
                     </th>
                 </tr>
                 </thead>
+            <?php $grandTotal = 0; ?>
             <?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
             <?php if($_item->getParentItem()) continue; else $i++; ?>
                 <?php
                     $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-                    $granTotal += $_product->getFinalPrice()*$_item->getQty();
+                $grandTotal += $_product->getFinalPrice()*$_item->getQty();
                 ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach; ?>
@@ -61,7 +62,7 @@
                 <tfoot style="color: #ccc;">
                     <tr>
                         <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Total</td>
-                        <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right; color:#000"><?php echo "$ ".$granTotal ?></td>
+                        <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right; color:#000"><?php echo "$ ".$grandTotal ?></td>
                     </tr>
                 </tfoot>
             </table>
@@ -78,7 +79,7 @@
             <br />
             <table cellspacing="0" cellpadding="0" border="0" width="100%" style="border:1px solid #EAEAEA;">
                 <thead>
-                    <tr>f
+                    <tr>
                         <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><strong><?php echo $this->__('Gift Message for this Order') ?></strong></th>
                     </tr>
                 </thead>
