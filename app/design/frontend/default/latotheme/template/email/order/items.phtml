@@ -55,7 +55,7 @@
             <?php if($_item->getParentItem()) continue; else $i++; ?>
                 <?php
                     $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-                $grandTotal += $_product->getFinalPrice()*$_item->getQty();
+                $grandTotal += $_product->getFinalPrice()*$_item->getQtyOrdered();
                 ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach; ?>
