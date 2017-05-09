@@ -40,11 +40,11 @@
         </td>
 
         <td class="cell-content align-center" style="font-size: 17px; color: #676767; text-align: left">
-            $<?php echo number_format($_product->getFinalPrice(),0) ?>
+            $<?php echo number_format($_product->getFinalPrice(),0,',','.') ?>
         </td>
 
         <td class="cell-content align-center" style="font-size: 17px; color: #676767;  text-align: left">
-            $<?php echo number_format($_product->getFinalPrice()*$_item->getQty()*1,0); ?>
+            $<?php echo number_format($_product->getFinalPrice()*$_item->getQty()*1,0,',','.'); ?>
         </td>
     </tr>
 </tbody>
