@@ -24,8 +24,8 @@ class Ditosas_BillingService_Model_Observer {
             array_push($json['detalle'], $child);
         }
 
-        Mage::log(date('d/m/Y H:i:s')." Bill # ".$invoice->getIncrementId(),null,'ws-billing.log');
-        Mage::log(date('d/m/Y H:i:s')." SENT JSON: ".json_encode($json),null,'ws-billing.log');
+        Mage::log(date('d/m/Y H:i:s')." Bill # ".$invoice->getIncrementId()."\n",null,'ws-billing.log');
+        Mage::log(date('d/m/Y H:i:s')." SENT JSON: ".json_encode($json)."\n \n",null,'ws-billing.log');
 
 
         $data_string = json_encode($json);
@@ -40,7 +40,7 @@ class Ditosas_BillingService_Model_Observer {
         );
 
         $result = curl_exec($ch);
-        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result,null,'ws-billing.log');
+        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result." \n",null,'ws-billing.log');
 
         $result = json_decode($result);
 
@@ -49,5 +49,8 @@ class Ditosas_BillingService_Model_Observer {
         } else {
             Mage::log(date('d/m/Y H:i:s').': Bill #'.$invoice->getIncrementId().' created successfully',null,'ws-billing.log');
         }
+
+        Mage::log("\n ================================================ \n \n",null,'ws-billing.log');
+
     }
 }
