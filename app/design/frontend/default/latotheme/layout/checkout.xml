@@ -530,6 +530,9 @@ One page checkout order review block
         <reference name="content">
             <block type="checkout/onepage_success" name="checkout.success" template="checkout/success.phtml"/>
         </reference>
+        <reference name="head">
+            <action method="setTitle" translate="title"><title>Abako Ecommerce</title></action>
+        </reference>
     </checkout_onepage_success>
     <checkout_onepage_failure translate="label">
         <label>One Page Checkout Failure</label>
