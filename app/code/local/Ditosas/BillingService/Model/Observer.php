@@ -6,7 +6,7 @@ class Ditosas_BillingService_Model_Observer {
         $order = $invoice->getOrder();
 
         $json = [];
-        $json['NuMFactura'] = $invoice->getIncrementId();
+        $json['NumFactura'] = $invoice->getIncrementId();
         $json['CodAsesor'] = '1';
         $json['CodCliente'] = '1';
         $json['Fc'] = $invoice->getCreatedAt();
