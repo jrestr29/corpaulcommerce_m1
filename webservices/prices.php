@@ -31,7 +31,7 @@ if($browser){
 
 foreach($prices->Precios as $precio) {
     $sku = $precio->CodPro;
-    $productPrice = $precio->PVN;
+    $productPrice = round($precio->PVN,0);
 
     //$product = Mage::getModel('catalog/product')->loadByAttribute('sku',$sku);
     $product = Mage::getModel('catalog/product')->getCollection()
