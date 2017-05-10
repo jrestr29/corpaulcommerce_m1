@@ -24,6 +24,10 @@ class Ditosas_BillingService_Model_Observer {
             array_push($json['detalle'], $child);
         }
 
+        Mage::log(date('d/m/Y H:i:s')." Bill # ".$invoice->getIncrementId(),null,'ws-billing.log');
+        Mage::log(date('d/m/Y H:i:s')." SENT JSON: ".json_encode($json),null,'ws-billing.log');
+
+
         $data_string = json_encode($json);
 
         $ch = curl_init('http://190.14.230.242:60020/ServicioMovilDITO_v2/ServicioMovilDITO.svc/IngresarFactura');
@@ -36,6 +40,8 @@ class Ditosas_BillingService_Model_Observer {
         );
 
         $result = curl_exec($ch);
+        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result,null,'ws-billing.log');
+
         $result = json_decode($result);
 
         if($result->MsgID=="-1"){
