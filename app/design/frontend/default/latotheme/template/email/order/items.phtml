@@ -65,18 +65,18 @@
 
                 <tfoot style="color: #929292;">
                     <tr>
-                        <td colsspan="1" style=" border-top: 1px solid #92; padding-top: 10px;">Subtotal</td>
+                        <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Subtotal</td>
                         <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right"><?php echo "$ ".number_format($grandTotal,0,',','.') ?></td>
                     </tr>
 
                     <tr>
-                        <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Flete</td>
-                        <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right"><?php echo "$ ".number_format($_orderShippingTotal,0,',','.') ?></td>
+                        <td colsspan="1" style="padding-top: 10px;">Flete</td>
+                        <td colspan="3" style="padding-top: 10px;   text-align: right"><?php echo "$ ".number_format($_orderShippingTotal,0,',','.') ?></td>
                     </tr>
 
                     <tr>
-                        <td colsspan="1" style=" border-top: 1px solid #ccc; padding-top: 10px;">Total</td>
-                        <td colspan="3" style="border-top: 1px solid #ccc; padding-top: 10px;   text-align: right"><?php echo "$ ".number_format(($grandTotal+$_orderShippingTotal),0,',','.') ?></td>
+                        <td colsspan="1" style=" padding-top: 10px;">Total</td>
+                        <td colspan="3" style="padding-top: 10px;   text-align: right"><?php echo "$ ".number_format(($grandTotal+$_orderShippingTotal),0,',','.') ?></td>
                     </tr>
                 </tfoot>
             </table>
