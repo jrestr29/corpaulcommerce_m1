@@ -8,7 +8,7 @@ class Ditosas_BillingService_Model_Observer {
         $json = [];
         $json['NumFactura'] = $invoice->getIncrementId();
         $json['CodAsesor'] = '1';
-        $json['CodCliente'] = '1';
+        $json['CodCliente'] = '2';
         $json['Fc'] = $invoice->getCreatedAt();
         $json['Tp'] = '1';
         $json['Fnt'] = '9';
