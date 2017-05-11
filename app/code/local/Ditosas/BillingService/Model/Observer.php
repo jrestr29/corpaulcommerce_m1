@@ -40,7 +40,8 @@ class Ditosas_BillingService_Model_Observer {
         );
 
         $result = curl_exec($ch);
-        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result." \n",null,'ws-billing.log');
+        Mage::log("",null,"ws-billing.log");
+        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result." \n \n",null,'ws-billing.log');
 
         $result = json_decode($result);
 
