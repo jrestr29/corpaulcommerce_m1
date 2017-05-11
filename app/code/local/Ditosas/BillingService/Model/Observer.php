@@ -12,6 +12,7 @@ class Ditosas_BillingService_Model_Observer {
         $json['Fc'] = $invoice->getCreatedAt();
         $json['Tp'] = '1';
         $json['Fnt'] = '9';
+        $json['Agencia'] = '0040000001';
         $json['detalle'] = array();
 
         foreach($invoice->getAllItems() as $item){
