@@ -29,6 +29,8 @@
 <?php 
     $_orderShippingTotal = $_order->getShippingAmount()*1.19;
     $_orderDiscountTotal = $_order->getDiscountAmount();
+
+    var_dump($_order->getDiscountAmount());
 ?>
 
 
@@ -80,7 +82,10 @@
                             <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format($_orderDiscountTotal,0,',','.') ?></td>
                         </tr>
                      <?php endif; ?>
+<<<<<<< HEAD
                     ?>
+=======
+>>>>>>> b1b2fdad56f1b4847bf683c782ef37bb9d9291fe
                     <tr>
                         <td colsspan="1" style=" padding-top: 10px; font-size: 17px !important">Total</td>
                         <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format((($grandTotal+$_orderShippingTotal)-$_orderDiscountTotal),0,',','.') ?></td>
