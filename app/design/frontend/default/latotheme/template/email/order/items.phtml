@@ -28,6 +28,9 @@
 <?php $_order = $this->getOrder(); ?>
 <?php 
     $_orderShippingTotal = $_order->getShippingAmount()*1.19;
+    $_orderDiscountTotal = $_order->getDiscountAmount();
+
+    var_dump($_order->getDiscountAmount());
 ?>
 
 
@@ -58,7 +61,7 @@
             <?php if($_item->getParentItem()) continue; else $i++; ?>
                 <?php
                     $_product = Mage::getModel('catalog/product')->load($_item->getProductId());
-                $grandTotal += $_product->getFinalPrice()*$_item->getQtyOrdered();
+                    $grandTotal += $_product->getFinalPrice()*$_item->getQtyOrdered();
                 ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach; ?>
@@ -73,10 +76,15 @@
                         <td colsspan="1" style="padding-top: 10px;; font-size: 17px !important">Flete</td>
                         <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format($_orderShippingTotal,0,',','.') ?></td>
                     </tr>
-
+                    <?php  if ($_orderDiscountTotal > 0) : ?>
+                        <tr>
+                            <td colsspan="1" style="padding-top: 10px;; font-size: 17px !important">Descuento</td>
+                            <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format($_orderDiscountTotal,0,',','.') ?></td>
+                        </tr>
+                     <?php endif; ?>
                     <tr>
                         <td colsspan="1" style=" padding-top: 10px; font-size: 17px !important">Total</td>
-                        <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format(($grandTotal+$_orderShippingTotal),0,',','.') ?></td>
+                        <td colspan="3" style="padding-top: 10px;   text-align: right; font-size: 17px !important"><?php echo "$ ".number_format((($grandTotal+$_orderShippingTotal)-$_orderDiscountTotal),0,',','.') ?></td>
                     </tr>
                 </tfoot>
             </table>
