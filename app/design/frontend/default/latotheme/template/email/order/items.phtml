@@ -28,9 +28,7 @@
 <?php $_order = $this->getOrder(); ?>
 <?php 
     $_orderShippingTotal = $_order->getShippingAmount()*1.19;
-    $_orderDiscountTotal = $_order->getDiscountAmount();
-
-    var_dump($_order->getDiscountAmount()); //
+    $_orderDiscountTotal = abs($_order->getDiscountAmount());
 ?>
 
 
