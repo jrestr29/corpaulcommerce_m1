@@ -49,19 +49,20 @@
                 <li class="fields">
                     <div class="customer-name">
                         <div class="field">
-                            <label for="document_type" style="width: 220px">Tipo de documento de identidad</label>    
-                            <select name="document_type" class="input-box" style="display: block">
-                                <option>CC</option>
-                                <option>CE</option>
-                                <option>TI</option>
-                                <option>PASAPORTE</option>
-                                <option>DUI</option>
+                            <label for="tipodocumentoidentidad" style="width: 220px">Tipo de documento de identidad</label>    
+                            <select name="tipodocumentoidentidad" class="input-box" style="display: block">
+                                <option value="250">Cedula de ciudadanía</option>
+                                <option value="251">Cedula de extranjería</option>
+                                <option value="252">Tarjeta de identidad</option>
+                                <option value="253">Documento único de identidad</option>
+                                <option value="254">Pasaporte</option>
+                                <option value="255">NIT</option>
                             </select>
                         </div>
 
                         <div class="field">
-                            <label for="id_document" style="width: 220px">Documento de identidad</label>
-                            <input type="text" name="id_document" class="input-box" style="display: block">
+                            <label for="documentoidentidad" style="width: 220px">Documento de identidad</label>
+                            <input type="text" name="documentoidentidad" class="input-box" style="display: block">
                         </div>
                     </div>
                 </li>
