@@ -47,6 +47,25 @@
             <p class="required"><?php echo $this->__('* Required Fields') ?></p>
             <ul class="form-list">
                 <li class="fields">
+                    <div class="customer-name">
+                        <div class="field">
+                            <label for="document_type">Tipo de documento de identidad</label>    
+                            <select name="document_type">
+                                <option>CC</option>
+                                <option>CE</option>
+                                <option>TI</option>
+                                <option>PASAPORTE</option>
+                                <option>DUI</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="id_document">Documento de identidad</label>
+                            <input type="text" name="id_document">
+                        </div>
+                    </div>
+                </li>
+                <li class="fields">
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
                 </li>
                 <li>
