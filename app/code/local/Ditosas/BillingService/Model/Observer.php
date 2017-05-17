@@ -8,10 +8,11 @@ class Ditosas_BillingService_Model_Observer {
         $json = [];
         $json['NumFactura'] = $invoice->getIncrementId();
         $json['CodAsesor'] = '1';
-        $json['CodCliente'] = '1';
+        $json['CodCliente'] = '2';
         $json['Fc'] = $invoice->getCreatedAt();
         $json['Tp'] = '1';
         $json['Fnt'] = '9';
+        $json['Agencia'] = '0040000001';
         $json['detalle'] = array();
 
         foreach($invoice->getAllItems() as $item){
@@ -40,7 +41,8 @@ class Ditosas_BillingService_Model_Observer {
         );
 
         $result = curl_exec($ch);
-        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result." \n",null,'ws-billing.log');
+        Mage::log("",null,"ws-billing.log");
+        Mage::log(date('d/m/Y H:i:s')." RECEIVED JSON: ".$result." \n \n",null,'ws-billing.log');
 
         $result = json_decode($result);
 
