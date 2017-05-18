@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_DocumentosIdentidad>
+            <version>1.0.0</version>
+        </Ditosas_DocumentosIdentidad>
+    </modules>
+    <global>
+        <resources>
+            <Ditosas_DocumentosIdentidad_setup>
+                <setup>
+                    <module>Ditosas_DocumentosIdentidad</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </Ditosas_DocumentosIdentidad_setup>
+            <Ditosas_DocumentosIdentidad_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </Ditosas_DocumentosIdentidad_write>
+            <Ditosas_DocumentosIdentidad_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </Ditosas_DocumentosIdentidad_read>
+        </resources>
+
+        <models>
+            <ditosas_citydropdown>
+                <class>Ditosas_DocumentosIdentidad_Model</class>
+            </ditosas_citydropdown>
+        </models>
+    </global>
+</config>
