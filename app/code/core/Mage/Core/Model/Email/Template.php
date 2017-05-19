@@ -404,9 +404,9 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
                 break;
         }
 
-        if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
+        /*if ($this->hasQueue() && $this->getQueue() instanceof Mage_Core_Model_Email_Queue) {
             /** @var $emailQueue Mage_Core_Model_Email_Queue */
-            $emailQueue = $this->getQueue();
+            /*$emailQueue = $this->getQueue();
             $emailQueue->clearRecipients();
             $emailQueue->setMessageBody($text);
             $emailQueue->setMessageParameters(array(
@@ -423,7 +423,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
             $emailQueue->addMessageToQueue();
 
             return true;
-        }
+        }*/
 
         ini_set('SMTP', Mage::getStoreConfig('system/smtp/host'));
         ini_set('smtp_port', Mage::getStoreConfig('system/smtp/port'));
@@ -449,7 +449,7 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Email_Template_Abst
         $mail->setFrom($this->getSenderEmail(), $this->getSenderName());
 
         try {
-            $mail->send();
+            //$mail->send();
             $this->_mail = null;
         }
         catch (Exception $e) {
