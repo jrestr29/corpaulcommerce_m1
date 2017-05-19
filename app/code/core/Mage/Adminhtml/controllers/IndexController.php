@@ -353,7 +353,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
             $user->setRpToken(null);
             $user->setRpTokenCreatedAt(null);
             $user->save();
-            $this->_getSession()->addSuccess(Mage::helper('adminhtml')->__('Se ha actualizado tu contraseña..'));
+            $this->_getSession()->addSuccess(Mage::helper('adminhtml')->__('Se ha actualizado tu contraseña.'));
             $this->_redirect('*/*/login');
         } catch (Exception $exception) {
             $this->_getSession()->addError($exception->getMessage());

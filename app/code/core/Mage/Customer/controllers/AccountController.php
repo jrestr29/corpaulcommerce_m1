@@ -870,7 +870,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $this->_getSession()->unsetData(self::TOKEN_SESSION_NAME);
             $this->_getSession()->unsetData(self::CUSTOMER_ID_SESSION_NAME);
 
-            $this->_getSession()->addSuccess($this->_getHelper('customer')->__('Se ha actualizado tu contraseña..'));
+            $this->_getSession()->addSuccess($this->_getHelper('customer')->__('Se ha actualizado tu contraseña.'));
             $this->_redirect('*/*/login');
         } catch (Exception $exception) {
             $this->_getSession()->addException($exception, $this->__('Cannot save a new password.'));
