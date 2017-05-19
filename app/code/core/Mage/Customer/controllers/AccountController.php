@@ -792,7 +792,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $this->renderLayout();
 
         } catch (Exception $exception) {
-            $this->_getSession()->addError($this->_getHelper('customer')->__('Your password reset link has expired.'));
+            $this->_getSession()->addError($this->_getHelper('customer')->__('Tu link para cambiar la contraseña ha caducado.'));
             $this->_redirect('*/*/forgotpassword');
         }
     }
@@ -814,7 +814,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
                 ->_redirect('*/*/changeforgotten');
 
         } catch (Exception $exception) {
-            $this->_getSession()->addError($this->_getHelper('customer')->__('Your password reset link has expired.'));
+            $this->_getSession()->addError($this->_getHelper('customer')->__('Tu link para cambiar la contraseña ha caducado.'));
             $this->_redirect('*/*/forgotpassword');
         }
     }
@@ -832,7 +832,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
         try {
             $this->_validateResetPasswordLinkToken($customerId, $resetPasswordLinkToken);
         } catch (Exception $exception) {
-            $this->_getSession()->addError($this->_getHelper('customer')->__('Your password reset link has expired.'));
+            $this->_getSession()->addError($this->_getHelper('customer')->__('Tu link para cambiar la contraseña ha caducado.'));
             $this->_redirect('*/*/');
             return;
         }
@@ -870,7 +870,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $this->_getSession()->unsetData(self::TOKEN_SESSION_NAME);
             $this->_getSession()->unsetData(self::CUSTOMER_ID_SESSION_NAME);
 
-            $this->_getSession()->addSuccess($this->_getHelper('customer')->__('Your password has been updated.'));
+            $this->_getSession()->addSuccess($this->_getHelper('customer')->__('Se ha actualizado tu contraseña..'));
             $this->_redirect('*/*/login');
         } catch (Exception $exception) {
             $this->_getSession()->addException($exception, $this->__('Cannot save a new password.'));
@@ -905,7 +905,7 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
         $customerToken = $customer->getRpToken();
         if (strcmp($customerToken, $resetPasswordLinkToken) != 0 || $customer->isResetPasswordLinkTokenExpired()) {
-            throw Mage::exception('Mage_Core', $this->_getHelper('customer')->__('Your password reset link has expired.'));
+            throw Mage::exception('Mage_Core', $this->_getHelper('customer')->__('Tu link para cambiar la contraseña ha caducado.'));
         }
     }
 

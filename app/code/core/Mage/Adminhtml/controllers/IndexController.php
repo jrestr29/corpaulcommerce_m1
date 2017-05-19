@@ -291,7 +291,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
             );
             $this->_outTemplate('resetforgottenpassword', $data);
         } catch (Exception $exception) {
-            $this->_getSession()->addError(Mage::helper('adminhtml')->__('Your password reset link has expired.'));
+            $this->_getSession()->addError(Mage::helper('adminhtml')->__('Tu link para cambiar la contraseña ha caducado.'));
             $this->_redirect('*/*/forgotpassword', array('_nosecret' => true));
         }
     }
@@ -311,7 +311,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
         try {
             $this->_validateResetPasswordLinkToken($userId, $resetPasswordLinkToken);
         } catch (Exception $exception) {
-            $this->_getSession()->addError(Mage::helper('adminhtml')->__('Your password reset link has expired.'));
+            $this->_getSession()->addError(Mage::helper('adminhtml')->__('Tu link para cambiar la contraseña ha caducado.'));
             $this->_redirect('*/*/');
             return;
         }
@@ -353,7 +353,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
             $user->setRpToken(null);
             $user->setRpTokenCreatedAt(null);
             $user->save();
-            $this->_getSession()->addSuccess(Mage::helper('adminhtml')->__('Your password has been updated.'));
+            $this->_getSession()->addSuccess(Mage::helper('adminhtml')->__('Se ha actualizado tu contraseña..'));
             $this->_redirect('*/*/login');
         } catch (Exception $exception) {
             $this->_getSession()->addError($exception->getMessage());
@@ -392,7 +392,7 @@ class Mage_Adminhtml_IndexController extends Mage_Adminhtml_Controller_Action
 
         $userToken = $user->getRpToken();
         if (!hash_equals($userToken, $resetPasswordLinkToken) || $user->isResetPasswordLinkTokenExpired()) {
-            throw Mage::exception('Mage_Core', Mage::helper('adminhtml')->__('Your password reset link has expired.'));
+            throw Mage::exception('Mage_Core', Mage::helper('adminhtml')->__('Tu link para cambiar la contraseña ha caducado.'));
         }
     }
 
