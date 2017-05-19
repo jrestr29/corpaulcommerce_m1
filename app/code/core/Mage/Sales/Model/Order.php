@@ -1349,11 +1349,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         ));
 
         /** @var $emailQueue Mage_Core_Model_Email_Queue */
-        $emailQueue = Mage::getModel('core/email_queue');
+        /*$emailQueue = Mage::getModel('core/email_queue');
         $emailQueue->setEntityId($this->getId())
             ->setEntityType(self::ENTITY)
             ->setEventType(self::EMAIL_EVENT_NAME_NEW_ORDER)
-            ->setIsForceCheck(!$forceMode);
+            ->setIsForceCheck(!$forceMode);*/
 
         //$mailer->setQueue($emailQueue)->send();
         $mailer->send();
@@ -1445,11 +1445,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         );
 
         /** @var $emailQueue Mage_Core_Model_Email_Queue */
-        $emailQueue = Mage::getModel('core/email_queue');
-        $emailQueue->setEntityId($this->getId())
+        //$emailQueue = Mage::getModel('core/email_queue');
+        /*$emailQueue->setEntityId($this->getId())
             ->setEntityType(self::ENTITY)
             ->setEventType(self::EMAIL_EVENT_NAME_UPDATE_ORDER)
-            ->setIsForceCheck(!$forceMode);
+            ->setIsForceCheck(!$forceMode);*/
         //$mailer->setQueue($emailQueue)->send();
         $mailer->send();
 

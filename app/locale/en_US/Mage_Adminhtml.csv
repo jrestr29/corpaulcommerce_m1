@@ -1260,7 +1260,7 @@
 "You need to specify order items.","You need to specify order items."
 "You will need to wait when the action ends.","You will need to wait when the action ends."
 "Your answers contain duplicates.","Your answers contain duplicates."
-"Your password has been updated.","Se ha actualizado tu contraseña.."
+"Your password has been updated.","Se ha actualizado tu contraseña."
 "Your password reset link has expired.","Tu link para cambiar la contraseña ha caducado."
 "Your server PHP settings allow you to upload files not more than %s at a time. Please modify post_max_size (currently is %s) and upload_max_filesize (currently is %s) values in php.ini if you want to upload larger files.","Your server PHP settings allow you to upload files not more than %s at a time. Please modify post_max_size (currently is %s) and upload_max_filesize (currently is %s) values in php.ini if you want to upload larger files."
 "Your web server is configured incorrectly. As a result, configuration files with sensitive information are accessible from the outside. Please contact your hosting provider.","Your web server is configured incorrectly. As a result, configuration files with sensitive information are accessible from the outside. Please contact your hosting provider."
