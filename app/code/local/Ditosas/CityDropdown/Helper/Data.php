@@ -6,6 +6,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
         $results = Mage::getModel('ditosas_citydropdown/city')->getCollection()
             ->addFieldToFilter('region_id', array('eq' => $region_id))
             ->addFieldToFilter('country:id', array('eq' => $country_id))
+            ->addAttributeToSort('city_id', Varien_Data_Collection::SORT_ORDER_ASC)
             ->load()
             ->getData();
 
@@ -19,7 +20,7 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
             }
         }
         return $cities;
-    }
+    } 
 
     public function getCitiesAsDropdown($selectedCity = '',$country_id, $region_id)
     {
@@ -55,6 +56,8 @@ class Ditosas_CityDropdown_Helper_Data extends Mage_Core_Helper_Abstract{
     {
         $results = Mage::getModel('ditosas_citydropdown/city')->getCollection()
             ->addFieldToFilter('country_id', array('eq' => 'CO'))
+            ->addAttributeToSort('city_id', Varien_Data_Collection::SORT_ORDER_ASC)
+            ->addAttributeToSort('city_id', Varien_Data_Collection::SORT_ORDER_ASC)
             ->load()
             ->getData();
 
