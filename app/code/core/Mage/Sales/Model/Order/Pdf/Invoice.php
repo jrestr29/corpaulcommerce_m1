@@ -96,6 +96,32 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $this->y -= 20;
     }
 
+    protected function drawInvoiceInfo(Zend_Pdf_Page $page)
+    {
+        $this->_setFontRegular($page, 10);
+        $page->setFillColor(new Zend_Pdf_Color_RGB(0.93, 0.92, 0.92));
+        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
+        $page->setLineWidth(0.5);
+        $page->drawRectangle(25, $this->y, 570, $this->y -15);
+        $this->y -= 10;
+        $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
+
+        $lines[0][] = array(
+            'text' => 'Empresa que factura',
+            'feed'  => 260,
+            'align' => 'center'
+        );
+
+        $lineBlock = array(
+            'lines'  => $lines,
+            'height' => 1
+        );
+
+        $this->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
+        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
+        $this->y -= 20;
+    }
+
     /**
      * Return PDF document
      *
@@ -135,6 +161,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 Mage::helper('sales')->__('Factura # ') . $invoice->getIncrementId()
             );
             /* Add table */
+            $this->drawInvoiceInfo($page);
             $this->_drawHeader($page);
             /* Add body */
             foreach ($invoice->getAllItems() as $item){
@@ -172,4 +199,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         }
         return $page;
     }
+
+
 }
