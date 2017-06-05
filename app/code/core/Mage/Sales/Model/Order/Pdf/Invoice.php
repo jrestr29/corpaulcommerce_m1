@@ -98,6 +98,10 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
 
     protected function drawInvoiceInfo(Zend_Pdf_Page $page)
     {
+        $top = 815;
+        $font = $this->_setFontRegular($page, 10);
+
+        //Draw header
         $this->_setFontRegular($page, 10);
         $page->setFillColor(new Zend_Pdf_Color_RGB(0.93, 0.92, 0.92));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
@@ -120,6 +124,23 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $this->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
         $this->y -= 20;
+        $top -= 10;
+
+        //Draw company invoice info 
+        $page->setFillColor(new Zend_Pdf_Color_RGB(255, 255, 255));
+        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
+        $page->setLineWidth(0.5);
+        $page->drawRectangle(25, $this->y+17, 570, $this->y-69);
+        $this->y -= 10;
+        $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
+
+        $page->drawText('CORPAUL',280,495,'UTF-8');
+        $page->drawText('890.981.683-8',275,483,'UTF-8');
+        $page->drawText('CALLE 9CSUR 50FF - 67 MEDELLIN',220,471,'UTF-8');
+        $page->drawText('(57- 4) 448 05 50 Opción 3',245,457,'UTF-8');
+        $page->drawText('IVA REGIMEN COMÚN',250,443,'UTF-8');
+
+        $this->y -= 72;
     }
 
     /**
