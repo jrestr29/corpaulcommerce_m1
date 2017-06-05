@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Magento
  *
@@ -134,11 +134,11 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $this->y -= 10;
         $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
 
-        $page->drawText('CORPAUL',280,495,'UTF-8');
-        $page->drawText('890.981.683-8',275,483,'UTF-8');
-        $page->drawText('CALLE 9CSUR 50FF - 67 MEDELLIN',220,471,'UTF-8');
-        $page->drawText('(57- 4) 448 05 50 Opción 3',245,457,'UTF-8');
-        $page->drawText('IVA REGIMEN COMÚN',250,443,'UTF-8');
+        $page->drawText('CORPAUL',280,445,'UTF-8');
+        $page->drawText('890.981.683-8',275,433,'UTF-8');
+        $page->drawText('CALLE 9CSUR 50FF - 67 MEDELLIN',220,421,'UTF-8');
+        $page->drawText('(57- 4) 448 05 50 Opción 3',245,407,'UTF-8');
+        $page->drawText('IVA REGIMEN COMÚN',250,393,'UTF-8');
 
         $this->y -= 72;
     }
