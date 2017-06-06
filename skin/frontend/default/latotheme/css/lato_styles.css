@@ -2256,6 +2256,9 @@ address,
   color: #000000 !important;
 }
 @media screen and (max-width: 450px) {
+  body .mobile_information {
+    width: 39% !important;
+  }
   body.customer-account-login .account-login .new-users,
   body.customer-account-login .account-login .registered-users {
     height: auto !important;
@@ -2345,6 +2348,25 @@ address,
   body.catalog-product-view .product-description {
     margin-top: 1rem !important;
   }
+  body.checkout-cart-index .page-title button {
+    display: none !important;
+  }
+  body.checkout-cart-index .cart .cart-table {
+    width: 100% !important;
+  }
+  body.checkout-cart-index .cart .cart-table tfoot tr td button span {
+    font-size: 12px !important;
+  }
+  body.checkout-cart-index .cart .cart-forms {
+    width: 100% !important;
+  }
+  body.checkout-cart-index .cart .cart-totals-wrapper {
+    width: 100% !important;
+  }
+  body.checkout-cart-index .cart .cart-freeshipping-advice {
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
 }
 @media screen and (max-width: 800px) {
   body header .skip-nav span.label {
@@ -2430,6 +2452,9 @@ address,
   body.catalog-product-view #product-review-table tbody {
     display: none !important;
   }
+  body.checkout-onepage-index #checkout-progress-wrapper {
+    display: none !important;
+  }
 }
 @media screen and (min-width: 450px) and (max-width: 750px) {
   body .category-products ul li {
@@ -2506,5 +2531,31 @@ address,
   body.catalog-category-view .col-left .accordion-open dl#narrow-by-list dt:after {
     border-top: 4px solid #000000 !important;
     border-left: 4px solid transparent !important;
+  }
+  body.checkout-cart-index .page-title button {
+    display: none !important;
+  }
+  body.checkout-cart-index .cart .cart-table {
+    width: 100% !important;
+  }
+  body.checkout-cart-index .cart .cart-table tbody td.product-cart-actions button {
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  body.checkout-cart-index .cart .cart-table tfoot tr td button span {
+    font-size: 12px !important;
+  }
+  body.checkout-cart-index .cart .cart-totals-wrapper {
+    width: 55% !important;
+  }
+  body.checkout-cart-index .cart .cart-freeshipping-advice {
+    width: 55% !important;
+    padding-left: 10px !important;
+  }
+  body.checkout-onepage-index ol#checkoutSteps li #checkout-step-login .col-1 {
+    height: 252px !important;
+  }
+  body.checkout-onepage-index ol#checkoutSteps li #checkout-step-login .col-1 .buttons-set {
+    margin-top: 69px !important;
   }
 }
