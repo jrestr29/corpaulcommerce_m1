@@ -2269,11 +2269,8 @@ address,
     max-width: 200px !important;
     margin: 0 auto !important;
   }
-  body .mobile_information {
-    width: 38% !important;
-  }
-  body .mobile_information img {
-    margin-right: 0 !important;
+  body header .mobile_information {
+    display: none !important;
   }
   body.customer-account-login .account-login .new-users,
   body.customer-account-login .account-login .registered-users {
