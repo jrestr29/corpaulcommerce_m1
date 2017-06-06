@@ -179,7 +179,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             /* Add document text and number */
             $this->insertDocumentNumber(
                 $page,
-                Mage::helper('sales')->__('Factura # ') . $invoice->getIncrementId()
+                Mage::helper('sales')->__('Factura #') . $invoice->getIncrementId()
             );
             /* Add table */
             $this->drawInvoiceInfo($page);
