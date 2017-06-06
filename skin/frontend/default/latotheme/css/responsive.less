@@ -1,5 +1,8 @@
 body {
 	@media screen and (max-width: 450px) {
+		.mobile_information {
+			    width: 39% !important;
+		}
 
 		&.customer-account-login {
 			.account-login {
@@ -145,9 +148,44 @@ body {
 			.product-description {
 				margin-top: 1rem !important;
 			}
+		}
 
+		&.checkout-cart-index {
+			.page-title {
+				button {
+					display: none !important
+				}
+			}
+			.cart {
+				.cart-table {
+					width: 100% !important;
 
+					tfoot {
+						tr {
+							td {
+								button {
+									span {
+										font-size: 12px !important
+									}
+								}
+							}
+						}
+					}
+				}
 
+				.cart-forms {
+					width: 100% !important;
+				}
+
+				.cart-totals-wrapper {
+					width: 100% !important;	
+				}
+
+				.cart-freeshipping-advice {
+					width: 100% !important;
+				    padding-left: 0 !important;
+				}
+			}
 		}
 	}
 
@@ -310,9 +348,14 @@ body {
 				tbody {
 					display: none !important;
 				}
-			}
+			}	
+		}
 
-			
+
+		&.checkout-onepage-index {
+			#checkout-progress-wrapper {
+				display: none !important
+			}
 		}
 
 	}
@@ -432,6 +475,70 @@ body {
 						    	    border-top: 4px solid #000000 !important;
 						    	    border-left: 4px solid transparent !important;
 							    }
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.checkout-cart-index {
+			.page-title {
+				button {
+					display: none !important
+				}
+			}
+
+			.cart {
+				.cart-table {
+					width: 100% !important;
+
+					tbody {
+						td {
+							&.product-cart-actions {
+								button {
+								    display: block !important;
+								    margin: 0 auto !important;
+								}
+							}
+						}
+					}
+
+					tfoot {
+						tr {
+							td {
+								button {
+									span {
+										font-size: 12px !important
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.cart-totals-wrapper {
+				    width: 55% !important;
+				}
+
+				.cart-freeshipping-advice {
+					width: 55% !important;
+   					padding-left: 10px !important;
+				}
+			}
+		}
+
+		&.checkout-onepage-index {
+			ol {
+				&#checkoutSteps {
+					li {
+						#checkout-step-login{
+							.col-1 {
+								height: 252px !important;
+
+								.buttons-set{
+									margin-top: 69px !important
+								}
 							}
 						}
 					}
