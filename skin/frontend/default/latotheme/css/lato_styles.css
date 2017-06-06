@@ -2260,6 +2260,15 @@ address,
     padding-left: 5px !important;
     padding-right: 5px !important;
   }
+  body header .page-header-container a.logo {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center;
+  }
+  body header .page-header-container a.logo img {
+    max-width: 200px !important;
+    margin: 0 auto !important;
+  }
   body .mobile_information {
     width: 38% !important;
   }
