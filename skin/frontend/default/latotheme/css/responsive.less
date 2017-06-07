@@ -40,6 +40,12 @@ body {
 
 		&.catalog-category-view {
 			.main {
+
+				button {
+					&.btn-cart {
+						    padding: .2em .4em !important;
+					}
+				}
 				.col-main {
 					width: 100% !important;
 
@@ -122,7 +128,7 @@ body {
 					.category-products {
 						ul {
 							li {
-								width: 46.7% !important;
+								width: 46% !important; 
 								
 								&:nth-child(2n) {
 									margin-right:0 !important;
@@ -161,8 +167,15 @@ body {
 		&.catalog-product-view {
 			.add-to-cart-wrapper {
 				.add-to-cart-buttons {
+					margin-left:0 !important;
+					width: 42.5% !important;
+
 					button {
-						font-size: 12px !important;
+						    font-size: 11px!important;
+						    padding: 0 0px!important;
+						    width: 100%;
+						    max-width: 100%;
+						    min-width: 80% !important;
 					}
 				}
 			}
@@ -386,7 +399,7 @@ body {
 		.category-products {
 			ul {
 				li {
-					width: 30.8% !important;
+					width: 30% !important;
 					&:nth-child(3n) {
 						margin-right:0 !important;
 					}
