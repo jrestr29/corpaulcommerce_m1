@@ -4,7 +4,9 @@
 /var/log
 /downloader
 /media
+media/
 /app/etc/local.xml
 app/etc/local.xml
 /.idea
 /var
+var/
