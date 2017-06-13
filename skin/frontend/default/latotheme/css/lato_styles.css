@@ -2272,6 +2272,28 @@ address,
   body header .mobile_information {
     display: none !important;
   }
+  body .footer .links {
+    text-align: left !important;
+    padding-left: 5% !important;
+  }
+  body .footer-container .newsletter .content {
+    height: 136px !important;
+  }
+  body .footer-container .newsletter .content .actions {
+    float: right !important;
+    display: block !important;
+    margin-right: 5% !important;
+  }
+  body .pagend .paymethods .container {
+    width: 153px !important;
+  }
+  body .pagend .copyright span {
+    font-size: 12px !important;
+  }
+  body.cms-contacto form input {
+    max-width: 383px !important;
+    width: 383px !important;
+  }
   body.customer-account-login .account-login .new-users,
   body.customer-account-login .account-login .registered-users {
     height: auto !important;
