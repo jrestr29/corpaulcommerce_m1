@@ -2272,6 +2272,17 @@ address,
   body header .mobile_information {
     display: none !important;
   }
+  body.cms-contacto .buttons-set span {
+    display: inline-block;
+    width: 305px !important;
+  }
+  body.cms-contacto .buttons-set input {
+    display: inline-block;
+    width: 25px !important;
+    max-width: 25px !important;
+    position: relative !important;
+    top: -23px !important;
+  }
   body .footer .links {
     text-align: left !important;
     padding-left: 5% !important;

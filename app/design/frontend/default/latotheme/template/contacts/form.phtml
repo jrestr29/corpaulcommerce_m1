@@ -61,13 +61,27 @@
             </li>
         </ul>
     </div>
-    <div class="buttons-set">
+    <div class="buttons-set" style="text-align: left">
         <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
-        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+        <button type="submit" data-handle="envio" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="button" style="display: none"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+        <input type="checkbox" name="politicas"><span class="politicas" style="text-align: left; padding-left: 5px">Acepto que mis datos sean tratados conforme a la <a href="<?php echo Mage::getBaseUrl() ?>politica-privacidad"> política de privacidad</a> de BUENOSMOTIVOS</span>
     </div>
 </form>
 <script type="text/javascript">
 //<![CDATA[
     var contactForm = new VarienForm('contactForm', true);
 //]]>
+</script>
+<script>
+    jQuery(document).ready(function() {
+        jQuery("input[name='politicas']").click(function() {
+            if(jQuery(this).is(":checked")){
+                jQuery("button[data-handle='envio']").show();
+                jQuery(this).hide();
+                jQuery('.politicas').hide();
+            } else {
+                jQuery("button[data-handle='envio']").hide();
+            }
+        });
+    });
 </script>
