@@ -27,13 +27,19 @@
 <div class="footer-container">
     <div class="newsletter">
         <div class="content">
-            <span>haz parte de nuestra comunidad</span>
+            <div class="text">
+                <span>haz parte de nuestra comunidad</span>
+                <div class="acceptance">
+                   <input type="checkbox" name="politicas"><span class="politicas" style="text-align: left; padding-left: 5px">Acepto la <a href="<?php echo Mage::getBaseUrl() ?>politica-privacidad"> política de privacidad</a></span> 
+                </div>    
+            </div>
+            
             <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
                 <div class="input-box">
                     <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" placeholder="Ingresa tu E-mail"/>
                 </div>
                 <div class="actions">
-                    <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button btn-newsletter"><span><span><?php echo $this->__('Enviar') ?></span></span></button>
+                    <button type="submit" data-handle="envio" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button btn-newsletter" disabled><span><span><?php echo $this->__('Enviar') ?></span></span></button>
                 </div>
             </form>
         </div>
@@ -116,4 +122,16 @@
     //<![CDATA[
     var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
+</script>
+<script>
+    jQuery(document).ready(function() {
+        jQuery("input[name='politicas']").click(function() {
+            if(jQuery(this).is(":checked")){
+                jQuery("button[data-handle='envio']").prop('disabled',false);
+                jQuery(this).prop('disabled',true);
+            } else {
+                jQuery("button[data-handle='envio']").hide();
+            }
+        });
+    });
 </script>
