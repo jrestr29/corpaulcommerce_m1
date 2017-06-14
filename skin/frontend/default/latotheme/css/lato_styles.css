@@ -963,6 +963,22 @@ body .main-container {
   position: initial;
   top: 10px;
 }
+.footer-container .newsletter .content .text {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+.footer-container .newsletter .content .text .acceptance input {
+  position: relative;
+  top: 6px;
+}
+.footer-container .newsletter .content .text .acceptance span {
+  font-size: 10px;
+}
+.footer-container .newsletter .content .text .acceptance span a {
+  color: #fbd61d !important;
+  text-decoration: underline;
+}
 @media screen and (min-width: 750px) {
   .footer-container .newsletter .content {
     position: relative;
@@ -982,6 +998,8 @@ body .main-container {
 .footer-container .newsletter form {
   display: block;
   width: 100%;
+  position: relative;
+  top: -8px;
 }
 @media screen and (min-width: 750px) {
   .footer-container .newsletter form {
@@ -1027,6 +1045,8 @@ body .main-container {
   display: inline-block;
   vertical-align: middle;
   width: 112px !important;
+  position: relative;
+  top: 1px;
 }
 .footer-container .newsletter form button span {
   color: #000000 !important;
@@ -2288,7 +2308,10 @@ address,
     padding-left: 5% !important;
   }
   body .footer-container .newsletter .content {
-    height: 136px !important;
+    height: 160px !important;
+  }
+  body .footer-container .newsletter .content form {
+    top: 1px !important;
   }
   body .footer-container .newsletter .content .actions {
     float: right !important;
