@@ -42,7 +42,9 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
     protected function _drawHeader(Zend_Pdf_Page $page)
     {
         /* Add table head */
-        $this->_setFontRegular($page, 10);
+        //$this->_setFontRegular($page, 10);
+        $font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
+        $page->setFont($font, 10);
         $page->setFillColor(new Zend_Pdf_Color_RGB(0.93, 0.92, 0.92));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
         $page->setLineWidth(0.5);
@@ -110,7 +112,8 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $pdf = new Zend_Pdf();
         $this->_setPdf($pdf);
         $style = new Zend_Pdf_Style();
-        $this->_setFontBold($style, 10);
+        //$this->_setFontBold($style, 10);
+        $font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
 
         foreach ($invoices as $invoice) {
             if ($invoice->getStoreId()) {
@@ -118,6 +121,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 Mage::app()->setCurrentStore($invoice->getStoreId());
             }
             $page  = $this->newPage();
+            $page->setFont($font, 10);
             $order = $invoice->getOrder();
             /* Add image */
             $this->insertLogo($page, $invoice->getStore());
@@ -177,8 +181,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
     protected function insertOrder(&$page, $obj, $putOrderId = true)
     {
         if ($obj instanceof Mage_Sales_Model_Order) {
-            $shipment = null;
-            $order = $obj;
+            $shipment = null;            $order = $obj;
         } elseif ($obj instanceof Mage_Sales_Model_Order_Shipment) {
             $shipment = $obj;
             $order = $shipment->getOrder();
@@ -192,7 +195,10 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $page->drawRectangle(25, $top, 570, $top - 55);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
         $this->setDocHeaderCoordinates(array(25, $top, 570, $top - 55));
-        $this->_setFontRegular($page, 10);
+        //$this->_setFontRegular($page, 10);
+        $font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
+        $page->setFont($font, 9);
+
 
         if ($putOrderId) {
             $page->drawText(
@@ -212,7 +218,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         //Draw header
         $top -= 33;
 
-        $this->_setFontRegular($page, 10);
+        //$this->_setFontRegular($page, 10);
         $page->setFillColor(new Zend_Pdf_Color_Rgb(0.93, 0.92, 0.92));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
         $page->setLineWidth(0.5);
@@ -277,7 +283,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
 
         //HERE STARTS INVOICE
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $this->_setFontBold($page, 12);
+        //$this->_setFontBold($page, 12);
         $page->drawText(Mage::helper('sales')->__('Sold to:'), 35, ($top - 15), 'UTF-8');
 
         if (!$order->getIsVirtual()) {
@@ -294,7 +300,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
         $page->drawRectangle(25, ($top - 25), 570, $top - 33 - $addressesHeight);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $this->_setFontRegular($page, 10);
+        //$this->_setFontRegular($page, 10);
         $this->y = $top - 40;
         $addressesStartY = $this->y;
 
@@ -337,7 +343,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             $page->drawRectangle(275, $this->y, 570, $this->y-25);
 
             $this->y -= 15;
-            $this->_setFontBold($page, 12);
+            //$this->_setFontBold($page, 12);
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
             $page->drawText(Mage::helper('sales')->__('Payment Method'), 35, $this->y, 'UTF-8');
             $page->drawText(Mage::helper('sales')->__('Shipping Method:'), 285, $this->y , 'UTF-8');
@@ -345,7 +351,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             $this->y -=10;
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
 
-            $this->_setFontRegular($page, 10);
+            //$this->_setFontRegular($page, 10);
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
 
             $paymentLeft = 35;
@@ -403,14 +409,14 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 $page->drawLine(400, $yShipments, 400, $yShipments - 10);
                 //$page->drawLine(510, $yShipments, 510, $yShipments - 10);
 
-                $this->_setFontRegular($page, 9);
+                //$this->_setFontRegular($page, 9);
                 $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
                 //$page->drawText(Mage::helper('sales')->__('Carrier'), 290, $yShipments - 7 , 'UTF-8');
                 $page->drawText(Mage::helper('sales')->__('Title'), 290, $yShipments - 7, 'UTF-8');
                 $page->drawText(Mage::helper('sales')->__('Number'), 410, $yShipments - 7, 'UTF-8');
 
                 $yShipments -= 20;
-                $this->_setFontRegular($page, 8);
+                //$this->_setFontRegular($page, 8);
                 foreach ($tracks as $track) {
 
                     $CarrierCode = $track->getCarrierCode();
