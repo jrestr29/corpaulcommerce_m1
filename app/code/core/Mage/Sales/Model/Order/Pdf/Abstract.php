@@ -194,27 +194,6 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
      * @param Zend_Pdf_Page $page
      * @param null $store
      */
-    protected function insertAddress(&$page, $store = null)
-    {
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $font = $this->_setFontRegular($page, 10);
-        $page->setLineWidth(0);
-        $this->y = $this->y ? $this->y : 815;
-        $top = 815;
-        foreach (explode("\n", Mage::getStoreConfig('sales/identity/address', $store)) as $value){
-            if ($value !== '') {
-                $value = preg_replace('/<br[^>]*>/i', "\n", $value);
-                foreach (Mage::helper('core/string')->str_split($value, 45, true, true) as $_value) {
-                    $page->drawText(trim(strip_tags($_value)),
-                        $this->getAlignRight($_value, 130, 440, $font, 10),
-                        $top,
-                        'UTF-8');
-                    $top -= 10;
-                }
-            }
-        }
-        $this->y = ($this->y > $top) ? $top : $this->y;
-    }
 
     /**
      * Format address

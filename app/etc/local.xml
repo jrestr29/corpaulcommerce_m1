@@ -42,8 +42,8 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[root]]></username>
-                    <password><![CDATA[mysql]]></password>
-                    <dbname><![CDATA[coecm1]]></dbname>
+                    <password><![CDATA[Jose342]]></password>
+                    <dbname><![CDATA[coec]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>

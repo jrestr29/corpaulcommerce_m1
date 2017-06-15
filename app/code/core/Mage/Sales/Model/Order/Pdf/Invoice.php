@@ -96,53 +96,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $this->y -= 20;
     }
 
-    protected function drawInvoiceInfo(Zend_Pdf_Page $page)
-    {
-        $top = 815;
-        $font = $this->_setFontRegular($page, 10);
-
-        //Draw header
-        $this->_setFontRegular($page, 10);
-        $page->setFillColor(new Zend_Pdf_Color_RGB(0.93, 0.92, 0.92));
-        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
-        $page->setLineWidth(0.5);
-        $page->drawRectangle(25, $this->y+205, 570, $this->y +220);
-        $this->y -= 10;
-        $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
-
-        $lines[0][] = array(
-            'text' => 'Empresa que factura',
-            'feed'  => 260,
-            'align' => 'center'
-        );
-
-        $lineBlock = array(
-            'lines'  => $lines,
-            'height' => 1
-        );
-
-        $this->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $this->y -= 20;
-        $top -= 10;
-
-        //Draw company invoice info 
-        $page->setFillColor(new Zend_Pdf_Color_RGB(255, 255, 255));
-        $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
-        $page->setLineWidth(0.5);
-        $page->drawRectangle(25, $this->y+17, 570, $this->y-69);
-        $this->y -= 10;
-        $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
-
-        $page->drawText('CORPAUL',280,445,'UTF-8');
-        $page->drawText('890.981.683-8',275,433,'UTF-8');
-        $page->drawText('CALLE 9CSUR 50FF - 67 MEDELLIN',220,421,'UTF-8');
-        $page->drawText('(57- 4) 448 05 50 Opción 3',245,407,'UTF-8');
-        $page->drawText('IVA REGIMEN COMÚN',250,393,'UTF-8');
-
-        $this->y -= 72;
-    }
-
     /**
      * Return PDF document
      *
@@ -177,8 +130,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 Mage::getStoreConfigFlag(self::XML_PATH_SALES_PDF_INVOICE_PUT_ORDER_ID, $order->getStoreId())
             );
             /* Add document text and number */
-            //$this->drawInvoiceInfo($page);
-
 
             $this->insertDocumentNumber(
                 $page,
@@ -223,28 +174,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         return $page;
     }
 
-    protected function insertAddress(&$page, $store = null)
-    {
-        /*$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $font = $this->_setFontRegular($page, 10);
-        $page->setLineWidth(0);
-        $this->y = $this->y ? $this->y : 515;
-        $top = 815;
-        foreach (explode("\n", Mage::getStoreConfig('sales/identity/address', $store)) as $value){
-            if ($value !== '') {
-                $value = preg_replace('/<br[^>]*>/i', "\n", $value);
-                foreach (Mage::helper('core/string')->str_split($value, 45, true, true) as $_value) {
-                    $page->drawText(trim(strip_tags($_value)),
-                        $this->getAlignRight($_value, 130, 440, $font, 10),
-                        $top,
-                        'UTF-8');
-                    $top -= 10;
-                }
-            }
-        }
-        $this->y = ($this->y > $top) ? $top : $this->y;*/
-    }
-
     protected function insertOrder(&$page, $obj, $putOrderId = true)
     {
         if ($obj instanceof Mage_Sales_Model_Order) {
@@ -278,7 +207,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             ($top -= 15),
             'UTF-8'
         );
-
 
         //HERE IS INVOICE DISCLAIMER
         //Draw header
@@ -315,16 +243,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $top -= 12;
         $page->drawText('IVA REGIMEN COMÚN',250,$top,'UTF-8');
 
-
-
-
-
-
-
-
-
-
-
         $top -= 10;
         $page->setFillColor(new Zend_Pdf_Color_Rgb(0.93, 0.92, 0.92));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
@@ -356,25 +274,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             $shippingAddress = $this->_formatAddress($order->getShippingAddress()->format('pdf'));
             $shippingMethod  = $order->getShippingDescription();
         }
-
-        
-
-        /*$lines[0][] = array(
-            'text' => 'Empresa que factura',
-            'feed'  => 260,
-            'align' => 'center'
-        );
-
-        $lineBlock = array(
-            'lines'  => $lines,
-            'height' => 1
-        );
-
-        $this->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));*/
-
-
-
 
         //HERE STARTS INVOICE
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));

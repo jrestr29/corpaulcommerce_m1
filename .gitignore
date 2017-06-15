@@ -2,6 +2,7 @@
 /var/session
 /var/report
 /var/log
+.idea/
 /downloader
 /media
 media/
