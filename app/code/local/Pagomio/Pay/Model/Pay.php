@@ -114,6 +114,7 @@ class Pagomio_Pay_Model_Pay extends Mage_Payment_Model_Method_Abstract
             if($response->status == \Pagomio\Pagomio::TRANSACTION_SUCCESS && $status != 'complete'){
                 $payment->registerCaptureNotification( $response->total_amount );
                 $order->addStatusToHistory('complete', $strResponse);
+                $order->sendNewOrderEmail();
                 $payment->save();
             }elseif($response->status == \Pagomio\Pagomio::TRANSACTION_PENDING && $status != 'pending'){
                 $order->addStatusToHistory('pending', $strResponse);
