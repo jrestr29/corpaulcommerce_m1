@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ditosas_OrderEmailControl>
+            <version>1.0.0</version>
+        </Ditosas_OrderEmailControl>
+    </modules>
+    <global>
+        <models>
+            <processEmail>
+                <class>Ditosas_OrderEmailControl_Model</class>
+            </processEmail>
+        </models>
+        <events>
+          <checkout_onepage_controller_success_action>
+           <observers>
+             <processEmail>
+                <type>singleton</type>
+                  <class>Ditosas_OrderEmailControl_Model_Observer</class>
+                  <method>processEmail</method>
+            </processEmail>
+          </observers>
+         </checkout_onepage_controller_success_action>
+        </events>
+    </global>
+</config>
+
