@@ -21,7 +21,5 @@ class Ditosas_OrderEmailControl_Model_Observer
 				var_dump($e->getMessage());
 			}
 		}
-
-		echo "Observer end";
 	}
 }
