@@ -195,14 +195,23 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 $this->_drawItem($item, $page, $order);
                 $page = end($pdf->pages);
             }
+
             /* Add totals */
             $this->insertTotals($page, $invoice);
+            $this->insertDianConsecutivo($page);
+
             if ($invoice->getStoreId()) {
                 Mage::app()->getLocale()->revert();
             }
         }
         $this->_afterGetPdf();
         return $pdf;
+    }
+
+    protected function insertDianConsecutivo(&$page)
+    {
+        $this->_setFontRegular($page, 12);
+        $page->drawText('RESOLUCIÓN DIAN FORMULARIO 18762003445720 DEL 2017/05/20 PWEB del 1 AL 100.000', 80, ($this->y-80), 'UTF-8');
     }
 
     /**
@@ -225,24 +234,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
 
     protected function insertAddress(&$page, $store = null)
     {
-        /*$page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $font = $this->_setFontRegular($page, 10);
-        $page->setLineWidth(0);
-        $this->y = $this->y ? $this->y : 515;
-        $top = 815;
-        foreach (explode("\n", Mage::getStoreConfig('sales/identity/address', $store)) as $value){
-            if ($value !== '') {
-                $value = preg_replace('/<br[^>]*>/i', "\n", $value);
-                foreach (Mage::helper('core/string')->str_split($value, 45, true, true) as $_value) {
-                    $page->drawText(trim(strip_tags($_value)),
-                        $this->getAlignRight($_value, 130, 440, $font, 10),
-                        $top,
-                        'UTF-8');
-                    $top -= 10;
-                }
-            }
-        }
-        $this->y = ($this->y > $top) ? $top : $this->y;*/
     }
 
     protected function insertOrder(&$page, $obj, $putOrderId = true)
@@ -303,7 +294,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $this->y -= 10;
         $page->setFillColor(new Zend_Pdf_Color_RGB(0, 0, 0));
 
-
         $top -= 12;
         $page->drawText('CORPAUL',280,$top,'UTF-8');
         $top -= 12;
@@ -314,18 +304,8 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $page->drawText('(57- 4) 448 05 50 Opción 3',245,$top,'UTF-8');
         $top -= 12;
         $page->drawText('IVA REGIMEN COMÚN',250,$top,'UTF-8');
-
-
-
-
-
-
-
-
-
-
-
         $top -= 10;
+
         $page->setFillColor(new Zend_Pdf_Color_Rgb(0.93, 0.92, 0.92));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.5));
         $page->setLineWidth(0.5);
@@ -356,25 +336,6 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             $shippingAddress = $this->_formatAddress($order->getShippingAddress()->format('pdf'));
             $shippingMethod  = $order->getShippingDescription();
         }
-
-        
-
-        /*$lines[0][] = array(
-            'text' => 'Empresa que factura',
-            'feed'  => 260,
-            'align' => 'center'
-        );
-
-        $lineBlock = array(
-            'lines'  => $lines,
-            'height' => 1
-        );
-
-        $this->drawLineBlocks($page, array($lineBlock), array('table_header' => true));
-        $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));*/
-
-
-
 
         //HERE STARTS INVOICE
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
