@@ -283,9 +283,18 @@ body {
   }
   
   &.checkout-cart-index {
+    button {
+      span {
+        span {
+          text-decoration: none !important
+        }
+      }
+    }
+
     .cart-table{
       width:64%;
     }
+
 
     .cart-forms, .cart-totals-wrapper{
       width: 35%;
@@ -328,6 +337,8 @@ body {
   }
 
   &.customer-account-login {
+    
+
     form {
       .form-instructions{
         font-style: normal !important;
@@ -350,6 +361,20 @@ body {
   }
 
   &.customer-account {
+    .block-content {
+      ul {
+        li {
+          font-size: 12px !important;
+        }
+      }
+    }
+
+    .actions {
+      button {
+        display: none;
+      }
+    }
+
     .block-account{
       .block-title{
         margin-bottom: 15px;
