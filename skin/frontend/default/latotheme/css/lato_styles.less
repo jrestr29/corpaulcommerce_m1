@@ -151,6 +151,18 @@ select {
 
 body {
 
+  &.catalogsearch-result-index {
+   .category-products {
+    ul {
+      li {
+        &:nth-child(3n+1) {
+          clear:none !important;
+        }
+      }
+    }
+   } 
+  }
+
   &.checkout-onepage-failure {
     .sidebar {
       .block-reorder {
