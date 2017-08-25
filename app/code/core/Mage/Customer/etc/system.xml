@@ -193,6 +193,15 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </email_domain>
+                        <email_allowed_domain translate="label">
+                            <label>Direcciones de correo permitidas</label>
+                            <comment>En este ambiente solo se permiten cuentas de correo de los siguientes dominios: corpaul.com, buenosmotivos.com</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_allowed_domain>
                         <email_template translate="label">
                             <label>Default Welcome Email</label>
                             <frontend_type>select</frontend_type>

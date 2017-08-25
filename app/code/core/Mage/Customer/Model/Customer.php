@@ -868,6 +868,25 @@ class Mage_Customer_Model_Customer extends Mage_Core_Model_Abstract
             $errors[] = Mage::helper('customer')->__('Invalid email address "%s".', $this->getEmail());
         }
 
+        $allowed_emails = Mage::getStoreConfig('customer/create_account/email_allowed_domain');
+        if($allowed_emails){
+            $allowed_emails = str_replace(" ","",$allowed_emails);
+            $allowed_emails = explode(",",$allowed_emails);
+            $entered_email = split('@',$this->getEmail());
+
+            if (in_array($entered_email[1], $allowed_emails)) {
+                //valid email so continue
+            } else {
+                $emailerror = Mage::getStoreConfig('customer/create_account/email_allowed_domain_error');
+                
+                if ($emailerror) {
+                    $errors[] = $emailerror;
+                } else {
+                    $errors[] = 'Dirección de correo no apta para este ambiente: '.$this->getEmail();
+                }
+            }
+        }
+
         $password = $this->getPassword();
         if (!$this->getId() && !Zend_Validate::is($password , 'NotEmpty')) {
             $errors[] = Mage::helper('customer')->__('The password cannot be empty.');
