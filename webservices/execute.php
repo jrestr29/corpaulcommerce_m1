@@ -38,8 +38,10 @@
 	$fail = 0;
 	$successfull = 0;
 
-	if(ENABLE_LOG)
+	if(ENABLE_LOG) {
+		Mage::log('Recovered ' . count($prices) . ' registers', null, date('d-m-Y') . '/price_' . date('H-i-s') . '.log');
 	    Mage::log('Recovered ' . count($inventory) . ' registers', null, date('d-m-Y') . '/inventory_' . date('H-i-s') . '.log');
+	}
 
 	if($browser){
 	    echo '<br>----Execution date '.date('d/m/Y H:i:s');
@@ -123,3 +125,6 @@
 	        ob_flush();
 	    }
 	}
+
+
+return ; 
