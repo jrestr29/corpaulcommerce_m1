@@ -11,6 +11,7 @@
 	//Check if WS is requested through browser
 	$browser = (isset($_GET['prtbwsr'])) ? true : false;
 	$folder = MAGENTO . '/../var/log/' . date('d-m-Y');
+	$execTime = date('H-i-s');
 
 	//Check if log is active, then create folder structure
 	if(ENABLE_LOG) { 
@@ -39,12 +40,12 @@
 	$successfull = 0;
 
 	if(ENABLE_LOG) {
-		Mage::log('Recovered ' . count($prices->Precios) . ' registers', null, date('d-m-Y') . '/price_' . date('H-i-s') . '.log');
-	    Mage::log('Recovered ' . count($inventory->Inventario) . ' registers', null, date('d-m-Y') . '/inventory_' . date('H-i-s') . '.log');
+		Mage::log('Recovered ' . count($prices->Precios) . ' registers', null, date('d-m-Y') . '/price_' . $execTime . '.log');
+	    Mage::log('Recovered ' . count($inventory->Inventario) . ' registers', null, date('d-m-Y') . '/inventory_' . $execTime . '.log');
 	}
 
 	if($browser){
-	    echo '<br>----Execution date '.date('d/m/Y H:i:s');
+	    echo '<br>----Execution date '.date('d/m/Y ') . $execTime;
 	    flush();
 	    ob_flush();
 	}
@@ -68,7 +69,7 @@
 		$p->setPrice($data[$p->getSku()]);
 
 		if(ENABLE_LOG)
-	        Mage::log('Product sku ' . $p->getSku() . ' price updated to $' . $data[$p->getSku()], null, date('d-m-Y') . '/price_' . date('H-i-s') . '.log');
+	        Mage::log('Product sku ' . $p->getSku() . ' price updated to $' . $data[$p->getSku()], null, date('d-m-Y') . '/price_' . $execTime . '.log');
 
 	    if($browser){
 	        echo '<br>Product sku ' . $p->getSku() . ' price updated to $' . $data[$p->getSku()];
@@ -117,7 +118,7 @@
 	    $stockItem->save();
 
 	    if(ENABLE_LOG)
-	        Mage::log('Product sku ' . $p->getSku() . ' inventory updated to ' . $qty, null, date('d-m-Y') . '/inventory_' . date('H-i-s') . '.log');
+	        Mage::log('Product sku ' . $p->getSku() . ' inventory updated to ' . $qty, null, date('d-m-Y') . '/inventory_' . $execTime . '.log');
 
 	    if($browser){
 	        echo '<br>Product sku ' . $p->getSku() . ' inventory updated to ' . $qty;
