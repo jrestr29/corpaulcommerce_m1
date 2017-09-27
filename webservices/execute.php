@@ -1,5 +1,5 @@
 <?php
-	ini_set('max_execution_time', 3600);
+	ini_set('max_execution_time', 7200);
 	ini_set('memory_limit','1024M');
 	error_reporting(E_ALL);
 	define('MAGENTO', realpath(dirname(__FILE__)));
@@ -88,6 +88,7 @@
 
     unset($data);
 
+	/************ INVENTORY PROCESS ************/
     foreach ($inventory->Inventario as $inventario) {
 		$data[$inventario->Codigo] = $inventario->Cantidad;
 	}
@@ -101,21 +102,29 @@
 				    )
 				    ->load();
 
-	$entity_ids = array();
+	$dataTmp = array();
 
 	foreach ($products as $p) {
-		$stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p->getEntityId());
-		$qty = $data[$p->getSku()];
+		$dataTmp[$p->entity_id] = $data[$p->sku];
+	}
 
-		$stockItem->setData('qty', $qty);
+	$data = $dataTmp;
+	unset($dataTmp);
 
+	$stockItem = Mage::getResourceModel('cataloginventory/stock_item_collection')
+				->addFieldToSelect(array('product_id', 'is_in_stock', 'qty'))
+				->addProductsFilter($products)
+				->load();
+
+	foreach ($stockItem as $item) {
+		$qty = $data[$item->product_id];
+		$item->setQty($qty);
+		
 		if($qty == 0) {
-	        $stockItem->setData('is_in_stock', '0');
+			$item->setIsInStock('0');
 	    } else {
-	        $stockItem->setData('is_in_stock', '1');
+	    	$item->setIsInStock('1');
 	    }
-
-	    $stockItem->save();
 
 	    if(ENABLE_LOG)
 	        Mage::log('Product sku ' . $p->getSku() . ' inventory updated to ' . $qty, null, date('d-m-Y') . '/inventory_' . $execTime . '.log');
@@ -126,6 +135,6 @@
 	        ob_flush();
 	    }
 	}
-
+	$stockItem->save();
 
 return ; 
