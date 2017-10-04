@@ -511,10 +511,11 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
      */
     public function insertDocumentNumber(Zend_Pdf_Page $page, $text)
     {
+        $this->_setFontBold($page, 13);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
-        $this->_setFontRegular($page, 10);
         $docHeader = $this->getDocHeaderCoordinates();
         $page->drawText($text, 35, $docHeader[1] - 15, 'UTF-8');
+        $this->_setFontRegular($page, 10);
     }
 
     /**

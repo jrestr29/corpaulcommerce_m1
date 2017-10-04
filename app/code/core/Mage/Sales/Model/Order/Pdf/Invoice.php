@@ -178,12 +178,15 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
             );
             /* Add document text and number */
             //$this->drawInvoiceInfo($page);
-
+            $this->_setFontBold($page, 13);
+        
 
             $this->insertDocumentNumber(
                 $page,
                 Mage::helper('sales')->__('Factura #') . $invoice->getIncrementId()
             );
+
+            $this->_setFontRegular($page, 10);
             /* Add table */
             $this->_drawHeader($page);
             /* Add body */
@@ -249,12 +252,12 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         //$this->y = $this->y ? $this->y : 515;
         $top = $this->y;
 
+        $this->_setFontBold($page, 13);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0.45));
         $page->setLineColor(new Zend_Pdf_Color_GrayScale(0.45));
         $page->drawRectangle(25, $top, 570, $top - 55);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
         $this->setDocHeaderCoordinates(array(25, $top, 570, $top - 55));
-        $this->_setFontRegular($page, 10);
 
         if ($putOrderId) {
             $page->drawText(
@@ -354,7 +357,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         }
 
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(1));
-        $page->drawRectangle(25, ($top - 25), 570, $top - 33 - $addressesHeight);
+        $page->drawRectangle(25, ($top - 25), 570, $top - 73 - $addressesHeight);
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
         $this->_setFontRegular($page, 10);
         $this->y = $top - 40;
@@ -372,6 +375,23 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
                 }
             }
         }
+
+
+        //Here draw user identification on INVOICE
+        $userId = "";
+        $customerInfo = Mage::getModel('customer/customer')->load($order->getCustomerId());
+        $attr = Mage::getModel('catalog/resource_eav_attribute')->load(214);
+        $attr = $attr->getSource()->getAllOptions();
+
+        foreach ($attr as $option) {
+            if ($option['value'] === $customerInfo->getTipodocumentoidentidad()) {
+                $userId = $option['label'] . ': ';
+            }
+        }
+
+        $userId .= $customerInfo->getDocumentoidentidad();
+        $page->drawText($userId, 35, $this->y, 'UTF-8');
+        $this->y -= 15;
 
         $addressesEndY = $this->y;
 
