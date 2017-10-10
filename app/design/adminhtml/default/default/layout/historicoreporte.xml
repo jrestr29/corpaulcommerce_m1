@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<historicoreporte_adminhtml_historicoreporte_index>
+        <reference name="content">
+            <block type="historicoreporte/adminhtml_historicoreporte" name="historicoreporte" />
+        </reference>
+    </historicoreporte_adminhtml_historicoreporte_index>
+</layout>

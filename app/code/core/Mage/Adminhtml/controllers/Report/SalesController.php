@@ -357,6 +357,16 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->renderLayout();
     }
 
+
+    public function historicAction()
+    {
+        $this->_initAction()
+            ->_setActiveMenu('report/product/historic')
+            ->_addBreadcrumb(Mage::helper('reports')->__('Histórico reporte de ventas'), Mage::helper('reports')->__('Histórico reporte de ventas'))
+            ->_addContent($this->getLayout()->createBlock('adminhtml/report_product_historic'))
+            ->renderLayout();
+    }
+
     /**
      * Export coupons report grid to CSV format
      */
