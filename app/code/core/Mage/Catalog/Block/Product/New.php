@@ -90,7 +90,7 @@ class Mage_Catalog_Block_Product_New extends Mage_Catalog_Block_Product_Abstract
 
         /** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
         $collection = Mage::getResourceModel('catalog/product_collection')
-            ->addFieldToFilter('entity_id', array('in'=> array(1388,1323,936)));
+            ->addFieldToFilter('entity_id', array('in'=> array(1423,1215,1326)));
         //$collection->setVisibility(Mage::getSingleton('catalog/product_visibility')->getVisibleInCatalogIds());
 
 
