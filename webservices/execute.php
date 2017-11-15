@@ -126,11 +126,19 @@
 	    	$item->setIsInStock('1');
 	    }
 
+	    $product = Mage::getResourceModel('catalog/product_collection')
+	    ->addAttributeToSelect(array('sku'))
+	    ->addAttributeToFilter(
+		        'entity_id', $item->product_id
+		    )
+	    ->load()
+	    ->getFirstItem();
+
 	    if(ENABLE_LOG)
-	        Mage::log('Product sku ' . $p->getSku() . ' inventory updated to ' . $qty, null, date('d-m-Y') . '/inventory_' . $execTime . '.log');
+	        Mage::log('Product sku ' . $product->getSku() . ' inventory updated to ' . $qty, null, date('d-m-Y') . '/inventory_' . $execTime . '.log');
 
 	    if($browser){
-	        echo '<br>Product sku ' . $p->getSku() . ' inventory updated to ' . $qty;
+	        echo '<br>Product sku ' . $product->getSku() . ' inventory updated to ' . $qty;
 	        flush();
 	        ob_flush();
 	    }
