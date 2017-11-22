@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Ditosas_Promobanner>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Ditosas_Promobanner>
     </modules>
